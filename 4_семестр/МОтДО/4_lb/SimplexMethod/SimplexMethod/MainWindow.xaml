@@ -1,0 +1,118 @@
+﻿<Window x:Class="SimplexMethod.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimplexMethod"
+        mc:Ignorable="d"
+        Title="SimplexMethod" Height="600" Width="1200" Background="Black" Foreground="LawnGreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Button Name="GetInputEquationTableButton"
+                    Content="Enter"
+                    FontSize="16"
+                    Foreground="Black"
+                    Background="LawnGreen"
+                    Width="100"
+                    Height="30"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right"
+                    Margin="20"
+                    Click="GetInputExpressionTableButton_Click"/>
+
+            <Label Content="Number of x :"
+                   Foreground="LawnGreen"
+                   FontSize="16"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Margin="10,0"/>
+            <TextBox Name="NumberOfUndefinedsTextBox" 
+                     Text=""
+                     Foreground="LawnGreen"
+                     Background="Black"
+                     FontSize="14"
+                     TextAlignment="Right"
+                     Width="100"
+                     Height="20"
+                     VerticalAlignment="Top"
+                     HorizontalAlignment="Left"
+                     BorderThickness="1"
+                     BorderBrush="LawnGreen"
+                     Margin="15,30,0,0"/>
+
+            <Label Content="Number of expressions :"
+                   Foreground="LawnGreen"
+                   FontSize="16"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Margin="150,0"/>
+            <TextBox Name="NumberOfEqationsTextBox" 
+                     Text=""
+                     Foreground="LawnGreen"
+                     Background="Black"
+                     FontSize="14"
+                     TextAlignment="Right"
+                     Width="100"
+                     Height="20"
+                     VerticalAlignment="Top"
+                     HorizontalAlignment="Left"
+                     BorderThickness="1"
+                     BorderBrush="LawnGreen"
+                     Margin="155,30,0,0"/>
+
+        </Grid>
+        
+        <Grid Name="FunctionGrid" 
+              Grid.Row="1">
+            <Label Name="ObjectiveFunctionLabel"
+                   Content="Objective function"
+                   Background="Black"
+                   Foreground="LawnGreen"
+                   FontSize="16"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Right"
+                   Margin="0,5,5,0"
+                   Visibility="Hidden"/>
+        </Grid>
+        
+        <ScrollViewer Grid.Row="2" 
+                      VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Name="ExpressionsGrid"
+                  Grid.Column="0"/>
+
+                <Button Grid.Column="1"
+                    Name="CalculateByJordaneGaussMethodButton"
+                    Content="Solutions"
+                    FontSize="16"
+                    Foreground="Black"
+                    Background="LawnGreen"
+                    Width="100"
+                    Height="30"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Left"
+                    Margin="0,0,20,20"
+                    Visibility="Hidden"
+                    Click="CalculateByJordaneGaussMethodButton_Click"/>
+            </Grid>
+        </ScrollViewer>
+
+        <ScrollViewer Grid.Row="3" 
+                      VerticalScrollBarVisibility="Auto">
+            <Grid Name="LastIterationGrid">
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>
