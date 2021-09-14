@@ -12,7 +12,7 @@
     <Grid Height="200" 
 		  Width="500">
         <Button Name="PotentialMethodButton"
-                Content="Транспортная задача"
+                Content="Transportation problem"
                 FontSize="20"
 				Style="{StaticResource BGTheme}"
 				Width="300"
@@ -21,7 +21,7 @@
                 Click="PotentialMethodButton_Click"/>
 
         <Button Name="AssignmentProblemButton"
-                Content="Задача на назначение"
+                Content="Assignment problem"
                 FontSize="20"
 				Style="{StaticResource BGTheme}"
 				Width="300"
