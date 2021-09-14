@@ -11,8 +11,6 @@ namespace WinesML.Collections
 		private const string SPLIT_SYMBOL = "\n";
 		private List<Wine> wines = new List<Wine>();
 
-		//public int Count => data.Count;
-
 		public Wine this[int index]
 		{ 
 			get => wines[index];
@@ -20,35 +18,13 @@ namespace WinesML.Collections
 
 		public Wines(string data)
 		{
-			var wineStrings = data.Split("\n");
+			var wineStrings = data.Split(SPLIT_SYMBOL);
 			foreach (var wineString in wineStrings)
 			{
 				if (!string.IsNullOrEmpty(wineString))
 					wines.Add(new Wine(wineString));
 			}
 		}
-
-		public void Add(Wine wine)
-		{
-			wines.Add(wine);
-		}
-
-		//public void AddRange(ICollection<Wine> wines)
-		//{
-		//	foreach (var wine in wines)
-		//		this.wines.Add(wine);
-		//}
-
-		//public void AddRange(Wines wines)
-		//{
-		//	foreach (var wine in wines)
-		//		this.wines.Add(wine);
-		//}
-
-		//public void Clear()
-		//{
-		//	wines.Clear();
-		//}
 
 		public bool Contains(Wine wine)
 		{
@@ -88,16 +64,6 @@ namespace WinesML.Collections
 				wines[j] = temp;
 			}
 		}
-
-		//public void CopyTo(Wine[] wines, int wineIndex)
-		//{
-		//	wines.CopyTo(this.wines.ToArray(), wineIndex);
-		//}
-
-		//public bool Remove(Wine wine)
-		//{
-		//	return wines.Remove(wine);
-		//}
 
 		public IEnumerator<Wine> GetEnumerator()
 		{
