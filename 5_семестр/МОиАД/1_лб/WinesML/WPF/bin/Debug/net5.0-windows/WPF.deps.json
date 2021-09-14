@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "WPF/1.0.0": {
+        "dependencies": {
+          "WinesML": "1.0.0"
+        },
+        "runtime": {
+          "WPF.dll": {}
+        }
+      },
+      "WinesML/1.0.0": {
+        "runtime": {
+          "WinesML.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WPF/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WinesML/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
