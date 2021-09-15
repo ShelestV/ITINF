@@ -11,9 +11,9 @@ namespace WinesML.Collections
 		private const string SPLIT_SYMBOL = "\n";
 		private List<Wine> wines = new List<Wine>();
 
-		public Wine this[int index]
-		{ 
-			get => wines[index];
+		private Wines()
+		{
+			wines = new List<Wine>();
 		}
 
 		public Wines(string data)
@@ -26,6 +26,24 @@ namespace WinesML.Collections
 			}
 		}
 
+		public Wine this[int index]
+		{
+			get => wines[index];
+		}
+
+		public void Add(Wine wine)
+		{
+			wines.Add(wine);
+		}
+
+		public Wines GetCopy()
+		{
+			var wines = new Wines();
+			foreach (var wine in this.wines)
+				wines.Add(wine);
+			return wines;
+		}
+		
 		public bool Contains(Wine wine)
 		{
 			return wines.Contains(wine);

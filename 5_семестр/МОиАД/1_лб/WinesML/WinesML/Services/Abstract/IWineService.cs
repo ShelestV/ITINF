@@ -1,6 +1,6 @@
 ﻿namespace WinesML.Services.Abstract
 {
-	interface IWineService
+	public interface IWineService
 	{
 		double CalculateExpectedValue();
 		double CalculateRmsBiasFromMean();

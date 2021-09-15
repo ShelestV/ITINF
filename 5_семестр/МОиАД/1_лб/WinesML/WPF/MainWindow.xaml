@@ -23,29 +23,53 @@
                     </interactivity:EventTrigger>
                 </interactivity:Interaction.Triggers>
             </Button>
+            <Button Content="Shuffle"
+                    Width="100"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="10">
+                <interactivity:Interaction.Triggers>
+                    <interactivity:EventTrigger EventName="Click">
+                        <interactivity:InvokeCommandAction Command="{Binding ShuffleCommand}"/>
+                    </interactivity:EventTrigger>
+                </interactivity:Interaction.Triggers>
+            </Button>
+            <Button Content="To first sequence"
+                    Width="100"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="10">
+                <interactivity:Interaction.Triggers>
+                    <interactivity:EventTrigger EventName="Click">
+                        <interactivity:InvokeCommandAction Command="{Binding ToFirstSequenceCommand}"/>
+                    </interactivity:EventTrigger>
+                </interactivity:Interaction.Triggers>
+            </Button>
         </StackPanel>
-        <DataGrid ItemsSource="{Binding WinesNames}" 
-                  Margin="10"
-                  DockPanel.Dock="Right"
-                  Width="200">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Key"
-                                    Binding="{Binding Id}"/>
-                <DataGridTemplateColumn Header="Name">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBox Text="{Binding Name}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+        <StackPanel Margin="10"
+                    DockPanel.Dock="Right"
+                    Width="200">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Expected value: "/>
+                <TextBlock Text="{Binding SelectedWineExpectedValue}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Rms bias from mean: "/>
+                <TextBlock Text="{Binding SelectedWineRmsBiasFromMean}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Dispersion: "/>
+                <TextBlock Text="{Binding SelectedWineDispersion}"/>
+            </StackPanel>
+        </StackPanel>
         <ListView ItemsSource="{Binding Wines}"
                   Margin="10"
-                  DockPanel.Dock="Left">
+                  DockPanel.Dock="Left"
+                  SelectedItem="{Binding SelectedWine}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding TypeId}">Type</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Type.Name}">Type name</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Alcohol}">Alcohol</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding MalicAcid}">Malic acid</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Ash}">Ash</GridViewColumn>

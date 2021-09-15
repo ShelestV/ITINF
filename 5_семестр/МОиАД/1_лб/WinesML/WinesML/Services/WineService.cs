@@ -5,7 +5,7 @@ using WinesML.Models;
 
 namespace WinesML.Services
 {
-	class WineService : Abstract.IWineService, Abstract.IWineServiceAsync
+	public class WineService : Abstract.IWineService, Abstract.IWineServiceAsync
 	{
 		private Wine wine;
 		
@@ -21,7 +21,7 @@ namespace WinesML.Services
 
 		public double CalculateExpectedValue()
 		{
-			return (1 / wine.NumberOfAttrubutes) * wine.AttributesArray.Sum();
+			return wine.AttributesArray.Sum() / wine.NumberOfAttrubutes;
 		}
 
 		public async Task<double> CalculateRmsBiasFromMeanAsync()

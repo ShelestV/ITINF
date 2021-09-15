@@ -43,7 +43,8 @@ namespace WinesML.DataProcessings
 			var splitedData = data.Split(SPLIT_SYMBOL);
 			IWineTypeParser wineTypeService = new WineTypeService();
 			foreach (var part in splitedData)
-				result.Add(wineTypeService.ParseFromString(part));
+				if (WineTypeService.IsCorrectStringFormat(part))
+					result.Add(wineTypeService.ParseFromString(part));
 
 			return result;
 		}

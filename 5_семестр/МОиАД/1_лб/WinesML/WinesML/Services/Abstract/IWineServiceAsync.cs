@@ -2,7 +2,7 @@
 
 namespace WinesML.Services.Abstract
 {
-	interface IWineServiceAsync
+	public interface IWineServiceAsync
 	{
 		Task<double> CalculateExpectedValueAsync();
 		Task<double> CalculateRmsBiasFromMeanAsync();
