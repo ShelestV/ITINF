@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "jstUunh58K5i+SgY7e7WYk1J+kRCBrScCT8Ia9R+WPgTtATOnkdMhKEZ9Cw9JeYN8ZPzxInTPJGXsSagH+F8xg==",
+  "dgSpecHash": "tnaOg24pS5iH5sq/zUm1jUCN6fDVnUDXTdQOoDaXnJdgMiEfrNIXLhKaeS6lZ54eprKX83pCmfEO2gr/5BRoig==",
   "success": true,
   "projectFilePath": "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WPF\\WPF.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\shelest\\.nuget\\packages\\system.windows.interactivity.wpf\\2.0.20525\\system.windows.interactivity.wpf.2.0.20525.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"System.Windows.Interactivity.WPF 2.0.20525\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \"net5.0-windows7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "System.Windows.Interactivity.WPF",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
 }

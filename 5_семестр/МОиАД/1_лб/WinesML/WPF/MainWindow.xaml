@@ -4,11 +4,45 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF" 
-        xmlns:viewmodels="clr-namespace:WPF.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MainVM}"
+        xmlns:viewmodels="clr-namespace:WPF.ViewModels" 
+        xmlns:interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
-        <ListView ItemsSource="{Binding Wines}">
+        <StackPanel Height="50"
+                    DockPanel.Dock="Top"
+                    Orientation="Horizontal">
+            <Button Content="Load data"
+                    Width="100"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="10">
+                <interactivity:Interaction.Triggers>
+                    <interactivity:EventTrigger EventName="Click">
+                        <interactivity:InvokeCommandAction Command="{Binding LoadDataCommand}"/>
+                    </interactivity:EventTrigger>
+                </interactivity:Interaction.Triggers>
+            </Button>
+        </StackPanel>
+        <DataGrid ItemsSource="{Binding WinesNames}" 
+                  Margin="10"
+                  DockPanel.Dock="Right"
+                  Width="200">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Key"
+                                    Binding="{Binding Id}"/>
+                <DataGridTemplateColumn Header="Name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <ListView ItemsSource="{Binding Wines}"
+                  Margin="10"
+                  DockPanel.Dock="Left">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding TypeId}">Type</GridViewColumn>

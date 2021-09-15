@@ -27,3 +27,5 @@ E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\WinesML\WP
 E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\WinesML\WPF\obj\Debug\net5.0-windows\ref\WPF.dll
 E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\WinesML\WPF\obj\Debug\net5.0-windows\WPF.pdb
 E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\WinesML\WPF\obj\Debug\net5.0-windows\WPF.genruntimeconfig.cache
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\WinesML\WPF\bin\Debug\net5.0-windows\Microsoft.Expression.Interactions.dll
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\WinesML\WPF\bin\Debug\net5.0-windows\System.Windows.Interactivity.dll
