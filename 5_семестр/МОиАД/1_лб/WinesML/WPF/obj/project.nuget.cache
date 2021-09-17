@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "e0hMstkO8sFyiJ0AXPMOtI/Wt4C+yjt+IGSV87Zotk6nt1jjS5UM5kZJrwJCCzUYKVMv0sDo6YvP3sNfwF9J1A==",
+  "dgSpecHash": "PVlMkQl5T8KwaKdlcJ6C8M8W9GD6zZSVUha2ESTk6kbz2GALdzqnmSOSC7IvZUQNtdSXdh4wIsbAoH7sE6x1cQ==",
   "success": true,
-  "projectFilePath": "A:\\University\\GitHub\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WPF\\WPF.csproj",
+  "projectFilePath": "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WPF\\WPF.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\starb\\.nuget\\packages\\system.windows.interactivity.wpf\\2.0.20525\\system.windows.interactivity.wpf.2.0.20525.nupkg.sha512"
+    "C:\\Users\\shelest\\.nuget\\packages\\system.windows.interactivity.wpf\\2.0.20525\\system.windows.interactivity.wpf.2.0.20525.nupkg.sha512"
   ],
   "logs": [
     {

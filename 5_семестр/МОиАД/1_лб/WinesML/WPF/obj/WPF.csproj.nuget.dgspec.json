@@ -1,25 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "A:\\University\\GitHub\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WPF\\WPF.csproj": {}
+    "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WPF\\WPF.csproj": {}
   },
   "projects": {
-    "A:\\University\\GitHub\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WinesML\\WinesML.csproj": {
+    "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WinesML\\WinesML.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\University\\GitHub\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WinesML\\WinesML.csproj",
+        "projectUniqueName": "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WinesML\\WinesML.csproj",
         "projectName": "WinesML",
-        "projectPath": "A:\\University\\GitHub\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WinesML\\WinesML.csproj",
-        "packagesPath": "C:\\Users\\starb\\.nuget\\packages\\",
-        "outputPath": "A:\\University\\GitHub\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WinesML\\obj\\",
+        "projectPath": "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WinesML\\WinesML.csproj",
+        "packagesPath": "C:\\Users\\shelest\\.nuget\\packages\\",
+        "outputPath": "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WinesML\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\starb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\shelest\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -28,8 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.telerik.com/nuget": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -61,26 +58,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.207\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "A:\\University\\GitHub\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WPF\\WPF.csproj": {
+    "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WPF\\WPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\University\\GitHub\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WPF\\WPF.csproj",
+        "projectUniqueName": "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WPF\\WPF.csproj",
         "projectName": "WPF",
-        "projectPath": "A:\\University\\GitHub\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WPF\\WPF.csproj",
-        "packagesPath": "C:\\Users\\starb\\.nuget\\packages\\",
-        "outputPath": "A:\\University\\GitHub\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WPF\\obj\\",
+        "projectPath": "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WPF\\WPF.csproj",
+        "packagesPath": "C:\\Users\\shelest\\.nuget\\packages\\",
+        "outputPath": "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WPF\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\starb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\shelest\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -89,15 +84,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.telerik.com/nuget": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "A:\\University\\GitHub\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WinesML\\WinesML.csproj": {
-                "projectPath": "A:\\University\\GitHub\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WinesML\\WinesML.csproj"
+              "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WinesML\\WinesML.csproj": {
+                "projectPath": "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\WinesML\\WinesML\\WinesML.csproj"
               }
             }
           }
@@ -135,7 +129,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.207\\RuntimeIdentifierGraph.json"
         }
       }
     }

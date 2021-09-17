@@ -27,25 +27,31 @@ namespace WinesML.DataProcessings
 
 		public async Task WriteNamesAsync(Dictionary<int, string> names)
 		{
-			var writer = new StreamWriter(NAMES_FILENAME);
-			var namesBuilder = new StringBuilder();
-			names.Select(name => namesBuilder.Append(name.Key).Append("-").Append(name.Value).Append("\n"));
-			await writer.WriteAsync(namesBuilder.ToString());
+			using (var writer = new StreamWriter(NAMES_FILENAME))
+			{
+				var namesBuilder = new StringBuilder();
+				foreach (var name in names)
+				{
+					namesBuilder.Append(name.Key).Append("-").Append(name.Value).Append("\n");
+				}
+				await writer.WriteAsync(namesBuilder.ToString());
+			}
 		}
 
 		public async Task<List<WineType>> GetWineTypesAsync()
 		{
-			var reader = new StreamReader(NAMES_FILENAME);
-			string data = await reader.ReadToEndAsync();
-
 			var result = new List<WineType>();
 
-			var splitedData = data.Split(SPLIT_SYMBOL);
-			IWineTypeParser wineTypeService = new WineTypeService();
-			foreach (var part in splitedData)
-				if (WineTypeService.IsCorrectStringFormat(part))
-					result.Add(wineTypeService.ParseFromString(part));
+			using (var reader = new StreamReader(NAMES_FILENAME))
+			{
+				string data = await reader.ReadToEndAsync();
 
+				var splitedData = data.Split(SPLIT_SYMBOL);
+				IWineTypeParser wineTypeService = new WineTypeService();
+				foreach (var part in splitedData)
+					if (WineTypeService.IsCorrectStringFormat(part))
+						result.Add(wineTypeService.ParseFromString(part));
+			}
 			return result;
 		}
 	}

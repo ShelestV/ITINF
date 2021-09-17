@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Text;
+using WinesML.Models.Abstract;
 
 namespace WinesML.Models
 {
-	public class Wine
+	public class Wine : BaseModel
 	{
 		private const string SPLIT_SYMBOL = ",";
 		private WineType type;
@@ -16,7 +17,8 @@ namespace WinesML.Models
 			set 
 			{ 
 				TypeId = type.Id; 
-				type = value; 
+				type = value;
+				OnPropertyChanged(nameof(Type));
 			} 
 		}
 		public double Alcohol { get; set; }

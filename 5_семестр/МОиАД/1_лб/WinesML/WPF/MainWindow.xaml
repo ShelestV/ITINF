@@ -46,45 +46,98 @@
                 </interactivity:Interaction.Triggers>
             </Button>
         </StackPanel>
-        <StackPanel Margin="10"
-                    DockPanel.Dock="Right"
-                    Width="200">
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Expected value: "/>
-                <TextBlock Text="{Binding SelectedWineExpectedValue}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Rms bias from mean: "/>
-                <TextBlock Text="{Binding SelectedWineRmsBiasFromMean}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Dispersion: "/>
-                <TextBlock Text="{Binding SelectedWineDispersion}"/>
+        <StackPanel Width="450"
+                    DockPanel.Dock="Right">
+            <ListView Margin="10"
+                      Height="310"
+                      VerticalAlignment="Top"
+                      ItemsSource="{Binding MathModels}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Attribute}">Attribute</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding ExpectedValue}">Expected value</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding RmsBiasFromMean}">Rms bias from mean</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Dispersion}">Dispersion</GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <StackPanel Margin="10"
+                        DockPanel.Dock="Right"
+                        VerticalAlignment="Bottom"
+                        Orientation="Horizontal">
+                <Label Content="Type: "/>
+                <TextBlock Text="{Binding SelectedWine.TypeId}"
+                           Margin="0,0,10,0"
+                           FontSize="18"
+                           VerticalAlignment="Center"/>
+                <Label Content="Name: "/>
+                <TextBox Text="{Binding SelectedWineTypeName, Mode=TwoWay}"
+                         Width="150"
+                         Height="20"/>
+                <Button Content="Save"
+                        Margin="5"
+                        HorizontalAlignment="Right">
+                    <interactivity:Interaction.Triggers>
+                        <interactivity:EventTrigger EventName="Click">
+                            <interactivity:InvokeCommandAction Command="{Binding SaveTypeNameCommand}"/>
+                        </interactivity:EventTrigger>
+                    </interactivity:Interaction.Triggers>
+                </Button>
             </StackPanel>
         </StackPanel>
-        <ListView ItemsSource="{Binding Wines}"
+        <DataGrid ItemsSource="{Binding Wines}"
                   Margin="10"
                   DockPanel.Dock="Left"
-                  SelectedItem="{Binding SelectedWine}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding TypeId}">Type</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Type.Name}">Type name</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Alcohol}">Alcohol</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding MalicAcid}">Malic acid</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Ash}">Ash</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding AlcanlinityOfAsh}">Alcalinity of ash</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Magnesium}">Magnesium</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding TotalPhenols}">Total phenols</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Flavanoids}">Flavanoids</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding NonflavanoidPhenols}">Nonflavanoid phenols</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Proanthocyanins}">Proanthocyanins</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding ColorIntensity}">Color intensity</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Hue}">Hue</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding  DeterminingTheProteinConcentration}">OD280/OD315 of diluted wines</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Proline}">Proline</GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+                  SelectedItem="{Binding SelectedWine}"
+                  AutoGenerateColumns="False"
+                  CanUserSortColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Type"
+                                    Binding="{Binding TypeId}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Type name"
+                                    Binding="{Binding Type.Name}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Alcohol"
+                                    Binding="{Binding Alcohol}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Malic acid"
+                                    Binding="{Binding MalicAcid}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Ash"
+                                    Binding="{Binding Ash}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Alcalinity of ash"
+                                    Binding="{Binding AlcanlinityOfAsh}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Magnesium"
+                                    Binding="{Binding Magnesium}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Total phenols"
+                                    Binding="{Binding TotalPhenols}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Flavanoids"
+                                    Binding="{Binding Flavanoids}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Nonflavanoid phenols"
+                                    Binding="{Binding NonflavanoidPhenols}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Proanthocyanins"
+                                    Binding="{Binding Proanthocyanins}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Color intensity"
+                                    Binding="{Binding ColorIntensity}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Hue"
+                                    Binding="{Binding Hue}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="OD280/OD315 of diluted wines"
+                                    Binding="{Binding DeterminingTheProteinConcentration}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Proline"
+                                    Binding="{Binding Proline}"
+                                    IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </DockPanel>
 </Window>

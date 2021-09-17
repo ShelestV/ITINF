@@ -1,17 +1,27 @@
 ﻿using System;
 using System.ComponentModel;
+using WinesML.Models.Abstract;
 
 namespace WinesML.Models
 {
-	public class WineType : INotifyPropertyChanged
+	public class WineType : BaseModel
 	{
-		public int Id { get; set; }
-		public string Name { get; set; }
+		private string name;
 
-		public event PropertyChangedEventHandler PropertyChanged;
-		protected virtual void OnPropertyChanged(string propertyName = "")
+		public int Id { get; set; }
+		public string Name 
 		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+			get => name;
+			set
+			{
+				name = value;
+				OnPropertyChanged(nameof(Name));
+			}
+		}
+
+		public bool EqualsById(int id)
+		{
+			return Id == id;
 		}
 
 		public override bool Equals(object obj)
