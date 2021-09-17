@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using WinesML.Models.Abstract;
 
 namespace WinesML.Models

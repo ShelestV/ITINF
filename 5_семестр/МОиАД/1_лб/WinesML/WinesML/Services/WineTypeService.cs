@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using WinesML.Models;
+﻿using WinesML.Models;
 using WinesML.Services.Adstract;
 
 namespace WinesML.Services
@@ -17,11 +16,6 @@ namespace WinesML.Services
 				Name = splitedStr[1]
 			};
 			return result;
-		}
-
-		public KeyValuePair<int, string> ParseToDictionaryValue(WineType wineType)
-		{
-			return new KeyValuePair<int, string>(wineType.Id, wineType.Name);
 		}
 
 		public static bool IsCorrectStringFormat(string str)

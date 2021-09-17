@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using WinesML.Models;
 
 namespace WinesML.Collections
@@ -26,11 +25,6 @@ namespace WinesML.Collections
 			}
 		}
 
-		public Wine this[int index]
-		{
-			get => wines[index];
-		}
-
 		public void Add(Wine wine)
 		{
 			wines.Add(wine);
@@ -42,31 +36,6 @@ namespace WinesML.Collections
 			foreach (var wine in this.wines)
 				wines.Add(wine);
 			return wines;
-		}
-		
-		public bool Contains(Wine wine)
-		{
-			return wines.Contains(wine);
-		}
-
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="wine"></param>
-		/// <returns>Returns wine object or null</returns>
-		public Wine Find(Wine wine)
-		{
-			return wines.FirstOrDefault(w => wine.Equals(w));
-		}
-
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="wineIndex"></param>
-		/// <returns>Returns wine object or null</returns>
-		public Wine FindAt(int wineIndex)
-		{
-			return wines[wineIndex];
 		}
 
 		public void Shuffle()

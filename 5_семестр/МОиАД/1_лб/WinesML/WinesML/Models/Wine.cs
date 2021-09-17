@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 using WinesML.Models.Abstract;
 
 namespace WinesML.Models
@@ -35,11 +34,6 @@ namespace WinesML.Models
 		public double DeterminingTheProteinConcentration { get; set; } // OD280/OD315 of diluted wines
 		public int Proline { get; set; }
 
-		public Wine()
-		{
-			Id = Guid.NewGuid();
-		}
-
 		public Wine(string data)
 		{
 			var attributeStrings = data.Split(SPLIT_SYMBOL);
@@ -60,33 +54,6 @@ namespace WinesML.Models
 			Hue = double.Parse(attributeStrings[11].Replace('.', ','));
 			DeterminingTheProteinConcentration = double.Parse(attributeStrings[12].Replace('.', ','));
 			Proline = int.Parse(attributeStrings[13]);
-		}
-
-		// This variable and method don`t apply to model abstraction
-		// This data is needed for reduce the link between model and service
-		public int NumberOfAttrubutes 
-		{ 
-			get => 13; 
-		}
-
-		public double[] AttributesArray
-		{
-			get => new double[]
-			{
-				Alcohol,
-				MalicAcid,
-				Ash,
-				AlcanlinityOfAsh,
-				Magnesium,
-				TotalPhenols,
-				Flavanoids,
-				NonflavanoidPhenols,
-				Proanthocyanins,
-				ColorIntensity,
-				Hue,
-				DeterminingTheProteinConcentration,
-				Proline
-			};
 		}
 
 		public override bool Equals(object obj)
@@ -126,34 +93,6 @@ namespace WinesML.Models
 			hash.Add(DeterminingTheProteinConcentration);
 			hash.Add(Proline);
 			return hash.ToHashCode();
-		}
-
-		public override string ToString()
-		{
-			var builder = new StringBuilder();
-
-			builder.Append("Wine type: ").Append(type.Name).Append(Environment.NewLine);
-			builder.Append("Alcohol: ").Append(Alcohol).Append(Environment.NewLine);
-			builder.Append("Malic acid: ").Append(MalicAcid).Append(Environment.NewLine);
-			builder.Append("Ash: ").Append(Ash).Append(Environment.NewLine);
-			builder.Append("Alcanlinity of ash: ").Append(AlcanlinityOfAsh)
-				.Append(Environment.NewLine);
-			builder.Append("Magnesium: ").Append(Magnesium).Append(Environment.NewLine);
-			builder.Append("Total phenols: ").Append(TotalPhenols).Append(Environment.NewLine);
-			builder.Append("Flavanoids: ").Append(Flavanoids).Append(Environment.NewLine);
-			builder.Append("Nonflavanoid phenols: ").Append(NonflavanoidPhenols)
-				.Append(Environment.NewLine);
-			builder.Append("Proanthocyanins: ").Append(Proanthocyanins)
-				.Append(Environment.NewLine);
-			builder.Append("Color intensity: ").Append(ColorIntensity)
-				.Append(Environment.NewLine);
-			builder.Append("Hue: ").Append(Hue).Append(Environment.NewLine);
-			builder.Append("Determining the protein concentration: ")
-				.Append(DeterminingTheProteinConcentration).Append(Environment.NewLine);
-			builder.Append("Proline: ").Append(Proline).Append(Environment.NewLine);
-			builder.Append("Wine type: ").Append(type.Name).Append(Environment.NewLine);
-
-			return builder.ToString();
 		}
 	}
 }
