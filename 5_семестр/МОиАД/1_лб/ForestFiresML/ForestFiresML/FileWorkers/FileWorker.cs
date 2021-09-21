@@ -26,7 +26,10 @@ namespace ForestFiresML.FileWorkers
 
 				foreach (var row in rows)
 				{
-					resultForestFires.Add(ForestFireConverter.ConvertFromString(row));
+					if (!string.IsNullOrEmpty(row))
+					{
+						resultForestFires.Add(ForestFireConverter.ConvertFromString(row));
+					}
 				}
 			}
 

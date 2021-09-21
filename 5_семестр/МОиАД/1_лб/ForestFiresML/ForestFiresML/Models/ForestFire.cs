@@ -1,4 +1,5 @@
 ﻿using ForestFiresML.Services;
+using System.Text;
 
 namespace ForestFiresML.Models
 {
@@ -185,9 +186,28 @@ namespace ForestFiresML.Models
 			this.id = id;
 		}
 
+		public string ShortForm()
+		{
+			return Name + " X -> " + X + " Y -> " + Y + " " + Month + " " + Day;
+		}
+
 		public override string ToString()
 		{
-			return base.ToString();
+			var builder = new StringBuilder();
+			builder.Append(Name).Append("\n");
+			builder.Append("X: ").Append(X).Append("\n");
+			builder.Append("Y: ").Append(Y).Append("\n");
+			builder.Append("Month: ").Append(Month).Append("\n");
+			builder.Append("Day: ").Append(Day).Append("\n");
+			builder.Append("FFMC: ").Append(FFMC).Append("\n");
+			builder.Append("DMC: ").Append(DMC).Append("\n");
+			builder.Append("DC: ").Append(DC).Append("\n");
+			builder.Append("ISI: ").Append(ISI).Append("\n");
+			builder.Append("Temp: ").Append(Temp).Append("\n");
+			builder.Append("RH: ").Append(RH).Append("\n");
+			builder.Append("Rain: ").Append(Rain).Append("\n");
+			builder.Append("Area: ").Append(Area).Append("\n");
+			return builder.ToString();
 		}
 	}
 }

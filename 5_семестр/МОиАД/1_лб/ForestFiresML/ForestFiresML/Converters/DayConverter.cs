@@ -19,7 +19,7 @@ namespace ForestFiresML.Converters
 					return Day.Thursday;
 				case "fri":
 					return Day.Friday;
-				case "sut":
+				case "sat":
 					return Day.Saturday;
 				case "sun":
 					return Day.Sunday;

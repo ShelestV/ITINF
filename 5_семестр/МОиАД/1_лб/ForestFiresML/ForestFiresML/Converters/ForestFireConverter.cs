@@ -18,15 +18,15 @@ namespace ForestFiresML.Converters
 				builder.BuildY(int.Parse(attributes[1]));
 				builder.BuildMonth(MonthConverter.ConvertFromString(attributes[2]));
 				builder.BuildDay(DayConverter.ConvertFromString(attributes[3]));
-				builder.BuildFFMC(double.Parse(attributes[4]));
-				builder.BuildDMC(double.Parse(attributes[5]));
-				builder.BuildDC(double.Parse(attributes[6]));
-				builder.BuildISI(double.Parse(attributes[7]));
-				builder.BuildTemp(double.Parse(attributes[8]));
-				builder.BuildRH(double.Parse(attributes[9]));
-				builder.BuildWind(double.Parse(attributes[10]));
-				builder.BuildRain(double.Parse(attributes[11]));
-				builder.BuildArea(double.Parse(attributes[12]));
+				builder.BuildFFMC(double.Parse(attributes[4].Replace('.', ',')));
+				builder.BuildDMC(double.Parse(attributes[5].Replace('.', ',')));
+				builder.BuildDC(double.Parse(attributes[6].Replace('.', ',')));
+				builder.BuildISI(double.Parse(attributes[7].Replace('.', ',')));
+				builder.BuildTemp(double.Parse(attributes[8].Replace('.', ',')));
+				builder.BuildRH(double.Parse(attributes[9].Replace('.', ',')));
+				builder.BuildWind(double.Parse(attributes[10].Replace('.', ',')));
+				builder.BuildRain(double.Parse(attributes[11].Replace('.', ',')));
+				builder.BuildArea(double.Parse(attributes[12].Replace('.', ',')));
 
 				return builder.GetForestFire();
 			}

@@ -1,0 +1,16 @@
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\bin\Debug\net5.0\ForestFiresML.exe
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\bin\Debug\net5.0\ForestFiresML.deps.json
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\bin\Debug\net5.0\ForestFiresML.runtimeconfig.json
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\bin\Debug\net5.0\ForestFiresML.runtimeconfig.dev.json
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\bin\Debug\net5.0\ForestFiresML.dll
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\bin\Debug\net5.0\ref\ForestFiresML.dll
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\bin\Debug\net5.0\ForestFiresML.pdb
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\obj\Debug\net5.0\ForestFiresML.csprojAssemblyReference.cache
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\obj\Debug\net5.0\ForestFiresML.GeneratedMSBuildEditorConfig.editorconfig
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\obj\Debug\net5.0\ForestFiresML.AssemblyInfoInputs.cache
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\obj\Debug\net5.0\ForestFiresML.AssemblyInfo.cs
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\obj\Debug\net5.0\ForestFiresML.csproj.CoreCompileInputs.cache
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\obj\Debug\net5.0\ForestFiresML.dll
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\obj\Debug\net5.0\ref\ForestFiresML.dll
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\obj\Debug\net5.0\ForestFiresML.pdb
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\ForestFiresML\ForestFiresML\obj\Debug\net5.0\ForestFiresML.genruntimeconfig.cache
