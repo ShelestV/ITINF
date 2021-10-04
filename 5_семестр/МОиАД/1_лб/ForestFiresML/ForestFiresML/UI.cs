@@ -24,14 +24,14 @@ namespace ForestFiresML
 
 			#region User communication
 			Console.WriteLine();
-			Console.WriteLine("Choose operation: ");
-			Console.WriteLine("1. Get element info.");
-			Console.WriteLine("2. Shuffle.");
-			Console.WriteLine("3. Show list of forestfires.");
-			Console.WriteLine("4. Calculate statistic characteristics.");
-			Console.WriteLine("5. Change id to name.");
-			Console.WriteLine("6. Clear console.");
-			Console.WriteLine("0. Exit.");
+			Console.WriteLine("Выберите действие: ");
+			Console.WriteLine("1. Получить информацию о элементе.");
+			Console.WriteLine("2. Перемешать.");
+			Console.WriteLine("3. Показать все записи о пожарах.");
+			Console.WriteLine("4. Посчитать статистические характеристики.");
+			Console.WriteLine("5. Поменять Id на название.");
+			Console.WriteLine("6. Очистить консоль.");
+			Console.WriteLine("0. Завершить.");
 
 			userInput = Console.ReadLine();
 			#endregion
@@ -67,7 +67,7 @@ namespace ForestFiresML
 
 		private void GetElementInfo()
 		{
-			Console.WriteLine("Enter id: ");
+			Console.WriteLine("Введите id: ");
 			string userInput = Console.ReadLine();
 			int id;
 			if (int.TryParse(userInput, out id))
@@ -76,14 +76,14 @@ namespace ForestFiresML
 			}
 			else
 			{
-				Console.WriteLine("Next time enter correct value!");
+				Console.WriteLine("В следующий раз введите корректное значение!");
 			}
 		}
 
 		private void Shuffle()
 		{
 			forestFires.Shuffle();
-			Console.WriteLine("Forestfires has been shuffled. To see result choose \"3\"");
+			Console.WriteLine("Записи о лесных пожарах были перемешаны. Чтобы увидеть результат выберите \"3\"");
 		}
 
 		private void ShowForestFires()
@@ -96,84 +96,84 @@ namespace ForestFiresML
 
 		private void CalculateStatistics()
 		{
-			Console.WriteLine("Statistics\tExpected value\tRms bias from mean\tDispersion");
+			Console.WriteLine("Величины\tМатематическое ожидание\tСреднее квадратичное отклонение\tДисперсия");
 			#region Output
 			#region X
 			Console.Write("X\t\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => (double)fire.X)), 3) + "\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => (double)fire.X)), 3) + "\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => (double)fire.X)), 3) + "\t\t\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => (double)fire.X)), 3) + "\t\t\t\t");
 			Console.WriteLine(Math.Round(Mathematics.Statistics.CalculateDispersion(forestFires.Select(fire => (double)fire.X)), 3) + "\t");
 			#endregion
 			#region Y
 			Console.Write("Y\t\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => (double)fire.Y)), 3) + "\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => (double)fire.Y)), 3) + "\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => (double)fire.Y)), 3) + "\t\t\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => (double)fire.Y)), 3) + "\t\t\t\t");
 			Console.WriteLine(Math.Round(Mathematics.Statistics.CalculateDispersion(forestFires.Select(fire => (double)fire.Y)), 3) + "\t");
 			#endregion
 			#region Month
 			Console.Write("Month\t\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => (double)fire.Month)), 3) + "\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => (double)fire.Month)), 3) + "\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => (double)fire.Month)), 3) + "\t\t\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => (double)fire.Month)), 3) + "\t\t\t\t");
 			Console.WriteLine(Math.Round(Mathematics.Statistics.CalculateDispersion(forestFires.Select(fire => (double)fire.Month)), 3) + "\t");
 			#endregion
 			#region Day
 			Console.Write("Day\t\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => (double)fire.Day)), 3) + "\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => (double)fire.Day)), 3) + "\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => (double)fire.Day)), 3) + "\t\t\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => (double)fire.Day)), 3) + "\t\t\t\t");
 			Console.WriteLine(Math.Round(Mathematics.Statistics.CalculateDispersion(forestFires.Select(fire => (double)fire.Day)), 3) + "\t");
 			#endregion
 			#region FFMC
 			Console.Write("FFMC\t\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.FFMC)), 3) + "\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.FFMC)), 3) + "\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.FFMC)), 3) + "\t\t\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.FFMC)), 3) + "\t\t\t\t");
 			Console.WriteLine(Math.Round(Mathematics.Statistics.CalculateDispersion(forestFires.Select(fire => fire.FFMC)), 3) + "\t");
 			#endregion
 			#region DMC
 			Console.Write("DMC\t\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.DMC)), 3) + "\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.DMC)), 3) + "\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.DMC)), 3) + "\t\t\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.DMC)), 3) + "\t\t\t\t");
 			Console.WriteLine(Math.Round(Mathematics.Statistics.CalculateDispersion(forestFires.Select(fire => fire.DMC)), 3) + "\t");
 			#endregion
 			#region DC
 			Console.Write("DC\t\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.DC)), 3) + "\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.DC)), 3) + "\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.DC)), 3) + "\t\t\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.DC)), 3) + "\t\t\t\t");
 			Console.WriteLine(Math.Round(Mathematics.Statistics.CalculateDispersion(forestFires.Select(fire => fire.DC)), 3) + "\t");
 			#endregion
 			#region ISI
 			Console.Write("ISI\t\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.ISI)), 3) + "\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.ISI)), 3) + "\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.ISI)), 3) + "\t\t\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.ISI)), 3) + "\t\t\t\t");
 			Console.WriteLine(Math.Round(Mathematics.Statistics.CalculateDispersion(forestFires.Select(fire => fire.ISI)), 3) + "\t");
 			#endregion
 			#region Temp
 			Console.Write("Temp\t\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.Temp)), 3) + "\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.Temp)), 3) + "\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.Temp)), 3) + "\t\t\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.Temp)), 3) + "\t\t\t\t");
 			Console.WriteLine(Math.Round(Mathematics.Statistics.CalculateDispersion(forestFires.Select(fire => fire.Temp)), 3) + "\t");
 			#endregion
 			#region RH
 			Console.Write("RH\t\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.RH)), 3) + "\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.RH)), 3) + "\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.RH)), 3) + "\t\t\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.RH)), 3) + "\t\t\t\t");
 			Console.WriteLine(Math.Round(Mathematics.Statistics.CalculateDispersion(forestFires.Select(fire => fire.RH)), 3) + "\t");
 			#endregion
 			#region Wind
 			Console.Write("Wind\t\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.Wind)), 3) + "\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.Wind)), 3) + "\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.Wind)), 3) + "\t\t\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.Wind)), 3) + "\t\t\t\t");
 			Console.WriteLine(Math.Round(Mathematics.Statistics.CalculateDispersion(forestFires.Select(fire => fire.Wind)), 3) + "\t");
 			#endregion
 			#region Rain
 			Console.Write("Rain\t\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.Rain)), 3) + "\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.Rain)), 3) + "\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.Rain)), 3) + "\t\t\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.Rain)), 3) + "\t\t\t\t");
 			Console.WriteLine(Math.Round(Mathematics.Statistics.CalculateDispersion(forestFires.Select(fire => fire.Rain)), 3) + "\t");
 			#endregion
 			#region Area
 			Console.Write("Area\t\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.Area)), 3) + "\t");
-			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.Area)), 3) + "\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateExpectedValue(forestFires.Select(fire => fire.Area)), 3) + "\t\t\t");
+			Console.Write(Math.Round(Mathematics.Statistics.CalculateRmsBiasFromMean(forestFires.Select(fire => fire.Area)), 3) + "\t\t\t\t");
 			Console.WriteLine(Math.Round(Mathematics.Statistics.CalculateDispersion(forestFires.Select(fire => fire.Area)), 3) + "\t");
 			#endregion
 			#endregion
@@ -181,20 +181,20 @@ namespace ForestFiresML
 
 		private void ChangeIdToName()
 		{
-			Console.WriteLine("Enter id: ");
+			Console.WriteLine("Введите id: ");
 			string userInput = Console.ReadLine();
 			int id;
 			if (int.TryParse(userInput, out id))
 			{
 				var fire = forestFires.FindByIdOrDefault(id);
 				Console.WriteLine(fire);
-				Console.WriteLine("Enter name: ");
+				Console.WriteLine("Введите название: ");
 				string name = Console.ReadLine();
 				fire.Name = name;
 			}
 			else
 			{
-				Console.WriteLine("Next time enter correct value!");
+				Console.WriteLine("В следующий раз введите корректное значение!");
 			}
 		}
 
