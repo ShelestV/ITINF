@@ -1,12 +1,16 @@
-﻿using System;
-
-namespace IrisML
+﻿namespace IrisML
 {
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			var ui = new UI();
+			ui.Start();
+
+			while (ui.IsWorking)
+			{
+				ui.Communicate();
+			}
 		}
 	}
 }

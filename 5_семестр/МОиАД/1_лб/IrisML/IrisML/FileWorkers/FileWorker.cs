@@ -15,7 +15,7 @@ namespace IrisML.FileWorkers
 			this.filename = filename;
 		}
 
-		public IEnumerable<Iris> GetForestFires()
+		public IEnumerable<Iris> GetIrises()
 		{
 			var resultForestFires = new List<Iris>();
 

@@ -5,11 +5,10 @@ namespace IrisML.Builders
 	class IrisBuilder
 	{
 		private Iris iris;
-		private static int nextId;
+		private static int nextId = 0;
 
 		public IrisBuilder()
 		{
-			nextId = 0;
 			Reset();
 		}
 
