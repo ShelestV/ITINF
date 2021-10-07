@@ -19,20 +19,43 @@ namespace ShelestML_2lb
 			positiveMatrix.Add(new List<string> { "Выше", "Дома", "Пропускают", "Нет" });
 			positiveMatrix.Add(new List<string> { "Ниже", "Дома", "Пропускают", "Нет" });
 
-			var algo = new FindS(positiveMatrix);
-			algo.CalculateHypotheses();
+			var findS = new FindS(positiveMatrix);
+			findS.CalculateHypotheses();
 
-			foreach (var item in algo.ParticularHypotheses)
+			Console.WriteLine("Find-S:");
+			foreach (var item in findS.ParticularHypotheses)
 			{
 				Console.Write(item + " ");
 			}
-			Console.WriteLine();
+			Console.WriteLine("\n");
 
 			  //--------------------------------------------------------//
 			 //----------Candidate Elimination algorithm---------------//
 			//--------------------------------------------------------//
 
+			var matrix = new Matrix(new List<string> { "Соперник", "Играем", "Лидеры", "Дождь" });
+			matrix.Add(new List<string> { "Выше", "Дома", "На месте", "Нет" }, true);
+			matrix.Add(new List<string> { "Ниже", "В гостях", "Пропускают", "Нет" }, false);
+			matrix.Add(new List<string> { "Ниже", "Дома", "Пропускают", "Да" }, false);
+			matrix.Add(new List<string> { "Выше", "Дома", "Пропускают", "Нет" }, true);
 
+			var candidateElimination = new CandidateElimination(matrix);
+			candidateElimination.CalculateHypotheses();
+
+			Console.WriteLine("Candidate elimination:");
+			foreach (var item in candidateElimination.ParticularHypotheses)
+			{
+				Console.Write(item + " ");
+			}
+			Console.WriteLine("\n");
+			foreach (var hypothesis in candidateElimination.GeneralHypotheses)
+			{
+				foreach (var item in hypothesis)
+				{
+					Console.Write(item + " ");
+				}
+				Console.WriteLine();
+			}
 		}
 	}
 }

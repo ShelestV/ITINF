@@ -55,6 +55,12 @@ namespace ShelestML_2lb.Models
 			}
 		}
 
+		public void Add(IEnumerable<string> row, bool positivity)
+		{
+			data.Add(row);
+			positivitiesOfRows.Add(positivity);
+		}
+
 		public IEnumerator<MatrixRow> GetEnumerator()
 		{
 			var result = new List<MatrixRow>();

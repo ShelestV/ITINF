@@ -1,5 +1,4 @@
 ﻿using ShelestML_2lb.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,6 +12,22 @@ namespace ShelestML_2lb.Algorithms
 		private Matrix dataMatrix;
 		private List<string> particularHypotheses;
 		private List<List<string>> generalHypotheses;
+
+		public List<string> ParticularHypotheses 
+		{
+			get
+			{
+				return particularHypotheses;
+			}
+		}
+
+		public List<List<string>> GeneralHypotheses
+		{
+			get
+			{
+				return generalHypotheses;
+			}
+		}
 
 		public CandidateElimination(Matrix matrix)
 		{
@@ -55,6 +70,8 @@ namespace ShelestML_2lb.Algorithms
 				string value = IsEmptyHypotesis(i) ? listRow[i] :
 					IsGeneralizedHypotesis(listRow[i], particularHypotheses[i]) ? generalizedValue :
 					defaultValue;
+
+				UpdateParticularHypotesisByIndex(i, value);
 			}
 		}
 
@@ -68,10 +85,29 @@ namespace ShelestML_2lb.Algorithms
 			return !hypothesis.Equals(value);
 		}
 
-		private void CalculateNegativeRow(IEnumerable<string> row)
+		private void UpdateParticularHypotesisByIndex(int index, string value)
 		{
-			
+			if (!value.Equals(generalizedValue))
+			{
+				particularHypotheses[index] = value;
+			}
 		}
 
+		private void CalculateNegativeRow(IEnumerable<string> row)
+		{
+			var listRow = row.ToList();
+			for (int i = 0; i < listRow.Count; ++i)
+			{
+				if (!listRow[i].Equals(particularHypotheses[i]))
+				{
+					var generalHypothesis = new List<string>();
+					for (int j = 0; j < listRow.Count; ++j)
+					{
+						generalHypothesis.Add(i == j ? particularHypotheses[i] : generalizedValue);
+					}
+					generalHypotheses.Add(generalHypothesis);
+				}
+			}
+		}
 	}
 }
