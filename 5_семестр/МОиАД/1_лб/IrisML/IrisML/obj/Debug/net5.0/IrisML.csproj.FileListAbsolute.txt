@@ -1,0 +1,16 @@
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\obj\Debug\net5.0\IrisML.csprojAssemblyReference.cache
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\obj\Debug\net5.0\IrisML.GeneratedMSBuildEditorConfig.editorconfig
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\obj\Debug\net5.0\IrisML.AssemblyInfoInputs.cache
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\obj\Debug\net5.0\IrisML.AssemblyInfo.cs
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\obj\Debug\net5.0\IrisML.csproj.CoreCompileInputs.cache
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\bin\Debug\net5.0\IrisML.exe
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\bin\Debug\net5.0\IrisML.deps.json
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\bin\Debug\net5.0\IrisML.runtimeconfig.json
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\bin\Debug\net5.0\IrisML.runtimeconfig.dev.json
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\bin\Debug\net5.0\IrisML.dll
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\bin\Debug\net5.0\ref\IrisML.dll
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\bin\Debug\net5.0\IrisML.pdb
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\obj\Debug\net5.0\IrisML.dll
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\obj\Debug\net5.0\ref\IrisML.dll
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\obj\Debug\net5.0\IrisML.pdb
+E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\IrisML\IrisML\obj\Debug\net5.0\IrisML.genruntimeconfig.cache

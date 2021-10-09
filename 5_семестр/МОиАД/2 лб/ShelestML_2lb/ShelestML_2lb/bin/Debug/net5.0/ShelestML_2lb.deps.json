@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "ShelestML_2lb/1.0.0": {
+        "runtime": {
+          "ShelestML_2lb.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ShelestML_2lb/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
