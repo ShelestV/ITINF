@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace tmo_2lb
 {
-	class Program
+	internal static class Program
 	{
 		static void Main(string[] args)
 		{
@@ -75,48 +75,48 @@ namespace tmo_2lb
 			barCharSum.Output();
 			Console.WriteLine();
 
-			var modulSumPosibility = new StreamPosibility(streamSum.ModulStreamParameter, time);
-			var sumPosibility = new StreamPosibility(streamParameter1 + streamParameter2, time);
+			var modelSumPossibility = new StreamPosibility(streamSum.ModelStreamParameter, time);
+			var sumPossibility = new StreamPosibility(streamParameter1 + streamParameter2, time);
 
 
-			Console.WriteLine("Modal sum stream parameter: " + streamSum.ModulStreamParameter);
-			Console.WriteLine("Modal sum stream posibilities: ");
-			Console.WriteLine("P[0] = " + modulSumPosibility.Calculate(0));
-			Console.WriteLine("P[1] = " + modulSumPosibility.Calculate(1));
-			Console.WriteLine("P[4] = " + modulSumPosibility.Calculate(4));
+			Console.WriteLine("Modal sum stream parameter: " + streamSum.ModelStreamParameter);
+			Console.WriteLine("Modal sum stream possibilities: ");
+			Console.WriteLine("P[0] = " + modelSumPossibility.Calculate(0));
+			Console.WriteLine("P[1] = " + modelSumPossibility.Calculate(1));
+			Console.WriteLine("P[4] = " + modelSumPossibility.Calculate(4));
 			Console.Write("P[>=5] = ");
-			Console.WriteLine(1.0 - modulSumPosibility.Calculate(4)
-				- modulSumPosibility.Calculate(3) - modulSumPosibility.Calculate(2)
-				- modulSumPosibility.Calculate(1) - modulSumPosibility.Calculate(0));
+			Console.WriteLine(1.0 - modelSumPossibility.Calculate(4)
+				- modelSumPossibility.Calculate(3) - modelSumPossibility.Calculate(2)
+				- modelSumPossibility.Calculate(1) - modelSumPossibility.Calculate(0));
 			Console.Write("P[<3] = ");
-			Console.WriteLine(modulSumPosibility.Calculate(0)
-				+ modulSumPosibility.Calculate(1) + modulSumPosibility.Calculate(2));
+			Console.WriteLine(modelSumPossibility.Calculate(0)
+				+ modelSumPossibility.Calculate(1) + modelSumPossibility.Calculate(2));
 			Console.Write("P[<=7] = ");
-			Console.WriteLine(modulSumPosibility.Calculate(0) + modulSumPosibility.Calculate(1)
-				+ modulSumPosibility.Calculate(2) + modulSumPosibility.Calculate(3)
-				+ modulSumPosibility.Calculate(4) + modulSumPosibility.Calculate(5)
-				+ modulSumPosibility.Calculate(6) + modulSumPosibility.Calculate(7));
-			Console.WriteLine("P[0.1 < Zk < 0.5] = " + (1 - Math.Exp(-streamSum.ModulStreamParameter * 0.5)
-				- (1 - Math.Exp(-streamSum.ModulStreamParameter * 0.1))));
+			Console.WriteLine(modelSumPossibility.Calculate(0) + modelSumPossibility.Calculate(1)
+				+ modelSumPossibility.Calculate(2) + modelSumPossibility.Calculate(3)
+				+ modelSumPossibility.Calculate(4) + modelSumPossibility.Calculate(5)
+				+ modelSumPossibility.Calculate(6) + modelSumPossibility.Calculate(7));
+			Console.WriteLine("P[0.1 < Zk < 0.5] = " + (1 - Math.Exp(-streamSum.ModelStreamParameter * 0.5)
+				- (1 - Math.Exp(-streamSum.ModelStreamParameter * 0.1))));
 			Console.WriteLine();
 
 			Console.WriteLine("Sum stream parameter: " + (streamParameter1 + streamParameter2));
-			Console.WriteLine("Sum stream posibilities: ");
-			Console.WriteLine("P[0] = " + sumPosibility.Calculate(0));
-			Console.WriteLine("P[1] = " + sumPosibility.Calculate(1));
-			Console.WriteLine("P[4] = " + sumPosibility.Calculate(4));
+			Console.WriteLine("Sum stream possibilities: ");
+			Console.WriteLine("P[0] = " + sumPossibility.Calculate(0));
+			Console.WriteLine("P[1] = " + sumPossibility.Calculate(1));
+			Console.WriteLine("P[4] = " + sumPossibility.Calculate(4));
 			Console.Write("P[>=5] = ");
-			Console.WriteLine(1.0 - sumPosibility.Calculate(4)
-				- sumPosibility.Calculate(3) - sumPosibility.Calculate(2)
-				- sumPosibility.Calculate(1) - sumPosibility.Calculate(0));
+			Console.WriteLine(1.0 - sumPossibility.Calculate(4)
+				- sumPossibility.Calculate(3) - sumPossibility.Calculate(2)
+				- sumPossibility.Calculate(1) - sumPossibility.Calculate(0));
 			Console.Write("P[<3] = ");
-			Console.WriteLine(sumPosibility.Calculate(0)
-				+ sumPosibility.Calculate(1) + sumPosibility.Calculate(2));
+			Console.WriteLine(sumPossibility.Calculate(0)
+				+ sumPossibility.Calculate(1) + sumPossibility.Calculate(2));
 			Console.Write("P[<=7] = ");
-			Console.WriteLine(sumPosibility.Calculate(0) + sumPosibility.Calculate(1)
-				+ sumPosibility.Calculate(2) + sumPosibility.Calculate(3)
-				+ sumPosibility.Calculate(4) + sumPosibility.Calculate(5)
-				+ sumPosibility.Calculate(6) + sumPosibility.Calculate(7));
+			Console.WriteLine(sumPossibility.Calculate(0) + sumPossibility.Calculate(1)
+				+ sumPossibility.Calculate(2) + sumPossibility.Calculate(3)
+				+ sumPossibility.Calculate(4) + sumPossibility.Calculate(5)
+				+ sumPossibility.Calculate(6) + sumPossibility.Calculate(7));
 			Console.WriteLine("P[0.1 < Zk < 0.5] = " + (1 - Math.Exp(-(streamParameter1 + streamParameter2) * 0.5)
 				- (1 - Math.Exp(-(streamParameter1 + streamParameter2) * 0.1))));
 			Console.WriteLine();

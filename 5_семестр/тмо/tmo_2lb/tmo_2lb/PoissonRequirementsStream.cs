@@ -4,235 +4,229 @@ using System.Linq;
 
 namespace tmo_2lb
 {
-	class PoissonRequirementsStream
-	{
-		private double streamParameter;
-		private List<double> Z = new List<double>();
-		private List<double> requestReceipt = new List<double>();
-		private List<int> intervals = new List<int>();
-		private Dictionary<int, int> distributionParameters 
-			= new Dictionary<int, int>();
+    class PoissonRequirementsStream
+    {
+        private readonly double streamParameter;
+        private readonly List<double> z = new List<double>();
+        private readonly List<double> requestReceipt = new List<double>();
+        private readonly List<int> intervals = new List<int>();
 
-		private double startTime;
-		private double endTime;
-		private double intervalTime;
+        private readonly Dictionary<int, int> distributionParameters
+            = new Dictionary<int, int>();
 
-		private double expectedValue;
-		private double modulStreamParameter;
+        private readonly double startTime;
+        private readonly double endTime;
+        private double intervalTime;
 
-		public List<int> Intervals 
-		{
-			get => intervals; 
-			set => intervals = value; 
-		}
-		public double StartTime { get => startTime; }
-		public double EndTime { get => endTime; }
-		public double ModulStreamParameter { get => modulStreamParameter; }
+        private double expectedValue;
+        private double modelStreamParameter;
 
-		public PoissonRequirementsStream(double streamParameter,
-										 int startTime,
-										 int endTime)
-		{
-			this.streamParameter = streamParameter;
-			this.startTime = startTime;
-			this.endTime = endTime;
-		}
+        public List<int> Intervals => intervals;
 
-		public PoissonRequirementsStream(List<int> intervals, 
-										 int variant,
-										 int startTime,
-										 int endTime)
-		{
-			this.intervals = intervals;
-			this.startTime = startTime;
-			this.endTime = endTime;
-			intervalTime = (this.endTime - this.startTime) / intervals.Count;
+        public double ModelStreamParameter => modelStreamParameter;
 
-			CalculateDistributionParameters();
-			CalculateModulOfStreamParameter(variant);
-		}
+        public PoissonRequirementsStream(double streamParameter,
+            int startTime,
+            int endTime)
+        {
+            this.streamParameter = streamParameter;
+            this.startTime = startTime;
+            this.endTime = endTime;
+        }
 
-		// Variant as parameter is very strange
-		// But the problem is also not quite mathematical
-		public void CalculateStreamCharacteristics(IEnumerable<double> randomNumbers, 
-												   int numberOfIntervals,
-												   int variant)
-		{
-			CalculateZ(randomNumbers);
-			CalculateRequestReceipt();
-			CalculateIntervals(numberOfIntervals);
-			CalculateDistributionParameters();
-			CalculateModulOfStreamParameter(variant);
-		}
+        public PoissonRequirementsStream(List<int> intervals,
+            int variant,
+            int startTime,
+            int endTime)
+        {
+            this.intervals = intervals;
+            this.startTime = startTime;
+            this.endTime = endTime;
+            intervalTime = (this.endTime - this.startTime) / intervals.Count;
 
-		public void CalculateZ(IEnumerable<double> randomNumbers)
-		{
-			foreach (double number in randomNumbers)
-				Z.Add(-(Math.Log(number) / streamParameter));
-		}
+            CalculateDistributionParameters();
+            CalculateModelOfStreamParameter(variant);
+        }
 
-		public void CalculateRequestReceipt()
-		{
-			double time = startTime;
-			int index = 0;
-			while (time + Z[index] < endTime)
-			{
-				time += Z[index];
-				requestReceipt.Add(time);
-				++index;
-			} 
-		}
+        // Variant as parameter is very strange
+        // But the problem is also not quite mathematical
+        public void CalculateStreamCharacteristics(IEnumerable<double> randomNumbers,
+            int numberOfIntervals,
+            int variant)
+        {
+            CalculateZ(randomNumbers);
+            CalculateRequestReceipt();
+            CalculateIntervals(numberOfIntervals);
+            CalculateDistributionParameters();
+            CalculateModelOfStreamParameter(variant);
+        }
 
-		public void CalculateIntervals(int numberOfIntervals)
-		{
-			intervalTime = (endTime - startTime) / numberOfIntervals;
-			int requestReceiptIndex = 0;
-			for (int i = 0; i < numberOfIntervals; ++i)
-			{
-				int requestOnInterval = 0;
+        public void CalculateZ(IEnumerable<double> randomNumbers)
+        {
+            foreach (double number in randomNumbers)
+                z.Add(-(Math.Log(number) / streamParameter));
+        }
 
-				double start = GetIntervalTimeFromStartTime(i, intervalTime);
-				double end = GetIntervalTimeFromStartTime(i + 1, intervalTime);
+        public void CalculateRequestReceipt()
+        {
+            double time = startTime;
+            int index = 0;
+            while (time + z[index] < endTime)
+            {
+                time += z[index];
+                requestReceipt.Add(time);
+                ++index;
+            }
+        }
 
-				if (IsIndexInRequestReceiptRange(requestReceiptIndex) &&
-					end >= requestReceipt[requestReceiptIndex])
-				{
-					while (IsIndexInRequestReceiptRange(requestReceiptIndex) &&
-						IsOnInterval(start, end, requestReceipt[requestReceiptIndex]))
-					{
-						++requestReceiptIndex;
-						++requestOnInterval;
-					}
-				}
-				intervals.Add(requestOnInterval);
-			}
-		}
+        public void CalculateIntervals(int numberOfIntervals)
+        {
+            intervalTime = (endTime - startTime) / numberOfIntervals;
+            int requestReceiptIndex = 0;
+            for (int i = 0; i < numberOfIntervals; ++i)
+            {
+                int requestOnInterval = 0;
 
-		private double GetIntervalTimeFromStartTime(int numberOfInterval,
-													double intervalTime)
-		{
-			return startTime + numberOfInterval * intervalTime;
-		}
+                double start = GetIntervalTimeFromStartTime(i, intervalTime);
+                double end = GetIntervalTimeFromStartTime(i + 1, intervalTime);
 
-		private bool IsIndexInRequestReceiptRange(int index)
-		{
-			return 0 <= index && index < requestReceipt.Count;
-		}
+                if (IsIndexInRequestReceiptRange(requestReceiptIndex) &&
+                    end >= requestReceipt[requestReceiptIndex])
+                {
+                    while (IsIndexInRequestReceiptRange(requestReceiptIndex) &&
+                           IsOnInterval(start, end, requestReceipt[requestReceiptIndex]))
+                    {
+                        ++requestReceiptIndex;
+                        ++requestOnInterval;
+                    }
+                }
 
-		private bool IsOnInterval(double startIntervalTime, 
-								  double endIntervalTime, 
-								  double time)
-		{
-			return startIntervalTime <= time && time <= endIntervalTime;
-		}
+                intervals.Add(requestOnInterval);
+            }
+        }
 
-		public void CalculateDistributionParameters()
-		{
-			int requestNumberOnInterval = 0;
-			
-			for (int numberOfCheckIntervals = 0; numberOfCheckIntervals < intervals.Count;)
-			{
-				int numberOfIntervals = 0;
-				foreach (var interval in intervals)
-				{
-					if (interval == requestNumberOnInterval)
-					{
-						++numberOfIntervals;
-						++numberOfCheckIntervals;
-					}
-				}
-				distributionParameters.Add(requestNumberOnInterval, numberOfIntervals);
-				++requestNumberOnInterval;
-			}
-		}
+        private double GetIntervalTimeFromStartTime(int numberOfInterval,
+            double parameterIntervalTime)
+        {
+            return startTime + numberOfInterval * parameterIntervalTime;
+        }
 
-		public void CalculateModulOfStreamParameter(int variant)
-		{
-			double parameter = 0;
+        private bool IsIndexInRequestReceiptRange(int index)
+        {
+            return 0 <= index && index < requestReceipt.Count;
+        }
 
-			foreach (var distributionParameter in distributionParameters)
-				parameter += distributionParameter.Key * distributionParameter.Value;
+        private bool IsOnInterval(double startIntervalTime,
+            double endIntervalTime,
+            double time)
+        {
+            return startIntervalTime <= time && time <= endIntervalTime;
+        }
 
-			expectedValue = parameter / variant;
-			modulStreamParameter = expectedValue / intervalTime;
-		}
+        public void CalculateDistributionParameters()
+        {
+            int requestNumberOnInterval = 0;
 
-		public void OutputStreamCharacteristics()
-		{
-			OutputTimeData();
-			OutputZ();
-			OutputRequestReceipt();
-			OutputIntervals();
-			OutputDistributionParameters();
-			OutputAmountOfEqualRequirementsOnInterval();
-			OutputExpectedValue();
-		}
+            for (int numberOfCheckIntervals = 0; numberOfCheckIntervals < intervals.Count;)
+            {
+                int numberOfIntervals = 0;
+                foreach (var interval in intervals)
+                {
+                    if (interval == requestNumberOnInterval)
+                    {
+                        ++numberOfIntervals;
+                        ++numberOfCheckIntervals;
+                    }
+                }
 
-		public void OutputTimeData()
-		{
-			Console.WriteLine("Start time: " + startTime);
-			Console.WriteLine("End time: " + endTime);
-			Console.WriteLine("Time difference: " + (endTime - startTime));
-			Console.WriteLine();
-		}
+                distributionParameters.Add(requestNumberOnInterval, numberOfIntervals);
+                ++requestNumberOnInterval;
+            }
+        }
 
-		public void OutputZ()
-		{
-			Console.WriteLine("Z:");
-			foreach (double z in Z)
-				Console.WriteLine("\t" + z);
-			Console.WriteLine();
-		}
+        public void CalculateModelOfStreamParameter(int variant)
+        {
+            double preExpectedValue = distributionParameters.Select(par => par.Key * par.Value).Sum();
+            expectedValue = preExpectedValue / (double)intervals.Count;
+            modelStreamParameter = expectedValue / intervalTime;
+        }
 
-		public void OutputRequestReceipt()
-		{
-			Console.WriteLine("Requirements times: ");
-			foreach (double time in requestReceipt)
-				Console.WriteLine("\t" + time);
-			Console.WriteLine();
-		}
+        public void OutputStreamCharacteristics()
+        {
+            OutputTimeData();
+            OutputZ();
+            OutputRequestReceipt();
+            OutputIntervals();
+            OutputDistributionParameters();
+            OutputAmountOfEqualRequirementsOnInterval();
+            OutputExpectedValue();
+        }
 
-		public void OutputIntervals()
-		{
-			Console.WriteLine("Interval time: " + intervalTime);
-			Console.WriteLine("Requirements on intervals");
-			int i = 0;
-			foreach (double interval in intervals)
-				Console.WriteLine("\t" + ++i + ": " + interval);
-			Console.WriteLine();
-		}
+        public void OutputTimeData()
+        {
+            Console.WriteLine("Start time: " + startTime);
+            Console.WriteLine("End time: " + endTime);
+            Console.WriteLine("Time difference: " + (endTime - startTime));
+            Console.WriteLine();
+        }
 
-		public void OutputDistributionParameters()
-		{
-			Console.WriteLine("Amount of equal requirements on intervals: ");
-			foreach (var amount in distributionParameters)
-				Console.WriteLine("\t" + amount.Key + ": " + amount.Value);
-			Console.WriteLine();
-		}
+        public void OutputZ()
+        {
+            Console.WriteLine("Z:");
+            foreach (double z in z)
+                Console.WriteLine("\t" + z);
+            Console.WriteLine();
+        }
 
-		public void OutputAmountOfEqualRequirementsOnInterval()
-		{
-			var amountOfEqualRequirementsOnInterval =
-				distributionParameters.Select(key => key.Value).ToList();
-			Console.WriteLine("Sum of amount: " + amountOfEqualRequirementsOnInterval.ToArray().Sum());
-			Console.WriteLine();
-		}
+        public void OutputRequestReceipt()
+        {
+            Console.WriteLine("Requirements times: ");
+            foreach (double time in requestReceipt)
+                Console.WriteLine("\t" + time);
+            Console.WriteLine();
+        }
 
-		public void OutputExpectedValue()
-		{
-			Console.WriteLine("Expected value: " + expectedValue);
-			Console.WriteLine();
-		}
+        public void OutputIntervals()
+        {
+            Console.WriteLine("Interval time: " + intervalTime);
+            Console.WriteLine("Requirements on intervals");
+            int i = 0;
+            foreach (double interval in intervals)
+                Console.WriteLine("\t" + ++i + ": " + interval);
+            Console.WriteLine();
+        }
 
-		public double GetExpectedValue()
-		{
-			return intervals.Select(i => (double)i / intervals.Count).Sum();
-		}
+        public void OutputDistributionParameters()
+        {
+            Console.WriteLine("Amount of equal requirements on intervals: ");
+            foreach (var amount in distributionParameters)
+                Console.WriteLine("\t" + amount.Key + ": " + amount.Value);
+            Console.WriteLine();
+        }
 
-		public double GetDispersion()
-		{
-			double M = GetExpectedValue();
-			return intervals.Select(i => Math.Pow(i - M, 2) / (intervals.Count - 1)).Sum();
-		}
-	}
+        public void OutputAmountOfEqualRequirementsOnInterval()
+        {
+            var amountOfEqualRequirementsOnInterval =
+                distributionParameters.Select(key => key.Value).ToList();
+            Console.WriteLine("Sum of amount: " + amountOfEqualRequirementsOnInterval.ToArray().Sum());
+            Console.WriteLine();
+        }
+
+        public void OutputExpectedValue()
+        {
+            Console.WriteLine("Expected value: " + expectedValue);
+            Console.WriteLine();
+        }
+
+        public double GetExpectedValue()
+        {
+            return intervals.Select(i => (double) i / intervals.Count).Sum();
+        }
+
+        public double GetDispersion()
+        {
+            double M = GetExpectedValue();
+            return intervals.Select(i => Math.Pow(i - M, 2) / (intervals.Count - 1)).Sum();
+        }
+    }
 }
