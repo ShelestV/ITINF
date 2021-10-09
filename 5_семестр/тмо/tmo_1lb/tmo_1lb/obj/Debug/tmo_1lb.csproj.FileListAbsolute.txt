@@ -1,0 +1,7 @@
+A:\University\tmo_1lb\tmo_1lb\bin\Debug\tmo_1lb.exe.config
+A:\University\tmo_1lb\tmo_1lb\bin\Debug\tmo_1lb.exe
+A:\University\tmo_1lb\tmo_1lb\bin\Debug\tmo_1lb.pdb
+A:\University\tmo_1lb\tmo_1lb\obj\Debug\tmo_1lb.csproj.AssemblyReference.cache
+A:\University\tmo_1lb\tmo_1lb\obj\Debug\tmo_1lb.csproj.CoreCompileInputs.cache
+A:\University\tmo_1lb\tmo_1lb\obj\Debug\tmo_1lb.exe
+A:\University\tmo_1lb\tmo_1lb\obj\Debug\tmo_1lb.pdb
