@@ -1,0 +1,7 @@
+A:\University\tmo_2lb\tmo_2lb\bin\Debug\tmo_2lb.exe.config
+A:\University\tmo_2lb\tmo_2lb\bin\Debug\tmo_2lb.exe
+A:\University\tmo_2lb\tmo_2lb\bin\Debug\tmo_2lb.pdb
+A:\University\tmo_2lb\tmo_2lb\obj\Debug\tmo_2lb.csproj.AssemblyReference.cache
+A:\University\tmo_2lb\tmo_2lb\obj\Debug\tmo_2lb.csproj.CoreCompileInputs.cache
+A:\University\tmo_2lb\tmo_2lb\obj\Debug\tmo_2lb.exe
+A:\University\tmo_2lb\tmo_2lb\obj\Debug\tmo_2lb.pdb
