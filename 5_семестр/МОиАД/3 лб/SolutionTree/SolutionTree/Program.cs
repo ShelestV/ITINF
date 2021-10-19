@@ -1,4 +1,5 @@
-﻿using SolutionTree.Models;
+﻿using SolutionTree.Algorithms;
+using SolutionTree.Models;
 
 namespace SolutionTree
 {
@@ -23,6 +24,9 @@ namespace SolutionTree
 			data.Games.Add(new TennisGame { Outlook = "Overcast", Temperature = 27, Humidity = 75, Wind = false, PlayTennis = true });
 			data.Games.Add(new TennisGame { Outlook = "Rain", Temperature = 22, Humidity = 80, Wind = true, PlayTennis = false });
 			#endregion
+			
+			var algo = new ID3(data);
+			algo.GetSolutionTree();
 		}
 	}
 }

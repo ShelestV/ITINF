@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SolutionTree.Models
 {
@@ -28,6 +29,18 @@ namespace SolutionTree.Models
 				default:
 					throw new ArgumentException();
 			}
+		}
+		
+		
+		public static IEnumerable<string> GetAttributeNames()
+		{
+			return new List<string>
+			{
+				nameof(Outlook), 
+				nameof(Temperature), 
+				nameof(Humidity), 
+				nameof(Wind)
+			};
 		}
 	}
 }

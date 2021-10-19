@@ -10,15 +10,5 @@ namespace SolutionTree.Models
 		{
 			Games = new List<TennisGame>();
 		}
-
-		public ICollection<object> GetAttributeValues(string attributeName)
-		{
-			var resultList = new List<object>();			
-			foreach (var game in Games)
-			{
-				resultList.Add(game.GetAttributeValueByName(attributeName));
-			}
-			return resultList;
-		}
 	}
 }

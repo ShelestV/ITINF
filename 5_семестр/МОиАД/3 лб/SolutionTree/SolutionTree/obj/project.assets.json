@@ -8,31 +8,24 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\shelest\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\ShelestV\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\3 лб\\SolutionTree\\SolutionTree\\SolutionTree.csproj",
+      "projectUniqueName": "D:\\university\\GitHub\\5_семестр\\МОиАД\\3 лб\\SolutionTree\\SolutionTree\\SolutionTree.csproj",
       "projectName": "SolutionTree",
-      "projectPath": "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\3 лб\\SolutionTree\\SolutionTree\\SolutionTree.csproj",
-      "packagesPath": "C:\\Users\\shelest\\.nuget\\packages\\",
-      "outputPath": "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\3 лб\\SolutionTree\\SolutionTree\\obj\\",
+      "projectPath": "D:\\university\\GitHub\\5_семестр\\МОиАД\\3 лб\\SolutionTree\\SolutionTree\\SolutionTree.csproj",
+      "packagesPath": "C:\\Users\\ShelestV\\.nuget\\packages\\",
+      "outputPath": "D:\\university\\GitHub\\5_семестр\\МОиАД\\3 лб\\SolutionTree\\SolutionTree\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\shelest\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\ShelestV\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -65,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.208\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\ShelestV\\.dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
