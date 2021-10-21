@@ -6,9 +6,11 @@ namespace SolutionTree.Servers
 	internal class TennisGamesDataService
 	{
 		private TennisGamesData data;
-		public TennisGamesData Games => data;
+		
+		public TennisGamesData Data => data;
+		public ICollection<TennisGame> Games => data.Games;
 
-public TennisGamesDataService(TennisGamesData data)
+		public TennisGamesDataService(TennisGamesData data)
 		{
 			this.data = data;
 		}

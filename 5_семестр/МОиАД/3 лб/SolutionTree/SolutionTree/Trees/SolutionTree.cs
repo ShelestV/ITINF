@@ -21,13 +21,28 @@ namespace SolutionTree.Trees
 		public void BuildByRoot(string attributeName)
 		{
 			rootAttributeName = attributeName;
-
-			var result = gamesService.Games.Games.GroupBy(x => x.GetAttributeValueByName(attributeName));
-			foreach (var game in result)
-			{
-				sheets.Add(new Sheet(attributeName, game.Key, game.ToList()));
-			}
+			AddSheets();
 			
+			
+		}
+
+		private void AddSheets()
+		{
+			var result = gamesService.Games
+				.GroupBy(game => game.GetAttributeValueByName(rootAttributeName))
+				.Select(group => new
+				{
+					AttributeName = group.Key,
+					Count = group.Count(),
+					Games = group.Select(game => game)
+				});
+			
+			foreach (var group in result)
+			{
+				var sheet = new Sheet(rootAttributeName, group.AttributeName);
+				sheets.Add(sheet);
+				sheet.CalculatePositivity(group.Games);
+			}
 		}
 	}
 }

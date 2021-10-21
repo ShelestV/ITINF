@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using SolutionTree.Models;
 
 namespace SolutionTree.Trees.Sheets
 {
@@ -12,25 +13,28 @@ namespace SolutionTree.Trees.Sheets
 		
 		public ICollection<Sheet> Sheets { get; }
 
-		public Sheet(string attributeName, object attributeValue, ICollection<Sheet> sheets = null)
+		public Sheet(string attributeName, object attributeValue)
 		{
 			AttributeName = attributeName;
 			AttributeValue = attributeValue;
 			AmountOfPositive = 0;
 			AmountOfNegative = 0;
 
-			Sheets = sheets;
+			Sheets = new List<Sheet>();
 		}
 
-		public void SetPositivity(bool isPositive)
+		public void CalculatePositivity(IEnumerable<TennisGame> games)
 		{
-			if (isPositive)
+			foreach (var game in games)
 			{
-				++AmountOfPositive;
-			}
-			else
-			{
-				++AmountOfNegative;
+				if (game.PlayTennis)
+				{
+					++AmountOfPositive;
+				}
+				else
+				{
+					++AmountOfNegative;
+				}
 			}
 		}
 	}
