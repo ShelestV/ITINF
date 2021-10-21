@@ -5,9 +5,8 @@ namespace SolutionTree.Servers
 {
 	internal class TennisGamesDataService
 	{
-		private TennisGamesData data;
-		
-		public TennisGamesData Data => data;
+		private readonly TennisGamesData data;
+
 		public ICollection<TennisGame> Games => data.Games;
 
 		public TennisGamesDataService(TennisGamesData data)

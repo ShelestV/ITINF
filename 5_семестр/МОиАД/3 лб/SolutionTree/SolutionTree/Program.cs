@@ -1,4 +1,5 @@
-﻿using SolutionTree.Algorithms;
+﻿using System;
+using SolutionTree.Algorithms;
 using SolutionTree.Models;
 
 namespace SolutionTree
@@ -26,7 +27,9 @@ namespace SolutionTree
 			#endregion
 			
 			var algo = new ID3(data);
-			algo.GetSolutionTree();
+			var tree = algo.GetSolutionTree();
+			
+			tree.ConsoleOutput();
 		}
 	}
 }

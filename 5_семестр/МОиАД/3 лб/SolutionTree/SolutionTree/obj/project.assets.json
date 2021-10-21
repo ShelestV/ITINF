@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ShelestV\\.nuget\\packages\\": {}
+    "C:\\Users\\vladimirsh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\university\\GitHub\\5_семестр\\МОиАД\\3 лб\\SolutionTree\\SolutionTree\\SolutionTree.csproj",
+      "projectUniqueName": "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\МОиАД\\3 лб\\SolutionTree\\SolutionTree\\SolutionTree.csproj",
       "projectName": "SolutionTree",
-      "projectPath": "D:\\university\\GitHub\\5_семестр\\МОиАД\\3 лб\\SolutionTree\\SolutionTree\\SolutionTree.csproj",
-      "packagesPath": "C:\\Users\\ShelestV\\.nuget\\packages\\",
-      "outputPath": "D:\\university\\GitHub\\5_семестр\\МОиАД\\3 лб\\SolutionTree\\SolutionTree\\obj\\",
+      "projectPath": "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\МОиАД\\3 лб\\SolutionTree\\SolutionTree\\SolutionTree.csproj",
+      "packagesPath": "C:\\Users\\vladimirsh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\МОиАД\\3 лб\\SolutionTree\\SolutionTree\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ShelestV\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\vladimirsh\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\ShelestV\\.dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\vladimirsh\\.dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

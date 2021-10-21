@@ -15,24 +15,15 @@ namespace SolutionTree.Algorithms
 			gamesService = new TennisGamesDataService(games);
 		}
 
-		/*public Trees.SolutionTree GetSolutionTree()
-		{
-			var attributeGainRatios = CalculateGainRatioForAllElements();
-			var tree = new Trees.SolutionTree(gamesService.Games);
-			tree.BuildByRoot(attributeGainRatios[0].Key);
-			return tree;
-		}*/
-
 		public Trees.SolutionTree.Node GetSolutionTree()
 		{
 			var attributeGainRatios = CalculateGainRatioForAllElements();
-			var treeRoot = new Trees.SolutionTree.Node(attributeGainRatios[0].Key);
+			var treeRoot = new Trees.SolutionTree.Node(attributeGainRatios.GetFirst().Key);
 			treeRoot.BuildTree(gamesService.Games);
 			return treeRoot;
-			//tree.BuildByRoot(attributeGainRatios[0].Key);
 		}
 
-		private SortedDictionaryByValue<string, double> CalculateGainRatioForAllElements()
+		public SortedDictionaryByValue<string, double> CalculateGainRatioForAllElements()
 		{
 			var attributeGainRatios = new SortedDictionaryByValue<string, double>();
 			foreach (var attributeName in gamesService.GetAttributeNames())
@@ -40,7 +31,6 @@ namespace SolutionTree.Algorithms
 				attributeGainRatios.Add(attributeName, CalculateGainRatio(attributeName));
 			}
 
-			attributeGainRatios.Desc();
 			return attributeGainRatios;
 		}
 		

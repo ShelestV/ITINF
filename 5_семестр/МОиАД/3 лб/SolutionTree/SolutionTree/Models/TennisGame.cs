@@ -5,12 +5,12 @@ namespace SolutionTree.Models
 {
 	internal class TennisGame
 	{
-		public string Outlook { get; set; }
-		public int Temperature { get; set; }
-		public int Humidity { get; set; }
-		public bool Wind { get; set; }
+		public string Outlook { get; init; }
+		public int Temperature { get; init; }
+		public int Humidity { get; init; }
+		public bool Wind { get; init; }
 
-		public bool PlayTennis { get; set; }
+		public bool PlayTennis { get; init; }
 
 		public object GetAttributeValueByName(string attributeName)
 		{

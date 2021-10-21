@@ -10,5 +10,14 @@ namespace SolutionTree.Models
 		{
 			Games = new List<TennisGame>();
 		}
+
+		public TennisGamesData(IEnumerable<TennisGame> games)
+		{
+			Games = new List<TennisGame>();
+			foreach (var game in games)
+			{
+				Games.Add(game);
+			}
+		}
 	}
 }
