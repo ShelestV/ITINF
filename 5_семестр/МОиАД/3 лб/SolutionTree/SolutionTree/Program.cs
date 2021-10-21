@@ -3,7 +3,7 @@ using SolutionTree.Models;
 
 namespace SolutionTree
 {
-	class Program
+	internal class Program
 	{
 		static void Main(string[] args)
 		{

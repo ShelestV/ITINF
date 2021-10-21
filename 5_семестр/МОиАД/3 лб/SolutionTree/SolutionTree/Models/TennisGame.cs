@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SolutionTree.Models
 {
-	class TennisGame
+	internal class TennisGame
 	{
 		public string Outlook { get; set; }
 		public int Temperature { get; set; }

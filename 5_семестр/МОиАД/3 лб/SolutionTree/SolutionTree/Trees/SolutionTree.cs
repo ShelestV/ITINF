@@ -1,15 +1,33 @@
-﻿using SolutionTree.Trees.Branches;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
+using SolutionTree.Models;
+using SolutionTree.Servers;
+using SolutionTree.Trees.Sheets;
 
 namespace SolutionTree.Trees
 {
-	class SolutionTree
+	internal class SolutionTree
 	{
-		private ICollection<Branch> branches;
-
-		public SolutionTree()
+		private string rootAttributeName;
+		private TennisGamesDataService gamesService;
+		private ICollection<Sheet> sheets;
+	
+		public SolutionTree(TennisGamesData games)
 		{
-			branches = new List<Branch>();
+			gamesService = new TennisGamesDataService(games);
+			sheets = new List<Sheet>();
+		}
+ 
+		public void BuildByRoot(string attributeName)
+		{
+			rootAttributeName = attributeName;
+
+			var result = gamesService.Games.Games.GroupBy(x => x.GetAttributeValueByName(attributeName));
+			foreach (var game in result)
+			{
+				sheets.Add(new Sheet(attributeName, game.Key, game.ToList()));
+			}
+			
 		}
 	}
 }
