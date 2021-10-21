@@ -5,3 +5,5 @@ A:\University\tmo_1lb\tmo_1lb\obj\Debug\tmo_1lb.csproj.AssemblyReference.cache
 A:\University\tmo_1lb\tmo_1lb\obj\Debug\tmo_1lb.csproj.CoreCompileInputs.cache
 A:\University\tmo_1lb\tmo_1lb\obj\Debug\tmo_1lb.exe
 A:\University\tmo_1lb\tmo_1lb\obj\Debug\tmo_1lb.pdb
+D:\university\GitHub\5_семестр\ТМО\tmo_1lb\tmo_1lb\obj\Debug\tmo_1lb.exe
+D:\university\GitHub\5_семестр\ТМО\tmo_1lb\tmo_1lb\obj\Debug\tmo_1lb.pdb

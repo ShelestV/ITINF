@@ -3,11 +3,12 @@ using SolutionTree.Models;
 
 namespace SolutionTree.Servers
 {
-	class TennisGamesDataService
+	internal class TennisGamesDataService
 	{
 		private TennisGamesData data;
+		public TennisGamesData Games => data;
 
-		public TennisGamesDataService(TennisGamesData data)
+public TennisGamesDataService(TennisGamesData data)
 		{
 			this.data = data;
 		}

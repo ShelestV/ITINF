@@ -2,7 +2,7 @@
 
 namespace SolutionTree.Models
 {
-	class TennisGamesData
+	internal class TennisGamesData
 	{
 		public ICollection<TennisGame> Games { get; }
 

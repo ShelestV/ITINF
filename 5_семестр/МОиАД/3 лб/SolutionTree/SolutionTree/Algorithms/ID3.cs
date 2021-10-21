@@ -1,7 +1,7 @@
 ﻿using System;
 using SolutionTree.Models;
-using System.Collections.Generic;
 using System.Linq;
+using SolutionTree.Collections;
 using SolutionTree.Servers;
 
 namespace SolutionTree.Algorithms
@@ -17,24 +17,25 @@ namespace SolutionTree.Algorithms
 
 		public Trees.SolutionTree GetSolutionTree()
 		{
-			var attributeGainRatios = new Dictionary<string, double>();
+			var attributeGainRatios = CalculateGainRatioForAllElements();
+			var tree = new Trees.SolutionTree(gamesService.Games);
+			tree.BuildByRoot(attributeGainRatios[0].Key);
+			return tree;
+		}
+
+		private SortedDictionaryByValue<string, double> CalculateGainRatioForAllElements()
+		{
+			var attributeGainRatios = new SortedDictionaryByValue<string, double>();
 			foreach (var attributeName in gamesService.GetAttributeNames())
 			{
 				attributeGainRatios.Add(attributeName, CalculateGainRatio(attributeName));
 			}
 
-			
-
-			/*int i = 0;
-			foreach (var attributeName in gamesService.GetAttributeNames())
-			{
-				Console.WriteLine(attributeName + " : " + attributeGainRatios[i]);
-				++i;
-			}*/
-			
-			return null;
+			attributeGainRatios.Desc();
+			return attributeGainRatios;
 		}
-private double CalculateGainRatio(string attributeName)
+		
+		private double CalculateGainRatio(string attributeName)
 		{
 			double gain = CalculateInformationGain(attributeName);
 			double split = CalculateSplitInfo(attributeName);
