@@ -1,10 +1,9 @@
-﻿using System;
-using lb_3.Collections;
+﻿using lb_3.Collections;
 using lb_3.DemandStreams;
 
 namespace lb_3
 {
-    class Program
+    static class Program
     {
         private const int GROUP = 1;
         private const int VARIANT = 30;
@@ -24,7 +23,7 @@ namespace lb_3
             {
                 var requestTime = requestStream.GetNextWaitingTime();
                 time += requestTime;
-                var requestResult = responseStreams.TryBusyChannels(time);
+                responseStreams.BusyChannels(time);
             }
         }
     }

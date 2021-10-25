@@ -1,4 +1,3 @@
-using System;
 using lb_3.DemandStreams;
 using lb_3.Loggers;
 
@@ -27,7 +26,7 @@ namespace lb_3.Collections
             }
         }
         
-        public bool TryBusyChannels(double time)
+        public void BusyChannels(double time)
         {
             FreeChannels(time);
 
@@ -38,11 +37,10 @@ namespace lb_3.Collections
                 releaseTimes[i] = time + streams[i].GetNextWaitingTime();
                 isBusy[i] = true;
                 ConsoleLogger.SetRequest(i, releaseTimes[i]);
-                return true;
+                return;
             }
             
             ConsoleLogger.FailRequest();
-            return false;
         }
 
         private void FreeChannels(double time)
