@@ -1,44 +1,59 @@
+using System;
 using lb_3.DemandStreams;
+using lb_3.Loggers;
 
 namespace lb_3.Collections
 {
     internal class ResponseStreamCollection
     {
-        private int size;
-        private PoissonDemandStream[] streams;
-        private bool[] isBusy;
-        private double[] releaseTime;
+        private readonly int size;
+        private readonly PoissonDemandStream[] streams;
+        private readonly bool[] isBusy;
+        private readonly double[] releaseTimes;
         
         public ResponseStreamCollection(int size = 0)
         {
             this.size = size;
             streams = new PoissonDemandStream[size];
             isBusy = new bool[size];
-            releaseTime = new double[size];
+            releaseTimes = new double[size];
         }
 
-        public void BusyChannels(double time)
+        public void Init(double streamParameter)
+        {
+            for (int i = 0; i < size; ++i)
+            {
+                streams[i] = new PoissonDemandStream(streamParameter);
+            }
+        }
+        
+        public bool TryBusyChannels(double time)
         {
             FreeChannels(time);
 
-            for (int i = 0; i < size; ++i)
+            for (var i = 0; i < size; ++i)
             {
-                if (!isBusy[i])
-                {
-                    releaseTime[i] = time + streams[i].GetNextWaitingTime();
-                }
+                if (isBusy[i]) continue;
+                
+                releaseTimes[i] = time + streams[i].GetNextWaitingTime();
+                isBusy[i] = true;
+                ConsoleLogger.SetRequest(i, releaseTimes[i]);
+                return true;
             }
+            
+            ConsoleLogger.FailRequest();
+            return false;
         }
 
         private void FreeChannels(double time)
         {
-            for (int i = 0; i < size; ++i)
+            for (var i = 0; i < size; ++i)
             {
-                if (releaseTime[i] <= time)
-                {
-                    isBusy[i] = false;
-                    releaseTime[i] = 0.0;
-                }
+                if (!isBusy[i] || !(releaseTimes[i] <= time)) continue;
+                
+                ConsoleLogger.FreeChannel(i, releaseTimes[i]);
+                isBusy[i] = false;
+                releaseTimes[i] = 0.0;
             }
         }
     }

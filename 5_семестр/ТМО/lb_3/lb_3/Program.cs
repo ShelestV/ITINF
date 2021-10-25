@@ -1,4 +1,6 @@
-﻿using lb_3.DemandStreams;
+﻿using System;
+using lb_3.Collections;
+using lb_3.DemandStreams;
 
 namespace lb_3
 {
@@ -13,19 +15,16 @@ namespace lb_3
             const double responseStreamParameter = 3.0 * (GROUP + VARIANT) / (VARIANT * NUMBER_OF_CHANNELS);
 
             var requestStream = new PoissonDemandStream(requestStreamParameter);
-            
-            var responseStreams = new PoissonDemandStream[NUMBER_OF_CHANNELS];
-            for (int i = 0; i < NUMBER_OF_CHANNELS; ++i)
-            {
-                responseStreams[i] = new PoissonDemandStream(responseStreamParameter);
-            }
 
-            
-            for (int i = 0; i < 100; ++i)
+            var responseStreams = new ResponseStreamCollection(NUMBER_OF_CHANNELS);
+            responseStreams.Init(responseStreamParameter);
+
+
+            for (var time = 0.0; time < 100.0;)
             {
                 var requestTime = requestStream.GetNextWaitingTime();
-                
-                
+                time += requestTime;
+                var requestResult = responseStreams.TryBusyChannels(time);
             }
         }
     }

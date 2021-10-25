@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ShelestV\\.nuget\\packages\\": {}
+    "C:\\Users\\vladimirsh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\university\\GitHub\\5_семестр\\ТМО\\lb_3\\lb_3\\lb_3.csproj",
+      "projectUniqueName": "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\ТМО\\lb_3\\lb_3\\lb_3.csproj",
       "projectName": "lb_3",
-      "projectPath": "D:\\university\\GitHub\\5_семестр\\ТМО\\lb_3\\lb_3\\lb_3.csproj",
-      "packagesPath": "C:\\Users\\ShelestV\\.nuget\\packages\\",
-      "outputPath": "D:\\university\\GitHub\\5_семестр\\ТМО\\lb_3\\lb_3\\obj\\",
+      "projectPath": "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\ТМО\\lb_3\\lb_3\\lb_3.csproj",
+      "packagesPath": "C:\\Users\\vladimirsh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\ТМО\\lb_3\\lb_3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ShelestV\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\vladimirsh\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\ShelestV\\.dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\vladimirsh\\.dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
