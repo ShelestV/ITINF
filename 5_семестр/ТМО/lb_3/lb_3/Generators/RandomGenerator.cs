@@ -10,7 +10,7 @@ namespace lb_3.Generators
 
         public double NextFrom0To1()
         {
-            int numerator = random.Next(1, MaxRandomValue - 1);
+            var numerator = random.Next(1, MaxRandomValue - 1);
             double denominator = random.Next(numerator, MaxRandomValue);
 
             return numerator / denominator;
