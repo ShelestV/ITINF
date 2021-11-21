@@ -1,23 +1,33 @@
+using System;
 using lb_3.DemandStreams;
 
 namespace lb_3.Collections
 {
     internal class ResponseStreamCollection
     {
-        private int size;
-        private PoissonDemandStream[] streams;
-        private bool[] isBusy;
-        private double[] releaseTime;
+        private readonly int size;
+        private readonly PoissonDemandStream[] streams;
+        private readonly bool[] isBusy;
+        private readonly double[] releaseTimes;
         
         public ResponseStreamCollection(int size = 0)
         {
             this.size = size;
+            
             streams = new PoissonDemandStream[size];
             isBusy = new bool[size];
-            releaseTime = new double[size];
+            releaseTimes = new double[size];
         }
 
-        public void BusyChannels(double time)
+        public void InitStreams(double streamParameter)
+        {
+            for (int i = 0; i < size; ++i)
+            {
+                streams[i] = new PoissonDemandStream(streamParameter);
+            }
+        }
+        
+        public bool SetRequest(double time)
         {
             FreeChannels(time);
 
@@ -25,19 +35,25 @@ namespace lb_3.Collections
             {
                 if (!isBusy[i])
                 {
-                    releaseTime[i] = time + streams[i].GetNextWaitingTime();
+                    releaseTimes[i] = time + streams[i].GetNextWaitingTime();
+                    isBusy[i] = true;
+                    Console.WriteLine((i + 1) + "-channel : is busy (" + releaseTimes[i] + ")");
+                    return true;
                 }
             }
+
+            return false;
         }
 
         private void FreeChannels(double time)
         {
             for (int i = 0; i < size; ++i)
             {
-                if (releaseTime[i] <= time)
+                if (isBusy[i] && releaseTimes[i] <= time)
                 {
+                    Console.WriteLine((i + 1) + "-channel is free(" + releaseTimes[i] + ")");
                     isBusy[i] = false;
-                    releaseTime[i] = 0.0;
+                    releaseTimes[i] = 0.0;
                 }
             }
         }
