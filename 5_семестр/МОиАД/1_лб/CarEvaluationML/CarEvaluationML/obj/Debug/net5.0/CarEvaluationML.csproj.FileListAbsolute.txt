@@ -14,3 +14,6 @@ E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\CarEvaluat
 E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\CarEvaluationML\CarEvaluationML\obj\Debug\net5.0\ref\CarEvaluationML.dll
 E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\CarEvaluationML\CarEvaluationML\obj\Debug\net5.0\CarEvaluationML.pdb
 E:\personal\university\ITINF\ITINF\5_семестр\МОиАД\1_лб\CarEvaluationML\CarEvaluationML\obj\Debug\net5.0\CarEvaluationML.genruntimeconfig.cache
+D:\university\GitHub\5_семестр\МОиАД\1_лб\CarEvaluationML\CarEvaluationML\obj\Debug\net5.0\CarEvaluationML.dll
+D:\university\GitHub\5_семестр\МОиАД\1_лб\CarEvaluationML\CarEvaluationML\obj\Debug\net5.0\ref\CarEvaluationML.dll
+D:\university\GitHub\5_семестр\МОиАД\1_лб\CarEvaluationML\CarEvaluationML\obj\Debug\net5.0\CarEvaluationML.pdb

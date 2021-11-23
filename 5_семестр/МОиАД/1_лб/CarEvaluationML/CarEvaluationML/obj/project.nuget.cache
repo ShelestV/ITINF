@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "/f5IDhI3XmbXE1gEQWabIv3HPYX0uWXOBiD+J5symG8thrDNptGov6W2jjBe5nXH5S6pZvJ9uGWyvhA85Ce/Vw==",
+  "dgSpecHash": "lXlTjDM8gcXlBS2as+4IeqlQ0cRdpiCjQoKHAetfvVjkZB1wERaJMdTKmoIHvYTl79CRixZIGft32+iWismzcg==",
   "success": true,
-  "projectFilePath": "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\CarEvaluationML\\CarEvaluationML\\CarEvaluationML.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\university\\GitHub\\5_семестр\\МОиАД\\1_лб\\CarEvaluationML\\CarEvaluationML\\CarEvaluationML.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ShelestV\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.11\\microsoft.netcore.app.host.win-x64.5.0.11.nupkg.sha512",
+    "C:\\Users\\ShelestV\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\ShelestV\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\ShelestV\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

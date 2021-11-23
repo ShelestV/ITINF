@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "q5H1x89es6vrZ0Wp+ZR/MD/fBkpX0n1LFYNjGJfeC08H9HtMxnoKYMGDX2B2SfS7cL0UJICO+neb1L8DgZaPbQ==",
+  "dgSpecHash": "Nd8Tfg6Amy4uz7Qk9ATgb/SUC2RARt1grAlbjhqtcRJcv+CPMM1cUwf7i7XZKUKlB9FEiS2UXGzhqiNrW96/mA==",
   "success": true,
-  "projectFilePath": "E:\\personal\\university\\ITINF\\ITINF\\5_семестр\\МОиАД\\1_лб\\ForestFiresML\\ForestFiresML\\ForestFiresML.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\university\\GitHub\\5_семестр\\МОиАД\\1_лб\\ForestFiresML\\ForestFiresML\\ForestFiresML.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ShelestV\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\ShelestV\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\ShelestV\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\ShelestV\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.11\\microsoft.netcore.app.host.win-x64.5.0.11.nupkg.sha512"
+  ],
   "logs": []
 }
