@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task 2 - 3lb Shelest ITINF-19-1</title>
+</head>
+<body>
+<a href="../index.html">Back</a>
+<script>
+    function isEmptyOrAllSpaces(str) {
+        for (let i = 0; i < str.length; i++) {
+            if (str.charAt(i) !== " ") {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function getMiddleSymbol(str) {
+        if (isEmptyOrAllSpaces(str)) {
+            return 'Empty string';
+        }
+
+        const evenMark = 1;
+        let index = Math.floor(str.length / 2);
+        if (str.length % 2 === evenMark) {
+            // index point at middle element
+            return str.charAt(index);
+        }
+
+        let preIndex = index - 1;
+        if (str.charAt(preIndex) === str.charAt(index)) {
+            return 'Middle elements are equal'
+        }
+
+        return str.substr(preIndex, 2);
+    }
+
+    let inputString = prompt("Enter a string");
+    alert(getMiddleSymbol(inputString));
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task 1 - 3lb Shelest ITINF-19-1</title>
+</head>
+<body>
+<a href="../index.html">Back</a>
+<script>
+    let calculateAmountsByGeneralAmountAndPercentage = function (
+        stringAmount,
+        stringPercentage) {
+
+        let amount = parseInt(stringAmount);
+        let percentage = parseInt(stringPercentage);
+
+        if (Number.isNaN(amount) || Number.isNaN(percentage) ||
+            amount < 0 || 0 > percentage || percentage > 100) {
+            alert("Incorrect input");
+            return;
+        }
+
+        return {
+            amountByGeneralAmountMinusPercentage: amount * ((100 - percentage) / 100),
+            numberByPercentage:  amount * (percentage / 100)
+        }
+    }
+
+    let numberOfBatteries = prompt("Please input a number of batteries");
+    let percentageOfDefectiveBatteries = prompt("Please input a percentage of defective batteries");
+
+    let result = calculateAmountsByGeneralAmountAndPercentage(numberOfBatteries, percentageOfDefectiveBatteries);
+    alert(`Number of batteries: ${numberOfBatteries}\n`+
+        `Percentage of defective batteries ${percentageOfDefectiveBatteries}%\n` +
+        `Number of defective batteries: ${result.numberByPercentage}\n` +
+        `Number of working batteries: ${result.amountByGeneralAmountMinusPercentage}`);
+</script>
+</body>
+</html>
