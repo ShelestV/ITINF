@@ -11,7 +11,7 @@ namespace TreesWithManyAttributes
         static void Main(string[] args)
         {
             #region Initialize data (contains both first and second variant and methods example)
-            /* First variant
+            /* First variant 
             var data = new Data(new[] {"Temperature"});
             data.Add(new ClassModel { Class = true,  AttributeValues = new [] { new AttributeValue(24) }});
             data.Add(new ClassModel { Class = false, AttributeValues = new [] { new AttributeValue(28) }});
@@ -20,14 +20,14 @@ namespace TreesWithManyAttributes
             data.Add(new ClassModel { Class = true,  AttributeValues = new [] { new AttributeValue(20) }});
             data.Add(new ClassModel { Class = true,  AttributeValues = new [] { new AttributeValue(22) }});
             */
-            /* Second variant*/
+            /* Second variant */
             var data = new Data(new[] {"A1", "A2"});
-            data.Add(new ClassModel { Class = true,  AttributeValues = new [] { new AttributeValue(7),  new AttributeValue(15) }});
-            data.Add(new ClassModel { Class = false, AttributeValues = new [] { new AttributeValue(24), new AttributeValue(32) }});
-            data.Add(new ClassModel { Class = true,  AttributeValues = new [] { new AttributeValue(8),  new AttributeValue(15) }});
-            data.Add(new ClassModel { Class = false, AttributeValues = new [] { new AttributeValue(75), new AttributeValue(56) }});
-            data.Add(new ClassModel { Class = false, AttributeValues = new [] { new AttributeValue(38), new AttributeValue(24) }});
-            data.Add(new ClassModel { Class = true,  AttributeValues = new [] { new AttributeValue(12), new AttributeValue(62) }});
+            data.Add(new ClassModel { Class = true,  AttributeValues = new [] { new AttributeValue(7),  new AttributeValue(15)  }});
+            data.Add(new ClassModel { Class = false, AttributeValues = new [] { new AttributeValue(24), new AttributeValue(32)  }});
+            data.Add(new ClassModel { Class = true,  AttributeValues = new [] { new AttributeValue(8),  new AttributeValue(135) }});
+            data.Add(new ClassModel { Class = false, AttributeValues = new [] { new AttributeValue(75), new AttributeValue(56)  }});
+            data.Add(new ClassModel { Class = false, AttributeValues = new [] { new AttributeValue(38), new AttributeValue(24)  }});
+            data.Add(new ClassModel { Class = true,  AttributeValues = new [] { new AttributeValue(12), new AttributeValue(62)  }});
             /**/
             /* Methoda example
             var data = new Data(new[] {"A1", "A2"});
@@ -54,10 +54,12 @@ namespace TreesWithManyAttributes
 
                 var rapids = Calculating.CalculateRapids(classes, attributeValues).ToList();
                 var gains = rapids
-                    .Select(rapid => Calculating.CalculateGainByRapid(classes, attributeValues, rapid))
+                    .Select(rapid => Calculating.CalculateGainByRapid(classes, attributeValues, rapid, attributeName))
                     .ToList();
                 var maxGain = gains.Max();
                 var indexOfMaxGain = gains.IndexOf(maxGain);
+                
+                Console.WriteLine($"{indexOfMaxGain + 1} rapid has max gain = {Math.Round(maxGain * 1000) / 1000}");
                 
                 data.DefineAttribute(attributeName, rapids[indexOfMaxGain]);
 

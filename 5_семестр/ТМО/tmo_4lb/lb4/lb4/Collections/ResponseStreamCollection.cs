@@ -1,4 +1,3 @@
-using lb4.Loggers;
 using lb4.Streams;
 using lb4.Streams.Enums;
 
@@ -10,6 +9,9 @@ namespace lb4.Collections
         private readonly PoissonDemandStream[] streams;
         private readonly bool[] isBusy;
         private readonly double[] releaseTimes;
+
+        public int RejectsCount { get; private set; } = 0;
+        public int RequestsCount { get; private set; } = 0;
         
         public ResponseStreamCollection(int size = 0)
         {
@@ -26,22 +28,24 @@ namespace lb4.Collections
                 streams[i] = new PoissonDemandStream(streamParameter, StreamType.Response);
         }
         
-        public bool SetRequest(double time)
+        public TimeChannel SetRequest(double time)
         {
             FreeChannels(time);
-
+            RequestsCount++;
+            
             for (var i = 0; i < size; ++i)
             {
                 if (isBusy[i]) continue;
                 
                 releaseTimes[i] = time + streams[i].GetNextWaitingTime();
                 isBusy[i] = true;
-                ConsoleLogger.SetRequest(i, releaseTimes[i]);
+                //ConsoleLogger.SetRequest(i, releaseTimes[i]);
                 
-                return true;
+                return new TimeChannel(releaseTimes[i], i);
             }
-
-            return false;
+            //ConsoleLogger.FailRequest();
+            RejectsCount++;
+            return null;
         }
 
         private void FreeChannels(double time)
@@ -50,7 +54,7 @@ namespace lb4.Collections
             {
                 if (!isBusy[i] || !(releaseTimes[i] <= time)) continue;
                 
-                ConsoleLogger.FreeChannel(i, releaseTimes[i]);
+                //ConsoleLogger.FreeChannel(i, releaseTimes[i]);
                 isBusy[i] = false;
                 releaseTimes[i] = 0.0;
             }

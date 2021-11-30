@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Nd8Tfg6Amy4uz7Qk9ATgb/SUC2RARt1grAlbjhqtcRJcv+CPMM1cUwf7i7XZKUKlB9FEiS2UXGzhqiNrW96/mA==",
+  "dgSpecHash": "98jES/uhplVE3+4M0aYgZWNUwScTllQ4LhgDdVWyW2NHkYW9o2Kdapqe2lD3wh1g4nqGtEZT4DYaKTlf895yuw==",
   "success": true,
-  "projectFilePath": "D:\\university\\GitHub\\5_семестр\\МОиАД\\1_лб\\ForestFiresML\\ForestFiresML\\ForestFiresML.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\ShelestV\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\ShelestV\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\ShelestV\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\ShelestV\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.11\\microsoft.netcore.app.host.win-x64.5.0.11.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\МОиАД\\1_лб\\ForestFiresML\\ForestFiresML\\ForestFiresML.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

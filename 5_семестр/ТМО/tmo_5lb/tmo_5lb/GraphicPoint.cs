@@ -1,0 +1,21 @@
+﻿using System.Drawing;
+
+namespace tmo_5lb
+{
+	public struct GraphicPoint
+	{
+		public int X { get; }
+		public int Y { get; }
+
+		public GraphicPoint(int x, int y)
+		{
+			X = x;
+			Y = y;
+		}
+
+		public Point ToPoint()
+		{
+			return new Point(X, Y);
+		}
+	}
+}

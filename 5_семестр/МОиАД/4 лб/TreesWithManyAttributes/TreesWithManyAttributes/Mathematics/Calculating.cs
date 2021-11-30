@@ -16,18 +16,21 @@ namespace TreesWithManyAttributes.Mathematics
 
             var rapids = new List<double>();
             var previousSign = classesList[0];
+            int index = 0;
             for (var i = 1; i < classesList.Count; ++i)
             {
                 if (previousSign == classesList[i]) continue;
-                
-                rapids.Add((attributeValuesList[i] + attributeValuesList[i - 1]) / 2.0);
+
+                var rapid = (attributeValuesList[i] + attributeValuesList[i - 1]) / 2.0;
+                Console.WriteLine($"{++index} rapid: {rapid}");
+                rapids.Add(rapid);
                 previousSign = classesList[i];
             }
 
             return rapids;
         }
 
-        private static double CalculateEntropy(IEnumerable<ValueClass> classesValues)
+        private static double CalculateEntropy(IEnumerable<ValueClass> classesValues, string entropyString)
         {
             if (classesValues == null)
                 throw new ArgumentException();
@@ -44,15 +47,28 @@ namespace TreesWithManyAttributes.Mathematics
                     ++numberOfNegativeValues;
             }
 
-            if (numberOfNegativeValues == 0 || numberOfPositiveValues == 0)
-                return 0;
+            var particularAmounts = new[] {numberOfPositiveValues, numberOfNegativeValues};
             
-            return -(new [] { numberOfPositiveValues, numberOfNegativeValues }
-                .Select(particularAmount => particularAmount / (double) classesValuesList.Count)
-                .Select(quantity => quantity * Math.Log2(quantity)).Sum());
+            
+            if (numberOfNegativeValues == 0 || numberOfPositiveValues == 0)
+            {
+                var number = numberOfNegativeValues == 0 ? numberOfPositiveValues : numberOfNegativeValues;
+                Console.WriteLine($"Entropy({entropyString}) = - ({number} / {classesValuesList.Count}) * log2({number} / {classesValuesList.Count}) = 0");
+                return 0;
+            }
+            
+            Console.Write($"Entropy({entropyString}) =");
+            foreach (var amount in particularAmounts)
+                Console.Write(
+                    $" - ({amount} / {classesValuesList.Count}) * log2({amount} / {classesValuesList.Count})");
+            
+            var result = -particularAmounts.Select(particularAmount => particularAmount / (double) classesValuesList.Count)
+                .Select(quantity => quantity * Math.Log2(quantity)).Sum();
+            Console.WriteLine($" = {Math.Round(1000 * result) / 1000}");
+            return result;
         }
         
-        public static double CalculateGainByRapid(IEnumerable<bool> classes, IEnumerable<int> attributesValues, double rapid)
+        public static double CalculateGainByRapid(IEnumerable<bool> classes, IEnumerable<int> attributesValues, double rapid, string attributeName)
         {
             if (classes == null || attributesValues == null || 
                 classes.Count() != attributesValues.Count())
@@ -63,9 +79,14 @@ namespace TreesWithManyAttributes.Mathematics
             var listOfGreaterThenRapid = GetValuesByComparingWithValue(classesValuesList, rapid, true);
             var listOfLessThenRapid = GetValuesByComparingWithValue(classesValuesList, rapid, false);
 
-            return CalculateEntropy(classesValuesList) -
-                   (listOfGreaterThenRapid.Count() / (double)classes.Count()) * CalculateEntropy(listOfGreaterThenRapid) -
-                   (listOfLessThenRapid.Count() / (double)classes.Count()) * CalculateEntropy(listOfLessThenRapid);
+            Console.WriteLine($"Gain(D, {attributeName}={rapid}) = Entropy(D) - ((|D > {rapid}| / |D|) * Entropy(D < {rapid}) + (|D < {rapid}| / |D|) * Entropy(D < {rapid}))");
+            
+            var result = CalculateEntropy(classesValuesList, "D") -
+                         (listOfGreaterThenRapid.Count() / (double)classes.Count()) * CalculateEntropy(listOfGreaterThenRapid, $"D > {rapid}") -
+                         (listOfLessThenRapid.Count() / (double)classes.Count()) * CalculateEntropy(listOfLessThenRapid, $"D < {rapid}");
+
+            Console.WriteLine($"Gain(D, {attributeName}={rapid}) = {Math.Round(1000 * result) / 1000}");
+            return result;
         }
 
         private static IEnumerable<ValueClass> GetValuesByComparingWithValue(IEnumerable<ValueClass> values, double value, bool isGreater)
