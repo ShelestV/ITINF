@@ -17,5 +17,10 @@ namespace tmo_5lb
 		{
 			return new Point(X, Y);
 		}
+
+		public override string ToString()
+		{
+			return $"x = {X}; y = {Y}";
+		}
 	}
 }

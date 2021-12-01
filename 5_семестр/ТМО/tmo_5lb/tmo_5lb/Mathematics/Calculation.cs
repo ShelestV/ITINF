@@ -71,7 +71,7 @@ namespace tmo_5lb.Mathematics
 
 		public static double AvgNumberOfBusyNodes(double requestParameter, double responseParameter, int numberOfChannels)
 		{
-			return 1.0 - AvgNumberOfFreeNodes(requestParameter, responseParameter, numberOfChannels);
+			return numberOfChannels - AvgNumberOfFreeNodes(requestParameter, responseParameter, numberOfChannels);
 		}
 
 		public static double AvgWaitingTime(double requestParameter, double responseParameter, int numberOfChannels)
@@ -79,7 +79,7 @@ namespace tmo_5lb.Mathematics
 			var p = Calculation.p(requestParameter, responseParameter);
 			var P0 = Calculation.P0(requestParameter, responseParameter, numberOfChannels);
 			return (Math.Pow(p, numberOfChannels) * P0) /
-				responseParameter * Factorial(numberOfChannels - 1) * Math.Pow(numberOfChannels - p, 2);
+				(responseParameter * Factorial(numberOfChannels - 1) * Math.Pow(numberOfChannels - p, 2));
 		}
 
 		public static double GeneralTimeOfRequestsInSystem(double requestParameter, double responseParameter, int numberOfChannels)
