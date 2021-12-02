@@ -19,6 +19,7 @@ namespace tmo_5lb
 		{
             var blackPen = new Pen(Color.Black, 1f);
             var redPen = new Pen(Color.Red, 2f);
+            var bluePen = new Pen(Color.Blue, 2f);
 
             var g = graphic.CreateGraphics();
 			#region X coordinate line
