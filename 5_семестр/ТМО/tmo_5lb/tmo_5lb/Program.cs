@@ -61,11 +61,11 @@ namespace tmo_5lb
             var P0 = Calculation.P0(requestStreamParameter, responseStreamParameter, numberOfChannels);
 
             var Pk = 0.0;
-            var k = 0;
+            var k = 1;
             for (; k < numberOfChannels; ++k)
             {
                 Pk = (Math.Pow(p, k) / Calculation.Factorial(k)) * P0;
-                graphicPoints.Add(new MathGraphicPoint(k, Pk));
+                graphicPoints.Add(new MathGraphicPoint(k - 1, Pk));
             }
 
             bool isLessThenEpsilon = false;

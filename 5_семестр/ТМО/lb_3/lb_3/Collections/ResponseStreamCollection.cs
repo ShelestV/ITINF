@@ -37,7 +37,7 @@ namespace lb_3.Collections
                 {
                     releaseTimes[i] = time + streams[i].GetNextWaitingTime();
                     isBusy[i] = true;
-                    Console.WriteLine((i + 1) + "-channel : is busy (" + releaseTimes[i] + ")");
+                    Loggers.ConsoleLogger.SetRequest(i, releaseTimes[i]);
                     return true;
                 }
             }
@@ -51,7 +51,8 @@ namespace lb_3.Collections
             {
                 if (isBusy[i] && releaseTimes[i] <= time)
                 {
-                    Console.WriteLine((i + 1) + "-channel is free(" + releaseTimes[i] + ")");
+                    Loggers.ConsoleLogger.FreeChannel(i, releaseTimes[i]);
+					Console.WriteLine((i + 1) + "-channel is free(" + releaseTimes[i] + ")");
                     isBusy[i] = false;
                     releaseTimes[i] = 0.0;
                 }

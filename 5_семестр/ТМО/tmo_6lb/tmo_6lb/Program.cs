@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -38,11 +38,11 @@ namespace tmo_6lb
 
 		private static void Do()
 		{
-			var group = 1.0;
-			var variant = 30.0;
+			var group = 2.0;
+			var variant = 5.0;
 
-			var numberOfChannels = 7;
-			var avgServeTime = 120.0;
+			var numberOfChannels = 4;
+			var avgServeTime = 90.0;
 
 			var startTime = variant + 1.0;
 			var endTime = variant + 200.0;
@@ -89,6 +89,12 @@ namespace tmo_6lb
 			queueForm.Text = "Queue";
 
 			forms.Add(queueForm);
+
+			Console.WriteLine("Модельная вероятность наличия очереди = " + channels.ToQueueCount / (double)channels.RequestsCount);
+			Console.WriteLine("Теоретическая вероятность наличия очереди = " + Mathematics.Calculation.QueueExistingProbability(requestStreamParameter, responseStreamParameter, numberOfChannels));
+
+			//Console.WriteLine("Model probability of queue existing = " + channels.ToQueueCount / (double)channels.RequestsCount);
+			//Console.WriteLine("Probability of queue existing = " + Mathematics.Calculation.QueueExistingProbability(requestStreamParameter, responseStreamParameter, numberOfChannels));
 		}
 	}
 }

@@ -12,9 +12,9 @@ namespace lb4
         static void Main(string[] args)
         {
             const double @group = 1.0;
-            const double journalNumber = 30.0;
-            const int numberOfChannels = 5;
-            const double avgServeTimeInSec = 80.0;
+            const double journalNumber = 9.0;
+            const int numberOfChannels = 6;
+            const double avgServeTimeInSec = 75.0;
 
             const double startTime = journalNumber + 1.0;
             const double endTime = journalNumber + 200.0;
@@ -42,12 +42,16 @@ namespace lb4
             }
             
             Console.WriteLine();
-            Console.WriteLine("Requests count = " + responseList.RequestsCount);
-            Console.WriteLine("Rejects count = " + responseList.RejectsCount);
+			Console.WriteLine("Requests count = " + responseList.RequestsCount);
+			Console.WriteLine("Rejects count = " + responseList.RejectsCount);
+			//Console.WriteLine("Количество запросов = " + responseList.RequestsCount);
+   //         Console.WriteLine("Количество отказов = " + responseList.RejectsCount);
             
             Console.WriteLine();
-            Console.WriteLine("Model reject probability = " + (responseList.RejectsCount / (double)responseList.RequestsCount));
-            Console.WriteLine("Erlange formula = " + Calculating.RejectProbability(requestStreamParameter, avgServeTimeInSec, numberOfChannels));
+			Console.WriteLine("Model reject probability = " + (responseList.RejectsCount / (double)responseList.RequestsCount));
+			Console.WriteLine("Erlange formula = " + Calculating.RejectProbability(requestStreamParameter, avgServeTimeInSec, numberOfChannels));
+			//Console.WriteLine("Модельная вероятность отказа = " + (responseList.RejectsCount / (double)responseList.RequestsCount));
+   //         Console.WriteLine("Вероятность отказа по первой формуле Эрланга = " + Calculating.RejectProbability(requestStreamParameter, avgServeTimeInSec, numberOfChannels));
         }
     }
 }

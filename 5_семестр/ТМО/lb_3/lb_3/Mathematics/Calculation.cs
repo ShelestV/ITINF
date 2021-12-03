@@ -1,11 +1,10 @@
 using System;
-using System.Net.NetworkInformation;
 
 namespace lb_3.Mathematics
 {
     internal static class Calculation
     {
-        private static double Factorial(int number)
+        public static double Factorial(int number)
         {
             if (number <= 1) return 1.0;
             
@@ -18,41 +17,63 @@ namespace lb_3.Mathematics
             return result;
         }
 
-        public static double FailureProbability(double load, int channelsAmount)
+        public static double p(double requestParameter, double responseParameter)
         {
-            double numerator = Math.Pow(load, channelsAmount) / Factorial(channelsAmount);
+            return requestParameter / responseParameter;
+        }
+
+        public static double P0(double requestParameter, double responseParameter, int numberOfChannels)
+        {
+            var p = Calculation.p(requestParameter, responseParameter);
+            var denominatorPart = 0.0;
+            for (var k = 0; k < numberOfChannels; ++k) denominatorPart += Math.Pow(p, k) / Factorial(k);
+            return 1.0 / (denominatorPart + (Math.Pow(p, numberOfChannels + 1) / (Factorial(numberOfChannels) * (numberOfChannels - p))));
+        }
+
+        public static double Pk(double requestParameter, double responseParameter, int numberOfChannels, int k)
+		{
+            var p = Calculation.p(requestParameter, responseParameter);
+            var numerator = Math.Pow(p, k) / Factorial(k);
+            var denominator = 0.0;
+            for (var i = 0; i < numberOfChannels; ++i)
+                denominator += Math.Pow(p, i) / Factorial(i);
+            return numerator / denominator;
+		}
+
+        public static double FailureProbability(double requestParameter, double responseParameter, int channelsAmount)
+        {
+            var p = Calculation.p(requestParameter, responseParameter);
+            double numerator = Math.Pow(p, channelsAmount) / Factorial(channelsAmount);
             double denominator = 0.0;
             for (int i = 0; i <= channelsAmount; ++i)
-            {
-                denominator += Math.Pow(load, i) / Factorial(i);
-            }
+                denominator += Math.Pow(p, i) / Factorial(i);
 
             return numerator / denominator;
         }
 
-        public static double AverageNumberOfBusyChannels(double load, int channelsAmount)
+        public static double AverageNumberOfBusyChannels(double requestParameter, double responseParameter, int channelsAmount)
         {
-            return load * (1.0 - FailureProbability(load, channelsAmount));
+            return Calculation.p(requestParameter, responseParameter) * (1.0 - FailureProbability(requestParameter, responseParameter, channelsAmount));
         }
 
-        public static double AverageNumberOfFreeChannels(double load, int channelsAmount)
+        public static double AverageNumberOfFreeChannels(double requestParameter, double responseParameter, int channelsAmount)
         {
-            return channelsAmount - AverageNumberOfBusyChannels(load, channelsAmount);
+            return channelsAmount - AverageNumberOfBusyChannels(requestParameter, responseParameter, channelsAmount);
         }
 
-        public static double RelativeBandwidth(double load, int channelsAmount)
+        public static double RelativeBandwidth(double requestParameter, double responseParameter, int channelsAmount)
         {
-            return 1.0 - FailureProbability(load, channelsAmount);
+            return 1.0 - FailureProbability(requestParameter, responseParameter, channelsAmount);
         }
 
-        public static double AbsoluteBandwidth(double streamParameter, double load, int channelsAmount)
+        public static double AbsoluteBandwidth(double requestParameter, double responseParameter, int channelsAmount)
         {
-            return streamParameter * RelativeBandwidth(load, channelsAmount);
+            return requestParameter * RelativeBandwidth(requestParameter, responseParameter, channelsAmount);
         }
 
-        public static double BusyCoefficient(double load, int channelsAmount)
+        public static double BusyCoefficient(double requestParameter, double responseParameter, int channelsAmount)
         {
-            return AverageNumberOfBusyChannels(load, channelsAmount) / channelsAmount;
+            return AverageNumberOfBusyChannels(requestParameter, responseParameter, channelsAmount) / channelsAmount;
         }
     }
 }

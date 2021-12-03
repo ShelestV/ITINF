@@ -1,0 +1,16 @@
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\bin\Debug\net5.0\BayesTheorema.exe
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\bin\Debug\net5.0\BayesTheorema.deps.json
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\bin\Debug\net5.0\BayesTheorema.runtimeconfig.json
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\bin\Debug\net5.0\BayesTheorema.runtimeconfig.dev.json
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\bin\Debug\net5.0\BayesTheorema.dll
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\bin\Debug\net5.0\ref\BayesTheorema.dll
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\bin\Debug\net5.0\BayesTheorema.pdb
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\obj\Debug\net5.0\BayesTheorema.csproj.AssemblyReference.cache
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\obj\Debug\net5.0\BayesTheorema.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\obj\Debug\net5.0\BayesTheorema.AssemblyInfoInputs.cache
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\obj\Debug\net5.0\BayesTheorema.AssemblyInfo.cs
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\obj\Debug\net5.0\BayesTheorema.csproj.CoreCompileInputs.cache
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\obj\Debug\net5.0\BayesTheorema.dll
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\obj\Debug\net5.0\ref\BayesTheorema.dll
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\obj\Debug\net5.0\BayesTheorema.pdb
+C:\Users\vladimirsh\RiderProjects\GitHub\ITINF\5_семестр\МОиАД\5 лб\BayesTheorema\BayesTheorema\obj\Debug\net5.0\BayesTheorema.genruntimeconfig.cache

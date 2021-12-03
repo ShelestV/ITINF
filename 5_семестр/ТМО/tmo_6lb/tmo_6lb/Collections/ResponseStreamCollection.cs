@@ -78,7 +78,6 @@ namespace tmo_6lb.Collections
 
                 ConsoleLogger.FreeChannel(i, releaseTimes[i]);
                 isBusy[i] = false;
-                releaseTimes[i] = 0.0;
                 try
                 {
                     requestQueue.Dequeue();
@@ -86,7 +85,7 @@ namespace tmo_6lb.Collections
                     lastTime = time;
                     streams[i].ActivityPeriods.Add(new Period(streams[i].LastTime, releaseTimes[i], 0)); // period of free
                     releaseTimes[i] = time + streams[i].GetNextWaitingTime();
-                    streams[i].ActivityPeriods.Add(new Period(time, releaseTimes[i], 1));
+                    streams[i].ActivityPeriods.Add(new Period(streams[i].LastTime, releaseTimes[i], 1));
                     streams[i].LastTime = releaseTimes[i];
                     isBusy[i] = true;
                     ConsoleLogger.SetRequestFromQueue(i, releaseTimes[i]);

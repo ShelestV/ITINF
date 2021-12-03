@@ -29,8 +29,9 @@ namespace tmo_6lb.Mathematics
 		{
 			var p = Calculation.p(requestParameter, responseParameter);
 			var P0 = Calculation.P0(requestParameter, responseParameter, numberOfChannels);
-			return (Math.Pow(p, numberOfChannels + 1) * P0) /
+			var result = (Math.Pow(p, numberOfChannels + 1) * P0) /
 				(Factorial(numberOfChannels) * (numberOfChannels - p));
+			return result > 1.0 ? 1.0 : result;
 		}
 	}
 }
