@@ -1,10 +1,11 @@
 ﻿using BayesTheorema.Models;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace BayesTheorema.Collections
 {
-	public class ModelsData
+	public class ModelsData : IEnumerable
 	{
 		private Model[] models;
 
@@ -71,6 +72,20 @@ namespace BayesTheorema.Collections
 			var modelProbability = models.Where(m => m.ContainsAllProperties(mainProperty, supportProperty)).First().Probability;
 
 			return (modelProbability * (mainProperty.Value ? probOfPosResOfMainProp : probOfNegResOfMainProp)) / probOfSupportProp;
+		}
+
+		public Model this[params BoolProperty[] properties]
+		{
+			get
+			{
+				return models.Where(m => m.ContainsAllProperties(properties)).FirstOrDefault();
+			}
+		}
+
+		public IEnumerator GetEnumerator()
+		{
+			foreach (var model in models)
+				yield return model;
 		}
 	}
 }

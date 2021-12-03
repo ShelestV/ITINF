@@ -33,10 +33,10 @@ namespace BayesTheorema.Models
 
 		public override string ToString()
 		{
-			var str = new StringBuilder("P(");
+			var str = new StringBuilder();
 
 			for (int i = 0; i < Properties.Length; ++i)
-				str.Append(Properties[i]).Append(i < Properties.Length - 1 ? "|" : ")");
+				str.Append(Properties[i]).Append(i < Properties.Length - 1 ? "|" : "");
 
 			return str.ToString();
 		}
