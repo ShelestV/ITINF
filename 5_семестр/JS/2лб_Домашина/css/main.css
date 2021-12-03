@@ -1,0 +1,81 @@
+:root {
+    --info-color: #78866b;
+    --main-color: #290f00;
+    --bg-color: #f5deb3;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.main {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+}
+
+.info-footer {
+    width: 100%;
+
+}
+
+.main-text {
+    color: var(--main-color);
+}
+
+.info-text {
+    color: var(--info-color);
+}
+
+.arrow-image img {
+    width: 80px;
+    height: 120px;
+    src: "/Images/arrow.png";
+    alt: "arrow"
+}
+
+.simple-link {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+.back-link {
+    text-decoration: none;
+    color: var(--info-color);
+}
+
+.list {
+    margin-left: 100px;
+    list-style: none;
+}
+
+.list-item {
+    color: var(--info-color);
+    text-size-adjust: 4;
+}
+
+.mark {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.footer-list {
+    color: var(--main-color);
+    margin-left: 100px;
+    list-style: none;
+}
+
+.footer-list-value {
+    color: var(--info-color);
+}
