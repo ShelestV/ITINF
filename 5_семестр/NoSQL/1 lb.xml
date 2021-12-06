@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gun-system>
+    <guns>
+        <gun>
+            <name>Coach gun</name>
+            <length>995</length>
+            <caliber>10</caliber>
+        </gun>
+        <gun>
+            <name>Winchester Model 1887/1901</name>
+            <length>997</length>
+            <caliber>10</caliber>
+        </gun>
+        <gun>
+            <name>Winchester Model 1897</name>
+            <length>1000</length>
+            <caliber>12</caliber>
+        </gun>
+        <gun>
+            <name>SRM Arms Model 1216</name>
+            <length>826</length>
+            <caliber>12</caliber>
+        </gun>
+    </guns>
+    <gun-owners>
+        <gun-owner gun="Winchester Model 1897">
+            <name>Tom</name>
+            <last-name>Riddle</last-name>
+            <age>25</age>
+            <national>American</national>
+        </gun-owner>
+        <gun-owner gun="Coach gun">
+            <name>Ted</name>
+            <last-name>Mosbie</last-name>
+            <age>30</age>
+            <national>American</national>
+        </gun-owner>
+        <gun-owner gun="Coach gun">
+            <name>Robin</name>
+            <last-name>Sherbatskie</last-name>
+            <age>28</age>
+            <national>Canadian</national>
+        </gun-owner>
+    </gun-owners>
+</gun-system>

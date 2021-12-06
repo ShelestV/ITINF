@@ -1,0 +1,39 @@
+{
+    "guns" : {
+        "Coach gun" : {
+            "length" : 995,
+            "caliber": 10
+        },
+        "Winchester Model 1887/1901" : {
+            "length" : 997,
+            "caliber" : 10
+        },
+        "Winchester Model 1897" : {
+            "length" : 1000,
+            "caliber" : 12
+        },
+        "SRM Arms Model 1897" : {
+            "length" : 826,
+            "caliber" : 12
+        }
+    },
+    "gun-owners" : {
+        "Tom" : {
+            "last-name" : "Riidle",
+            "age" : 25,
+            "national" : "American",
+            "gun" : "Winchester Model 1897"
+        },
+        "Ted" : {
+            "last-name" : "Mosbie",
+            "age" : 30,
+            "national" : "American",
+            "gun" : "Coach gun"
+        },
+        "Robin" : {
+            "last-name" : "Sherbatskie",
+            "age" : 28,
+            "national" : "Canadian"
+        }
+    }
+}

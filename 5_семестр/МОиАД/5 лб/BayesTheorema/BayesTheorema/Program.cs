@@ -27,7 +27,7 @@ namespace BayesTheorema
 
 			data = data.CutAttributes(@catch);
 
-			var result = data.CalculateProbabylityFor(new BoolProperty(cavity, false), new BoolProperty(toothache, true));
+			var result = data.CalculateProbabylityFor(new BoolProperty(cavity, true), new BoolProperty(toothache, true));
 
 			Console.WriteLine($"P({new BoolProperty(cavity, false)}|{new BoolProperty(toothache, true)}) = {result}");
 		}
