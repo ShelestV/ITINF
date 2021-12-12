@@ -19,3 +19,10 @@ E:\personal\university\ITINF\ITINF\5_семестр\ТМО\tmo_2lb\tmo_2lb\obj\D
 E:\personal\university\ITINF\ITINF\5_семестр\ТМО\tmo_2lb\tmo_2lb\obj\Debug\tmo_2lb.csproj.CoreCompileInputs.cache
 E:\personal\university\ITINF\ITINF\5_семестр\ТМО\tmo_2lb\tmo_2lb\obj\Debug\tmo_2lb.exe
 E:\personal\university\ITINF\ITINF\5_семестр\ТМО\tmo_2lb\tmo_2lb\obj\Debug\tmo_2lb.pdb
+C:\Users\vladimirsh\Documents\ITINF\ITINF\5_семестр\ТМО\tmo_2lb\tmo_2lb\bin\Debug\tmo_2lb.exe.config
+C:\Users\vladimirsh\Documents\ITINF\ITINF\5_семестр\ТМО\tmo_2lb\tmo_2lb\bin\Debug\tmo_2lb.exe
+C:\Users\vladimirsh\Documents\ITINF\ITINF\5_семестр\ТМО\tmo_2lb\tmo_2lb\bin\Debug\tmo_2lb.pdb
+C:\Users\vladimirsh\Documents\ITINF\ITINF\5_семестр\ТМО\tmo_2lb\tmo_2lb\obj\Debug\tmo_2lb.csproj.AssemblyReference.cache
+C:\Users\vladimirsh\Documents\ITINF\ITINF\5_семестр\ТМО\tmo_2lb\tmo_2lb\obj\Debug\tmo_2lb.csproj.CoreCompileInputs.cache
+C:\Users\vladimirsh\Documents\ITINF\ITINF\5_семестр\ТМО\tmo_2lb\tmo_2lb\obj\Debug\tmo_2lb.exe
+C:\Users\vladimirsh\Documents\ITINF\ITINF\5_семестр\ТМО\tmo_2lb\tmo_2lb\obj\Debug\tmo_2lb.pdb

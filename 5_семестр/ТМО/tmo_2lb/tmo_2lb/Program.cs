@@ -41,6 +41,12 @@ namespace tmo_2lb
 			stream1.CalculateIntervals(25);
 			stream2.CalculateIntervals(25);
 
+			stream1.OutputData();
+			Console.WriteLine();
+
+			stream2.OutputData();
+			Console.WriteLine();
+
 			var streamSum = new PoissonRequirementsStream(
 				ListMerger.MergeIntLists(stream1.Intervals, stream2.Intervals), 18, startTime, endTime);
 

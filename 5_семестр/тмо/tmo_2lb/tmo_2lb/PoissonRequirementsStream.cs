@@ -7,6 +7,7 @@ namespace tmo_2lb
     class PoissonRequirementsStream
     {
         private readonly double streamParameter;
+        private readonly List<double> r = new List<double>();
         private readonly List<double> z = new List<double>();
         private readonly List<double> requestReceipt = new List<double>();
         private readonly List<int> intervals = new List<int>();
@@ -64,7 +65,10 @@ namespace tmo_2lb
         public void CalculateZ(IEnumerable<double> randomNumbers)
         {
             foreach (double number in randomNumbers)
+            {
+                r.Add(number);
                 z.Add(-(Math.Log(number) / streamParameter));
+            }
         }
 
         public void CalculateRequestReceipt()
@@ -151,6 +155,16 @@ namespace tmo_2lb
             modelStreamParameter = expectedValue / intervalTime;
         }
 
+        public void OutputData()
+        {
+            Console.WriteLine("r\tz\tt");
+            for (var i = 0; i < z.Count; ++i)
+            {
+                var requestReceiptString = i < requestReceipt.Count ? (Math.Round(1000 * requestReceipt[i]) / 1000).ToString() : "";
+                Console.WriteLine($"{Math.Round(1000 * r[i]) / 1000}\t{Math.Round(1000 * z[i]) / 1000}\t{requestReceiptString}");
+            }
+        }
+
         public void OutputStreamCharacteristics()
         {
             OutputTimeData();
@@ -220,7 +234,7 @@ namespace tmo_2lb
 
         public double GetExpectedValue()
         {
-            return intervals.Select(i => (double) i / intervals.Count).Sum();
+            return intervals.Select(i => (double)i / intervals.Count).Sum();
         }
 
         public double GetDispersion()
