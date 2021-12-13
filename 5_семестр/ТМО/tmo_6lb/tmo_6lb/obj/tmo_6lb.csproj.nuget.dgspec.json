@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\ТМО\\tmo_6lb\\tmo_6lb\\tmo_6lb.csproj": {}
+    "C:\\Users\\vladimirsh\\Documents\\ITINF\\ITINF\\5_семестр\\ТМО\\tmo_6lb\\tmo_6lb\\tmo_6lb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\ТМО\\tmo_6lb\\tmo_6lb\\tmo_6lb.csproj": {
+    "C:\\Users\\vladimirsh\\Documents\\ITINF\\ITINF\\5_семестр\\ТМО\\tmo_6lb\\tmo_6lb\\tmo_6lb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\ТМО\\tmo_6lb\\tmo_6lb\\tmo_6lb.csproj",
+        "projectUniqueName": "C:\\Users\\vladimirsh\\Documents\\ITINF\\ITINF\\5_семестр\\ТМО\\tmo_6lb\\tmo_6lb\\tmo_6lb.csproj",
         "projectName": "tmo_6lb",
-        "projectPath": "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\ТМО\\tmo_6lb\\tmo_6lb\\tmo_6lb.csproj",
+        "projectPath": "C:\\Users\\vladimirsh\\Documents\\ITINF\\ITINF\\5_семестр\\ТМО\\tmo_6lb\\tmo_6lb\\tmo_6lb.csproj",
         "packagesPath": "C:\\Users\\vladimirsh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\ТМО\\tmo_6lb\\tmo_6lb\\obj\\",
+        "outputPath": "C:\\Users\\vladimirsh\\Documents\\ITINF\\ITINF\\5_семестр\\ТМО\\tmo_6lb\\tmo_6lb\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\vladimirsh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,7 +71,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

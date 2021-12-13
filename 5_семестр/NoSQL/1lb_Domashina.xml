@@ -1,0 +1,55 @@
+<menu>
+    <pizza-map>
+        <pizza product="Salyami">
+            <name>Milano</name>
+            <weight>550</weight>
+            <price>147</price>
+        </pizza>
+        <pizza product="Cheesse">
+            <name>Four cheesse</name>
+            <weight>530</weight>
+            <price>235</price>
+        </pizza>
+        <pizza product="Tomat">
+            <name>Margarita</name>
+            <weight>550</weight>
+            <price>125</price>
+        </pizza>
+        <pizza product="Salyami">
+            <name>Mexican</name>
+            <weight>600</weight>
+            <price>157</price>
+        </pizza>
+        <pizza product="Pineaple">
+            <name>Havaii</name>
+            <weight>600</weight>
+            <price>157</price>
+        </pizza>
+    </pizza-map>
+    <products>
+        <product>
+            <name>Tomat</name>
+        </product>
+        <product>
+            <name>Salyami</name>
+        </product>
+        <product>
+            <name>Onion</name>
+        </product>
+        <product>
+            <name>Cheesse</name>
+        </product>
+        <product>
+            <name>Corn</name>
+        </product>
+        <product>
+            <name>Chicken</name>
+        </product>
+        <product>
+            <name>Pineaple</name>
+        </product>
+        <product>
+            <name>Fish</name>
+        </product>
+    </products>
+</menu>
