@@ -1,0 +1,122 @@
+body {
+    display: flex;
+    align-items: center;
+}
+
+.main-content {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pages-navigation {
+    display: inline;
+}
+
+/*  Grid content  */
+.grid-content {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 25%);
+    grid-auto-columns: minmax(200px, 270px);
+    grid-auto-rows: minmax(150px, auto);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-content-box {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-rows: 260px 1fr 1fr;
+    border: 1px solid black;
+    text-align: left;
+}
+
+.grid-content-box-image {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 1;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    margin-top: 0px;
+    display: block;
+}
+
+.grid-content-box-info {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 2;
+    height: auto;
+    margin: 5px;
+}
+
+.grid-content-box-type {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 3;
+    font-style: italic;
+    margin: 5px;
+}
+
+.grid-content-box-price {
+    text-align: right;
+    grid-column: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    margin: 5px;
+}
+
+/*  List content  */
+.list-content {
+    display: grid;
+    width: 80%;
+    grid-template-columns: 1fr;
+    grid-auto-columns: minmax(200px, auto);
+    grid-auto-rows: minmax(150px, auto);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.list-content-box {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 160px 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: 1px solid black;
+    text-align: left;
+}
+
+.list-content-box-image {
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    margin-left: 0px;
+}
+
+.list-content-box-info {
+    grid-column: 2;
+    grid-row: 1;
+    height: auto;
+    margin: 5px;
+}
+
+.list-content-box-type {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row: 2;
+    font-style: italic;
+    margin: 5px;
+}
+
+.list-content-box-price {
+    text-align: right;
+    grid-column: 3;
+    grid-row: 1;
+    margin: 5px;
+}

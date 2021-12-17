@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>6-7 lb Shelest ITINF 19-1</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Plants store</h1>
+        </div>
+        <div class="main-content">
+            <div class="manipulate-items">
+                <div class="center-manipulate-items">
+                    <button class="manipulate-button" onclick="sortByPrice()">Sort by price</button>
+                    <button class="manipulate-button" id="changeInStokeFilter"
+                        onclick="changeInStokeFilter()">All</button>
+                    Min: <input type="number" class="manipulate-input" id="minPrice" min=0>
+                    Max: <input type="number" class="manipulate-input" id="maxPrice" max=0>
+                    <button class="manipulate-button" onclick="filter()">Apply</button>
+                </div>
+                <button class="basket-button" onclick="basketToConsole()">Basket</button>
+            </div>
+            <div id="content" class="content">
+                <!--Fill in js-->
+            </div>
+            <div class="pages-navigation">
+                <button id="previosPageButton" onclick="previosPage()">&lt;</button>
+                <button id="nextPageButton" onclick="nextPage()">&gt;</button>
+            </div>
+        </div>
+        <div class="footer">
+            <h3>+38(063)-447-53-96</h3>
+            <p>Shelest Vladimir: <a href="https://www.linkedin.com/in/shelestv/">LinkedIn</a></p>
+        </div>
+    </div>
+    <script>showData();</script>
+</body>
+
+</html>
