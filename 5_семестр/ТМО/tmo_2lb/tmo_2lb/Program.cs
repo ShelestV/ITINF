@@ -7,8 +7,8 @@ namespace tmo_2lb
 	{
 		static void Main(string[] args)
 		{
-			int group = 2;
-			int variant = 26;
+			int group = 1;
+			int variant = 9;
 
 			int startTime = variant + 1;
 			int endTime = variant + 5;
@@ -23,7 +23,7 @@ namespace tmo_2lb
 			var randomValues1 = new List<double>();
 			var randomValues2 = new List<double>();
 
-			for (int i = 0; i < 50; ++i)
+			for (int i = 0; i < 20; ++i)
 			{
 				randomValues1.Add(generator.NextFrom0To1());
 				randomValues2.Add(generator.NextFrom0To1());
@@ -41,9 +41,11 @@ namespace tmo_2lb
 			stream1.CalculateIntervals(25);
 			stream2.CalculateIntervals(25);
 
+			Console.WriteLine("1 stream");
 			stream1.OutputData();
 			Console.WriteLine();
 
+			Console.WriteLine("2 stream");
 			stream2.OutputData();
 			Console.WriteLine();
 
