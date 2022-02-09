@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2SA27JjNgXDTX66QLOXCvBcuPGtG21YD4YZ8FO99KWoCx5l/pc20/xMbidcqC0bNym8AU/S8wjkdHmkx6dytWg==",
+  "dgSpecHash": "Cu7cscbdB6za7h0wvnjtBMey2OgwylDtMAZpykUuNTlWZ/c5AQX355deb8/1uE+fJI02fHSawwec3i9McDk9hA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\ТМО\\tmo_4lb\\lb4\\lb4\\lb4.csproj",
+  "projectFilePath": "C:\\Users\\vladimirsh\\Documents\\ITINF\\ITINF\\5_семестр\\ТМО\\tmo_4lb\\lb4\\lb4\\lb4.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vladimirsh\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",
     "C:\\Users\\vladimirsh\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

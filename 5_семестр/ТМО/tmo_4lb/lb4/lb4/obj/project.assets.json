@@ -450,19 +450,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vladimirsh\\.nuget\\packages\\": {}
+    "C:\\Users\\vladimirsh\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\ТМО\\tmo_4lb\\lb4\\lb4\\lb4.csproj",
+      "projectUniqueName": "C:\\Users\\vladimirsh\\Documents\\ITINF\\ITINF\\5_семестр\\ТМО\\tmo_4lb\\lb4\\lb4\\lb4.csproj",
       "projectName": "lb4",
-      "projectPath": "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\ТМО\\tmo_4lb\\lb4\\lb4\\lb4.csproj",
+      "projectPath": "C:\\Users\\vladimirsh\\Documents\\ITINF\\ITINF\\5_семестр\\ТМО\\tmo_4lb\\lb4\\lb4\\lb4.csproj",
       "packagesPath": "C:\\Users\\vladimirsh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vladimirsh\\RiderProjects\\GitHub\\ITINF\\5_семестр\\ТМО\\tmo_4lb\\lb4\\lb4\\obj\\",
+      "outputPath": "C:\\Users\\vladimirsh\\Documents\\ITINF\\ITINF\\5_семестр\\ТМО\\tmo_4lb\\lb4\\lb4\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\vladimirsh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -512,7 +517,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
