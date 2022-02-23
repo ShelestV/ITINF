@@ -1,44 +1,28 @@
 ﻿using Core;
+using UI;
 
 public partial class Program
 {
     public static async Task Main(string[] args)
     {
-        var amountOfCriterias = GetIntFromConsole("Enter an amount of criteria: ");
-
-        var criterias = new Criteria[amountOfCriterias];
-        for (var criteriaIndex = 0; criteriaIndex < amountOfCriterias; criteriaIndex++)
-        {
-            var mentionsAmount = GetIntFromConsole($"Enter an amount of mentions for { criteriaIndex + 1 } criteria: ");
-            var mentions = new Mention[mentionsAmount];
-            for (var mentionIndex = 0; mentionIndex < mentionsAmount; mentionIndex++)
-            {
-                mentions[mentionIndex] = new Mention { Name = $"k{ mentionIndex + 1 }", Value = 1.0 / (mentionIndex + 1.0) };
-            }
-            criterias[criteriaIndex] = new Criteria { Index = criteriaIndex, Name = $"K{ criteriaIndex + 1 }", Mentions = new MentionCollection(mentions) };
-        }
-
-        Console.WriteLine("Your criterias: ");
-        WriteEnumerableToConsole(criterias);
-
-        ClearConsoleAfterAnyUserAct();
+        var criterias = ConsoleUIHelper.GetCriteriasByUserData();
 
         IAllTheoryAlternativesGetable criteriaService = new CriteriaService(criterias);
         var alternatives = await criteriaService.GetAllTheoryAlternativesAsync();
-        WriteEnumerableToConsole(alternatives);
+        ConsoleUIHelper.WriteEnumerableToConsole(alternatives);
 
-        ClearConsoleAfterAnyUserAct();
+        ConsoleUIHelper.ClearConsoleAfterAnyUserAct();
 
         var theoryAlternativesCount = criteriaService.TheoryAlternativesCount;
         Console.WriteLine($"Theory number of all alternatives = { theoryAlternativesCount }");
 
-        ClearConsoleAfterAnyUserAct();
+        ConsoleUIHelper.ClearConsoleAfterAnyUserAct();
     
         IAlternativesDivider alternativeService = new AlternativeService(alternatives);
         Console.WriteLine($"The best alternative is { alternativeService.GetBest() }");
         Console.WriteLine($"The worst alternative is { alternativeService.GetWorst() }");
 
-        ClearConsoleAfterAnyUserAct();
+        ConsoleUIHelper.ClearConsoleAfterAnyUserAct();
 
         var isFound = false;
         Alternative compareAlternative = default;
@@ -65,42 +49,18 @@ public partial class Program
 
         var betterCount = betterAlternatives.Count();
         Console.WriteLine($"Better alternatives({ betterCount }): ");
-        WriteEnumerableToConsole(betterAlternatives);
+        ConsoleUIHelper.WriteEnumerableToConsole(betterAlternatives);
 
         var worseCount = worseAlternatives.Count();
         Console.WriteLine($"\nWorse alternatives({ worseCount }): ");
-        WriteEnumerableToConsole(worseAlternatives);
+        ConsoleUIHelper.WriteEnumerableToConsole(worseAlternatives);
 
         var incomparableCount = incomparableAlternatives.Count();
         Console.WriteLine($"\nIncomparable alternatives({ incomparableCount }): ");
-        WriteEnumerableToConsole(incomparableAlternatives);
+        ConsoleUIHelper.WriteEnumerableToConsole(incomparableAlternatives);
 
         var sum = betterCount + worseCount + incomparableCount + 1;
         Console.WriteLine($"\n{ betterCount } + { worseCount } + { incomparableCount } + 1 = { sum }");
         Console.WriteLine($"Theory number of all alternatives = { theoryAlternativesCount }");
-    }
-
-    private static int GetIntFromConsole(string message)
-    {
-        uint number;
-        string? input;
-        do
-        {
-            Console.Write(message);
-            input = Console.ReadLine();
-        } while (!uint.TryParse(input, out number));
-        return (int)number;
-    }
-
-    private static void WriteEnumerableToConsole<T>(IEnumerable<T> enumerable)
-    {
-        foreach (var item in enumerable)
-            Console.WriteLine(item);
-    }
-
-    private static void ClearConsoleAfterAnyUserAct()
-    {
-        Console.ReadKey();
-        Console.Clear();
     }
 }
