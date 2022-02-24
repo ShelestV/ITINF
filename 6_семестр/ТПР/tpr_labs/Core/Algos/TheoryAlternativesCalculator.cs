@@ -9,7 +9,7 @@ internal class TheoryAlternativesCalculator
 {
     private readonly IEnumerable<Criteria> criterias;
 
-    private readonly Alternative[] alternatives;
+    private readonly IAlternative[] alternatives;
     private readonly Mention[,] mentions;
 
     private readonly int alternativesCount;
@@ -19,10 +19,10 @@ internal class TheoryAlternativesCalculator
         this.criterias = criterias;
         this.alternativesCount = this.criterias.Select(x => x.Mentions.Count).Multiply();
         this.mentions = new Mention[this.alternativesCount, this.criterias.Count()];
-        this.alternatives = new Alternative[this.alternativesCount];
+        this.alternatives = new IAlternative[this.alternativesCount];
     }
 
-    public async Task<IEnumerable<Alternative>> GetAlternativesAsync()
+    public async Task<IEnumerable<IAlternative>> GetAlternativesAsync()
     {
         var firstCriteria = this.criterias.First();
         await this.FillMentionsOrCreateAlternative(firstCriteria);
@@ -68,7 +68,7 @@ internal class TheoryAlternativesCalculator
     private void SetAlternative(int index)
     {
         var mentions = this.mentions.GetRow(index);
-        this.alternatives[index] = new()
+        this.alternatives[index] = new Alternative()
         {
             Index = index,
             Name = string.Join(',', mentions.Select(x => x.Name)),

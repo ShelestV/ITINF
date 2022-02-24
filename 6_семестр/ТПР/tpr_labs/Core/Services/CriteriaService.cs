@@ -14,7 +14,7 @@ public class CriteriaService : IAllTheoryAlternativesGetable
 
     public int TheoryAlternativesCount => this.criterias.Select(x => x.Mentions.Count).Multiply();
 
-    public async Task<IEnumerable<Alternative>> GetAllTheoryAlternativesAsync()
+    public async Task<IEnumerable<IAlternative>> GetAllTheoryAlternativesAsync()
     {
         var calculator = new TheoryAlternativesCalculator(this.criterias);
         return await calculator.GetAlternativesAsync();

@@ -7,30 +7,30 @@ namespace Core;
 
 public class AlternativeService : IAlternativesDivider
 {
-    private readonly IReadOnlyCollection<Alternative> alternatives;
+    private readonly IEnumerable<IAlternative> alternatives;
 
     /// <summary>
     /// Set all theory alternatives to correct work of get the best and get the worst
     /// </summary>
     /// <param name="alternatives"></param>
-    public AlternativeService(IEnumerable<Alternative> alternatives) =>
-        this.alternatives = alternatives.ToList();
+    public AlternativeService(IEnumerable<IAlternative> alternatives) =>
+        this.alternatives = alternatives;
 
-    public Alternative GetBest() => this.alternatives.First();
-    public Alternative GetWorst() => this.alternatives.Last();
+    public IAlternative GetBest() => this.alternatives.First();
+    public IAlternative GetWorst() => this.alternatives.Last();
 
-    public IEnumerable<Alternative> GetBetterAlternatives(Alternative comparableAlternative) =>
+    public IEnumerable<IAlternative> GetBetterAlternatives(IAlternative comparableAlternative) =>
         this.GetComparedAlternatives(comparableAlternative, AlternativeCompareResult.Better);
 
-    public IEnumerable<Alternative> GetWorseAlternatives(Alternative comparableAlternatives) =>
+    public IEnumerable<IAlternative> GetWorseAlternatives(IAlternative comparableAlternatives) =>
         this.GetComparedAlternatives(comparableAlternatives, AlternativeCompareResult.Worse);
 
-    public IEnumerable<Alternative> GetIncomparableAlternatives(Alternative comparableAlternative) =>
+    public IEnumerable<IAlternative> GetIncomparableAlternatives(IAlternative comparableAlternative) =>
         this.GetComparedAlternatives(comparableAlternative, AlternativeCompareResult.Incomparable);
 
-    private IEnumerable<Alternative> GetComparedAlternatives(Alternative comparableAlternative, AlternativeCompareResult expectedResult)
+    private IEnumerable<IAlternative> GetComparedAlternatives(IAlternative comparableAlternative, AlternativeCompareResult expectedResult)
     {
-        var result = new List<Alternative>();
+        var result = new List<IAlternative>();
         Parallel.ForEach(this.alternatives, alternative =>
         {
             var compareResult = CompareAlternatives(alternative, comparableAlternative);
@@ -45,7 +45,7 @@ public class AlternativeService : IAlternativesDivider
         return result;
     }
 
-    private static AlternativeCompareResult CompareAlternatives(Alternative first, Alternative second)
+    private static AlternativeCompareResult CompareAlternatives(IAlternative first, IAlternative second)
     {
         var index = 0;
         int compareResult;

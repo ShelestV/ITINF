@@ -24,7 +24,7 @@ public partial class Program
         ConsoleUIHelper.ClearConsoleAfterAnyUserAct();
 
         var isFound = false;
-        Alternative compareAlternative = default;
+        IAlternative compareAlternative = default(Alternative);
         do
         {
             Console.WriteLine("Enter alternative name to compare: ");
