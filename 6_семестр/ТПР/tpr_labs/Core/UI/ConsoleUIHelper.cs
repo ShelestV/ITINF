@@ -1,7 +1,7 @@
-﻿using Core;
+﻿using System;
 using System.Collections.Generic;
 
-namespace UI;
+namespace Core;
 
 internal static class ConsoleUIHelper
 {

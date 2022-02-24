@@ -3,11 +3,13 @@
   <PropertyGroup>
     <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>410c0f37-9dea-490f-9cc3-9e32b1a8026a</SharedGUID>
+    <SharedGUID>d5a93d89-1cce-4610-ab2b-eded2667a8c1</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>UI</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ConsoleUIHelper.cs" />
   </ItemGroup>
+  <Import Project="..\Core\Core.projitems" Label="Shared" />
 </Project>

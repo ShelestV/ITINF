@@ -1,5 +1,4 @@
 ﻿using Core;
-using UI;
 
 public partial class Program
 {
