@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace Core.Collections;
 
-namespace Core.Collections
+internal class ClassAlternativeCollection
 {
-    internal class ClassAlternativeCollection
-    {
-    }
 }

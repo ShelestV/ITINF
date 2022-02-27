@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_1", "lab_1\lab_1.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_2", "lab_2\lab_2.csproj", "{2B763E31-F085-4C3D-B656-EB58F4751F9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{76D0B2E2-5567-4F69-AB0C-BDCA43FD8C05}"
-EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Core\Core.projitems*{081716e5-b911-4986-8419-82bd66e5f18c}*SharedItemsImports = 5
@@ -39,10 +37,6 @@ Global
 		{2B763E31-F085-4C3D-B656-EB58F4751F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B763E31-F085-4C3D-B656-EB58F4751F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B763E31-F085-4C3D-B656-EB58F4751F9A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76D0B2E2-5567-4F69-AB0C-BDCA43FD8C05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76D0B2E2-5567-4F69-AB0C-BDCA43FD8C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76D0B2E2-5567-4F69-AB0C-BDCA43FD8C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76D0B2E2-5567-4F69-AB0C-BDCA43FD8C05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

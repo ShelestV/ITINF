@@ -10,10 +10,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Algos\TheoryAlternativesCalculator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\ClassAlternativeCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Infrastructures\LinqExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Collections\MentionCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Abstract\IAlternative.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Abstract\IClassAlternative.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Alternative.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ClassAlternative.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Criteria.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\AlternativeGroup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Mention.cs" />
     <Compile Include="..\Core\Services\Abstract\IAllTheoryAlternativesGetable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AlternativeService.cs" />

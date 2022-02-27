@@ -3,16 +3,16 @@
 internal struct ClassAlternative : IClassAlternative
 {
     public int Index { get; set; }
-    public string Name { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public MentionCollection Mentions { get => throw new System.NotImplementedException(); init => throw new System.NotImplementedException(); }
+    public string Name { get; set; }
+    public MentionCollection Mentions { get; init; }
 
-    public AlternativeGroup Group { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public double DistanceToGoodCenter { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public double DistanceToBadCenter { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public double ProximityToGoodCenter { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public double ProximityToBadCenter { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public double InformativenessOfGood { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public double InformativenessOfBad { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public AlternativeGroup Group { get; set; }
+    public double DistanceToGoodCenter { get; set; }
+    public double DistanceToBadCenter { get; set; }
+    public double ProximityToGoodCenter { get; set; }
+    public double ProximityToBadCenter { get; set; }
+    public double InformativenessOfGood { get; set; }
+    public double InformativenessOfBad { get; set; }
 
-    public double Informativeness => throw new System.NotImplementedException();
+    public double Informativeness => this.InformativenessOfGood + this.InformativenessOfBad;
 }
