@@ -1,6 +1,6 @@
 ﻿namespace Core;
 
-internal struct ClassAlternative : IClassAlternative
+public struct ClassAlternative
 {
     public int Index { get; set; }
     public string Name { get; set; }
@@ -15,4 +15,7 @@ internal struct ClassAlternative : IClassAlternative
     public double InformativenessOfBad { get; set; }
 
     public double Informativeness => this.InformativenessOfGood + this.InformativenessOfBad;
+
+    public void ChangeGroup(AlternativeGroup group) =>
+        this.Group = group;
 }

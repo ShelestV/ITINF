@@ -6,5 +6,5 @@ namespace Core;
 public interface IAllTheoryAlternativesGetable
 {
     int TheoryAlternativesCount { get; }
-    Task<IEnumerable<IAlternative>> GetAllTheoryAlternativesAsync();
+    Task<IEnumerable<Alternative>> GetAllTheoryAlternativesAsync();
 }

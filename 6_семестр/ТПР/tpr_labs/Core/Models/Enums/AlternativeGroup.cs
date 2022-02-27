@@ -1,6 +1,6 @@
 ﻿namespace Core;
 
-internal enum AlternativeGroup
+public enum AlternativeGroup
 {
     Bad = 1,
     Good,

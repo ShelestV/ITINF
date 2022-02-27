@@ -2,7 +2,8 @@
 
 namespace Core;
 
-public struct Alternative : IAlternative
+public struct Alternative
+
 {
     public int Index { get; set; }
     public string Name { get; set; }
@@ -23,4 +24,15 @@ public struct Alternative : IAlternative
 
     public override string? ToString() => 
         this.Name;
+
+    public ClassAlternative ToClassAlternative()
+    {
+        return new ClassAlternative
+        {
+            Index = this.Index,
+            Name = this.Name,
+            Mentions = this.Mentions,
+            Group = AlternativeGroup.Undefined
+        };
+    }
 }
