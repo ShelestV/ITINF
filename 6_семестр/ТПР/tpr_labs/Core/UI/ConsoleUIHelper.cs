@@ -16,7 +16,7 @@ internal static class ConsoleUIHelper
             var mentions = new Mention[mentionsAmount];
             for (var mentionIndex = 0; mentionIndex < mentionsAmount; mentionIndex++)
             {
-                mentions[mentionIndex] = new Mention { Name = $"k{ mentionIndex + 1 }", Value = 1.0 / (mentionIndex + 1.0) };
+                mentions[mentionIndex] = new Mention { Name = $"k{ mentionIndex + 1 }", Value = mentionIndex + 1.0 };
             }
             criterias[criteriaIndex] = new Criteria { Index = criteriaIndex, Name = $"K{ criteriaIndex + 1 }", Mentions = new MentionCollection(mentions) };
         }
@@ -29,22 +29,33 @@ internal static class ConsoleUIHelper
         return criterias;
     }
 
+    internal static void WriteEnumerableToConsole<T>(IEnumerable<T> enumerable)
+    {
+        foreach (var item in enumerable)
+            Console.WriteLine(item);
+    }
+
     internal static int GetIntFromConsole(string message)
     {
-        uint number;
+        return GetNumberFromConsoleByCondition(message, x => x > 0);
+    }
+
+    internal static AlternativeGroup GetAlternativeGroupFromConsole(string message)
+    {
+       
+        return (AlternativeGroup)GetNumberFromConsoleByCondition(message, x => x == 1 || x == 2);
+    }
+
+    private static int GetNumberFromConsoleByCondition(string message, Func<int, bool> condition)
+    {
+        int number;
         string? input;
         do
         {
             Console.Write(message);
             input = Console.ReadLine();
-        } while (!uint.TryParse(input, out number));
-        return (int)number;
-    }
-
-    internal static void WriteEnumerableToConsole<T>(IEnumerable<T> enumerable)
-    {
-        foreach (var item in enumerable)
-            Console.WriteLine(item);
+        } while (!int.TryParse(input, out number) || !condition(number));
+        return number;
     }
 
     internal static void ClearConsoleAfterAnyUserAct()

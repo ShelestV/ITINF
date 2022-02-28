@@ -4,9 +4,6 @@ using System.Threading.Tasks;
 using System.Linq;
 using Xunit;
 using FluentAssertions;
-using System;
-using Core.Algos;
-using System.IO;
 
 namespace _1lbTests;
 public class CriteriaServiceTests
@@ -20,14 +17,14 @@ public class CriteriaServiceTests
                 new List<Criteria>
                 {
                     new Criteria { Index = 0, Name = "K1", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 }),
+                        new Mention { Name = "k1", Value = 1 },
+                        new Mention { Name = "k2", Value = 2 },
+                        new Mention { Name = "k3", Value = 3 }),
                     },
                     new Criteria { Index = 1, Name = "K2", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 })
+                        new Mention { Name = "k1", Value = 1 },
+                        new Mention { Name = "k2", Value = 2 },
+                        new Mention { Name = "k3", Value = 3 })
                     }
                 }
             },
@@ -36,148 +33,66 @@ public class CriteriaServiceTests
                 new List<Criteria>
                 {
                     new Criteria { Index = 0, Name = "K1", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 })
+                        new Mention { Name = "k1", Value = 1 })
                     },
                     new Criteria { Index = 1, Name = "K2", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 })
+                        new Mention { Name = "k1", Value = 1 },
+                        new Mention { Name = "k2", Value = 2 })
                     },
                     new Criteria { Index = 2, Name = "K3", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 })
+                        new Mention { Name = "k1", Value = 1 },
+                        new Mention { Name = "k2", Value = 2 },
+                        new Mention { Name = "k3", Value = 3 })
                     },
                     new Criteria { Index = 3, Name = "K4", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 })
+                        new Mention { Name = "k1", Value = 1 },
+                        new Mention { Name = "k2", Value = 2 },
+                        new Mention { Name = "k3", Value = 3 },
+                        new Mention { Name = "k4", Value = 4 })
                     },
                     new Criteria { Index = 4, Name = "K5", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 })
+                        new Mention { Name = "k1", Value = 1 },
+                        new Mention { Name = "k2", Value = 2 },
+                        new Mention { Name = "k3", Value = 3 },
+                        new Mention { Name = "k4", Value = 4 },
+                        new Mention { Name = "k5", Value = 5 })
                     },
                     new Criteria { Index = 5, Name = "K6", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 },
-                        new Mention { Name = "k6", Value = 0.6 })
+                        new Mention { Name = "k1", Value = 1 },
+                        new Mention { Name = "k2", Value = 2 },
+                        new Mention { Name = "k3", Value = 3 },
+                        new Mention { Name = "k4", Value = 4 },
+                        new Mention { Name = "k5", Value = 5 },
+                        new Mention { Name = "k6", Value = 6 })
                     },
                     new Criteria { Index = 6, Name = "K7", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 },
-                        new Mention { Name = "k6", Value = 0.6 },
-                        new Mention { Name = "k7", Value = 0.7 })
+                        new Mention { Name = "k1", Value = 1 },
+                        new Mention { Name = "k2", Value = 2 },
+                        new Mention { Name = "k3", Value = 3 },
+                        new Mention { Name = "k4", Value = 4 },
+                        new Mention { Name = "k5", Value = 5 },
+                        new Mention { Name = "k6", Value = 6 },
+                        new Mention { Name = "k7", Value = 7 })
                     },
                     new Criteria { Index = 7, Name = "K8", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 },
-                        new Mention { Name = "k6", Value = 0.6 },
-                        new Mention { Name = "k7", Value = 0.7 },
-                        new Mention { Name = "k8", Value = 0.8 })
+                        new Mention { Name = "k1", Value = 1 },
+                        new Mention { Name = "k2", Value = 2 },
+                        new Mention { Name = "k3", Value = 3 },
+                        new Mention { Name = "k4", Value = 4 },
+                        new Mention { Name = "k5", Value = 5 },
+                        new Mention { Name = "k6", Value = 6 },
+                        new Mention { Name = "k7", Value = 7 },
+                        new Mention { Name = "k8", Value = 8 })
                     }
                 }
             }
         };
     }
 
-    [Fact]
-    public async Task GetAllAlternativesAsync_Test()
+    [Theory]
+    [MemberData(nameof(GetData))]
+    public async Task GetAllAlternativesAsync_Test(IEnumerable<Criteria> criterias)
     {
-        var criterias = new List<Criteria>
-                {
-                    new Criteria { Index = 0, Name = "K1", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 },
-                        new Mention { Name = "k6", Value = 0.6 },
-                        new Mention { Name = "k7", Value = 0.7 },
-                        new Mention { Name = "k8", Value = 0.8 })
-                    },
-                    new Criteria { Index = 1, Name = "K2", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 },
-                        new Mention { Name = "k6", Value = 0.6 },
-                        new Mention { Name = "k7", Value = 0.7 },
-                        new Mention { Name = "k8", Value = 0.8 })
-                    },
-                    new Criteria { Index = 2, Name = "K3", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 },
-                        new Mention { Name = "k6", Value = 0.6 },
-                        new Mention { Name = "k7", Value = 0.7 },
-                        new Mention { Name = "k8", Value = 0.8 })
-                    },
-                    new Criteria { Index = 3, Name = "K4", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 },
-                        new Mention { Name = "k6", Value = 0.6 },
-                        new Mention { Name = "k7", Value = 0.7 },
-                        new Mention { Name = "k8", Value = 0.8 })
-                    },
-                    new Criteria { Index = 4, Name = "K5", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 },
-                        new Mention { Name = "k6", Value = 0.6 },
-                        new Mention { Name = "k7", Value = 0.7 },
-                        new Mention { Name = "k8", Value = 0.8 })
-                    },
-                    new Criteria { Index = 5, Name = "K6", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 },
-                        new Mention { Name = "k6", Value = 0.6 },
-                        new Mention { Name = "k7", Value = 0.7 },
-                        new Mention { Name = "k8", Value = 0.8 })
-                    },
-                    new Criteria { Index = 6, Name = "K7", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 },
-                        new Mention { Name = "k6", Value = 0.6 },
-                        new Mention { Name = "k7", Value = 0.7 },
-                        new Mention { Name = "k8", Value = 0.8 })
-                    },
-                    new Criteria { Index = 7, Name = "K8", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 },
-                        new Mention { Name = "k6", Value = 0.6 },
-                        new Mention { Name = "k7", Value = 0.7 },
-                        new Mention { Name = "k8", Value = 0.8 })
-                    }
-                };
         var criteriaService = new CriteriaService(criterias);
         var alternatives = await criteriaService.GetAllTheoryAlternativesAsync();
         var alternativesCount = 1;
@@ -187,76 +102,6 @@ public class CriteriaServiceTests
         }
         alternatives.Count().Should().Be(alternativesCount);
         var alternativeNames = alternatives.Select(x => x.Name);
-        //foreach (var alternativeName in alternativeNames)
-        //    await File.WriteAllLinesAsync("WriteLines.txt", alternativeNames);
-    }
-
-    [Fact]
-    public void GetAllAlternatives_Test()
-    {
-        var criterias = new List<Criteria>
-                {
-                    new Criteria { Index = 0, Name = "K1", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 })
-                    },
-                    new Criteria { Index = 1, Name = "K2", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 })
-                    },
-                    new Criteria { Index = 2, Name = "K3", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 })
-                    },
-                    new Criteria { Index = 3, Name = "K4", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 })
-                    },
-                    new Criteria { Index = 4, Name = "K5", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 })
-                    },
-                    new Criteria { Index = 5, Name = "K6", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 },
-                        new Mention { Name = "k6", Value = 0.6 })
-                    },
-                    new Criteria { Index = 6, Name = "K7", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 },
-                        new Mention { Name = "k6", Value = 0.6 },
-                        new Mention { Name = "k7", Value = 0.7 })
-                    },
-                    new Criteria { Index = 7, Name = "K8", Mentions = new MentionCollection(
-                        new Mention { Name = "k1", Value = 0.1 },
-                        new Mention { Name = "k2", Value = 0.2 },
-                        new Mention { Name = "k3", Value = 0.3 },
-                        new Mention { Name = "k4", Value = 0.4 },
-                        new Mention { Name = "k5", Value = 0.5 },
-                        new Mention { Name = "k6", Value = 0.6 },
-                        new Mention { Name = "k7", Value = 0.7 },
-                        new Mention { Name = "k8", Value = 0.8 })
-                    }
-                };
-        var criteriaService = new CriteriaService(criterias);
-        //var alternatives = criteriaService.GetAllAlternatives();
-        var alternativesCount = 1;
-        foreach (var criteria in criterias)
-        {
-            alternativesCount *= criteria.Mentions.Count;
-        }
-        //lternatives.Count().Should().Be(alternativesCount);
     }
 
     [Fact]
@@ -265,19 +110,19 @@ public class CriteriaServiceTests
         var criterias = new List<Criteria>
         {
             new Criteria { Index = 0, Name = "K1", Mentions = new MentionCollection(
-                new Mention { Name = "k1", Value = 0.1 },
-                new Mention { Name = "k2", Value = 0.2 },
-                new Mention { Name = "k3", Value = 0.3 })
+                new Mention { Name = "k1", Value = 1 },
+                new Mention { Name = "k2", Value = 2 },
+                new Mention { Name = "k3", Value = 3 })
             },
             new Criteria { Index = 1, Name = "K2", Mentions = new MentionCollection(
-                new Mention { Name = "k1", Value = 0.1 },
-                new Mention { Name = "k2", Value = 0.2 },
-                new Mention { Name = "k3", Value = 0.3 },
-                new Mention { Name = "k4", Value = 0.4 })
+                new Mention { Name = "k1", Value = 1 },
+                new Mention { Name = "k2", Value = 2 },
+                new Mention { Name = "k3", Value = 3 },
+                new Mention { Name = "k4", Value = 4 })
             },
             new Criteria { Index = 2, Name = "K3", Mentions = new MentionCollection(
-                new Mention { Name = "k1", Value = 0.1 },
-                new Mention { Name = "k2", Value = 0.2 })
+                new Mention { Name = "k1", Value = 1 },
+                new Mention { Name = "k2", Value = 2 })
             }
         };
         var service = new CriteriaService(criterias);

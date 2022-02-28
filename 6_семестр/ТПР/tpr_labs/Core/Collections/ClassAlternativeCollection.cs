@@ -1,17 +1,12 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 using System.Collections;
-using System;
-using System.Threading.Tasks;
 
 namespace Core;
 
-internal class ClassAlternativeCollection : IEnumerable<ClassAlternative>
+internal class ClassAlternativeCollection : IClassAlternativeCollection
 {
     private IEnumerable<ClassAlternative> alternatives;
-
-    public Alternative GoodCenter { get; private set; }
-    public Alternative BadCenter { get; private set; }
 
     public ClassAlternativeCollection(IEnumerable<Alternative> alternatives)
     {
@@ -21,58 +16,53 @@ internal class ClassAlternativeCollection : IEnumerable<ClassAlternative>
         this.UpdateAlternativeGroup(this.alternatives.Count() - 1, AlternativeGroup.Bad);
     }
 
-    private void UpdateAlternativeGroup(int index, AlternativeGroup group)
+    public void UpdateAlternativeGroup(int index, AlternativeGroup group)
     {
         var alternative = this.alternatives.ElementAt(index);
         alternative.ChangeGroup(group);
         this.alternatives = this.alternatives.Update(index, alternative);
     }
 
-    public void CalculateCenters()
+    public void CalculateDistancesToGoodCenter()
     {
-        this.CalculateGoodCenter();
-        this.CalculateBadCenter();
+        var goodCenter = this.alternatives.Where(x => x.Group == AlternativeGroup.Good).Center();
+        this.alternatives = this.alternatives.CalculateDistancesToGood(goodCenter);
     }
 
-    public void CalculateGoodCenter()
+    public void CalculateDistancesToBadCenter()
     {
-        this.GoodCenter = this.CalculateCenter(AlternativeGroup.Good);
+        var badCenter = this.alternatives.Where(x => x.Group == AlternativeGroup.Bad).Center();
+        this.alternatives = this.alternatives.CalculateDistancesToBad(badCenter);
     }
 
-    public void CalculateBadCenter()
+    public void CalculateProximitiesToGoodCenter()
     {
-        this.BadCenter = this.CalculateCenter(AlternativeGroup.Bad);
+        this.alternatives = this.alternatives.CalculateGoodProximities();
     }
 
-    private Alternative CalculateCenter(AlternativeGroup group)
+    public void CalculateProximitiesToBadCenter()
     {
-        var alternatives = this.alternatives.Where(x => x.Group == group);
-        ValidateAlternatives(alternatives);
-
-        var mentionsCount = alternatives.First().Mentions.Count;
-        var centerMentionsValues = new double[mentionsCount];
-        centerMentionsValues = centerMentionsValues.Zero().ToArray();
-
-        Parallel.For(0, mentionsCount, (mentionIndex) =>
-        {
-            foreach (var alternative in alternatives)
-            {
-                centerMentionsValues[mentionIndex] += alternative.Mentions[mentionIndex].Value;
-            }
-            centerMentionsValues[mentionIndex] /= (double)alternatives.Count();
-        });
-
-        return new Alternative
-        {
-            Mentions = new MentionCollection(centerMentionsValues.Select(x => new Mention { Value = x }))
-        };
+        this.alternatives = this.alternatives.CalculateBadProximities();
     }
 
-    private static void ValidateAlternatives(IEnumerable<ClassAlternative> alternatives)
+    public void CalculateNumberOfBetterAlternatives()
     {
-        var mentionsCount = alternatives.First().Mentions.Count;
-        if (!alternatives.All(x => x.Mentions.Count == mentionsCount))
-            throw new ArgumentException("Different amounts of mentions");
+        this.alternatives = this.alternatives.CalculateBetterAlternatives();
+    }
+
+    public void CalculateNumberOfWorseAlternatives()
+    {
+        this.alternatives = this.alternatives.CalculateWorseAlternatives();
+    }
+
+    public void CalculateGoodInformativenesses()
+    {
+        this.alternatives = this.alternatives.CalculateGoodInformativenesses();
+    }
+
+    public void CalculateBadInformativenesses()
+    {
+        this.alternatives = this.alternatives.CalculateBadInformativenesses();
     }
 
     public IEnumerator<ClassAlternative> GetEnumerator() =>

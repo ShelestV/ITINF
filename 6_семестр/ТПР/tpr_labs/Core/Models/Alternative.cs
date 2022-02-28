@@ -2,7 +2,7 @@
 
 namespace Core;
 
-public struct Alternative
+public struct Alternative : IAlternative
 
 {
     public int Index { get; set; }

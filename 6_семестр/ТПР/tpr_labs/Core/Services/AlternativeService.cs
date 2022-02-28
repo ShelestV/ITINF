@@ -1,5 +1,4 @@
-﻿using Core.Services;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -45,7 +44,7 @@ public class AlternativeService : IAlternativesDivider
         return result;
     }
 
-    private static AlternativeCompareResult CompareAlternatives(Alternative first, Alternative second)
+    public static AlternativeCompareResult CompareAlternatives(IAlternative first, IAlternative second)
     {
         var index = 0;
         int compareResult;
@@ -53,7 +52,7 @@ public class AlternativeService : IAlternativesDivider
         {
             compareResult = first.Mentions[index].CompareTo(second.Mentions[index]);
             index++;
-            if (first.Mentions.Count == index && IsEqualedAlternatives(compareResult))
+            if (index == first.Mentions.Count && IsEqualedAlternatives(compareResult))
                 return AlternativeCompareResult.Equal;
         } while (IsEqualedAlternatives(compareResult));
 

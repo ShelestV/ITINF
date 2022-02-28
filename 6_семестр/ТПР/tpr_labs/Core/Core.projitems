@@ -10,20 +10,26 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Algos\TheoryAlternativesCalculator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\Abstract\IClassAlternativeCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Collections\ClassAlternativeCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructures\ClassAlternativeExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Infrastructures\AlternativesExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Infrastructures\LinqExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Collections\MentionCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Infrastructures\TwoDimensionalArrayExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Abstract\IAlternative.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Alternative.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ClassAlternative.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Criteria.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\AlternativeGroup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Mention.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Abstract\IAlternativesClassificable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ClassAlternativeService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\ConsoleUIHelper.cs" />
     <Compile Include="..\Core\Services\Abstract\IAllTheoryAlternativesGetable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AlternativeService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\CriteriaService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Abstract\IAlternativesDivider.cs" />
-    <Compile Include="..\Core\Services\Enums\AlternativeCompareResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\AlternativeCompareResult.cs" />
   </ItemGroup>
 </Project>

@@ -9,23 +9,34 @@ namespace _1lbTests;
 
 public class AlternativeServiceTests
 {
-    [Fact]
-    public async Task GetBetterAlternatives_Test()
+    private static IEnumerable<IEnumerable<object>> GetData()
     {
-        var criterias = new List<Criteria>
+        return new List<object[]>
         {
-            new Criteria { Index = 0, Name = "K1", Mentions = new MentionCollection(
-                new Mention { Name = "k1", Value = 1 },
-                new Mention { Name = "k2", Value = 0.6 },
-                new Mention { Name = "k3", Value = 0.3 })
-            },
-            new Criteria { Index = 1, Name = "K2", Mentions = new MentionCollection(
-                new Mention { Name = "k1", Value = 1 },
-                new Mention { Name = "k2", Value = 0.75 },
-                new Mention { Name = "k3", Value = 0.5  },
-                new Mention { Name = "k4", Value = 0.25 })
+            new object[]
+            {
+                new List<Criteria>
+                {
+                    new Criteria { Index = 0, Name = "K1", Mentions = new MentionCollection(
+                        new Mention { Name = "k1", Value = 1 },
+                        new Mention { Name = "k2", Value = 2 },
+                        new Mention { Name = "k3", Value = 3 })
+                    },
+                    new Criteria { Index = 1, Name = "K2", Mentions = new MentionCollection(
+                        new Mention { Name = "k1", Value = 1 },
+                        new Mention { Name = "k2", Value = 2 },
+                        new Mention { Name = "k3", Value = 3 },
+                        new Mention { Name = "k4", Value = 4 })
+                    }
+                }
             }
         };
+    }
+
+    [Theory]
+    [MemberData(nameof(GetData))]
+    public async Task GetBetterAlternatives_Test(IEnumerable<Criteria> criterias)
+    {
         var service = new CriteriaService(criterias);
         var alternatives = await service.GetAllTheoryAlternativesAsync();
 
@@ -46,23 +57,10 @@ public class AlternativeServiceTests
         }
     }
 
-    [Fact]
-    public async Task GetWorseAlternatives_Test()
+    [Theory]
+    [MemberData(nameof(GetData))]
+    public async Task GetWorseAlternatives_Test(IEnumerable<Criteria> criterias)
     {
-        var criterias = new List<Criteria>
-        {
-            new Criteria { Index = 0, Name = "K1", Mentions = new MentionCollection(
-                new Mention { Name = "k1", Value = 1 },
-                new Mention { Name = "k2", Value = 0.6 },
-                new Mention { Name = "k3", Value = 0.3 })
-            },
-            new Criteria { Index = 1, Name = "K2", Mentions = new MentionCollection(
-                new Mention { Name = "k1", Value = 1 },
-                new Mention { Name = "k2", Value = 0.75 },
-                new Mention { Name = "k3", Value = 0.5  },
-                new Mention { Name = "k4", Value = 0.25 })
-            }
-        };
         var service = new CriteriaService(criterias);
         var alternatives = await service.GetAllTheoryAlternativesAsync();
 
@@ -81,23 +79,10 @@ public class AlternativeServiceTests
         }
     }
 
-    [Fact]
-    public async Task GetIncomparableAlternatives_Test()
+    [Theory]
+    [MemberData(nameof(GetData))]
+    public async Task GetIncomparableAlternatives_Test(IEnumerable<Criteria> criterias)
     {
-        var criterias = new List<Criteria>
-        {
-            new Criteria { Index = 0, Name = "K1", Mentions = new MentionCollection(
-                new Mention { Name = "k1", Value = 1 },
-                new Mention { Name = "k2", Value = 0.6 },
-                new Mention { Name = "k3", Value = 0.3 })
-            },
-            new Criteria { Index = 1, Name = "K2", Mentions = new MentionCollection(
-                new Mention { Name = "k1", Value = 1 },
-                new Mention { Name = "k2", Value = 0.75 },
-                new Mention { Name = "k3", Value = 0.5  },
-                new Mention { Name = "k4", Value = 0.25 })
-            }
-        };
         var service = new CriteriaService(criterias);
         var alternatives = await service.GetAllTheoryAlternativesAsync();
 
@@ -116,23 +101,10 @@ public class AlternativeServiceTests
         }
     }
 
-    [Fact]
-    public async Task GetTheBestAlternative_Test()
+    [Theory]
+    [MemberData(nameof(GetData))]
+    public async Task GetTheBestAlternative_Test(IEnumerable<Criteria> criterias)
     {
-        var criterias = new List<Criteria>
-        {
-            new Criteria { Index = 0, Name = "K1", Mentions = new MentionCollection(
-                new Mention { Name = "k1", Value = 1 },
-                new Mention { Name = "k2", Value = 0.6 },
-                new Mention { Name = "k3", Value = 0.3 })
-            },
-            new Criteria { Index = 1, Name = "K2", Mentions = new MentionCollection(
-                new Mention { Name = "k1", Value = 1 },
-                new Mention { Name = "k2", Value = 0.75 },
-                new Mention { Name = "k3", Value = 0.5  },
-                new Mention { Name = "k4", Value = 0.25 })
-            }
-        };
         var service = new CriteriaService(criterias);
         var alternatives = await service.GetAllTheoryAlternativesAsync();
 
@@ -142,23 +114,10 @@ public class AlternativeServiceTests
         actual.Should().Be(expected);
     }
 
-    [Fact]
-    public async Task GetWorstAlternative_Test()
+    [Theory]
+    [MemberData(nameof(GetData))]
+    public async Task GetWorstAlternative_Test(IEnumerable<Criteria> criterias)
     {
-        var criterias = new List<Criteria>
-        {
-            new Criteria { Index = 0, Name = "K1", Mentions = new MentionCollection(
-                new Mention { Name = "k1", Value = 1 },
-                new Mention { Name = "k2", Value = 0.6 },
-                new Mention { Name = "k3", Value = 0.3 })
-            },
-            new Criteria { Index = 1, Name = "K2", Mentions = new MentionCollection(
-                new Mention { Name = "k1", Value = 1 },
-                new Mention { Name = "k2", Value = 0.75 },
-                new Mention { Name = "k3", Value = 0.5  },
-                new Mention { Name = "k4", Value = 0.25 })
-            }
-        };
         var service = new CriteriaService(criterias);
         var alternatives = await service.GetAllTheoryAlternativesAsync();
 

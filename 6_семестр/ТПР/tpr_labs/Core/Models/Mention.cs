@@ -29,10 +29,10 @@ public struct Mention : IComparable<Mention>
             return 0;
 
         if (this.Value > other.Value)
-            return 1;
+            return -1;
 
         if (this.Value < other.Value)
-            return -1;
+            return 1;
 
         return 0;
     }
