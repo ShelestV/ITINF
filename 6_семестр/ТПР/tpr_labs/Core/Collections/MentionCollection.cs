@@ -6,15 +6,15 @@ namespace Core;
 
 public class MentionCollection : IEnumerable<Mention>
 {
-    private readonly IEnumerable<Mention> mentions;
+    private readonly IList<Mention> mentions;
 
-    public int Count => this.mentions.Count();
+    public int Count => this.mentions.Count;
 
-    public MentionCollection() => 
+    private MentionCollection() => 
         this.mentions = new List<Mention>();
 
     public MentionCollection(IEnumerable<Mention> mentions) => 
-        this.mentions = mentions;
+        this.mentions = mentions.ToList();
 
     public MentionCollection(params Mention[] mentions) => 
         this.mentions = mentions;
@@ -22,7 +22,7 @@ public class MentionCollection : IEnumerable<Mention>
     public Mention this[int index]
     {
         get => this.mentions.ElementAt(index);
-        set => this.mentions.Insert(index, value);
+        set => this.mentions[index] = value;
     }
 
     public IEnumerator<Mention> GetEnumerator()
@@ -35,5 +35,16 @@ public class MentionCollection : IEnumerable<Mention>
 
     IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
-    public IEnumerable<Mention> GetData() => this.mentions;
+    public MentionCollection Copy()
+    {
+        var mentions = new MentionCollection();
+        foreach (var mention in this.mentions)
+            mentions.Add(mention.Copy());
+        return mentions;
+    }
+
+    private void Add(Mention mention)
+    {
+        this.mentions.Add(mention);
+    }
 }

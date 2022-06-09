@@ -4,7 +4,7 @@ public partial class Program
 {
     public static async Task Main(string[] args)
     {
-        var criterias = ConsoleUIHelper.GetCriteriasByUserData();
+        var criterias = ConsoleUIHelper.GetCriteriasByUserData(true);
 
         IAllTheoryAlternativesGetable criteriaService = new CriteriaService(criterias);
         var alternatives = await criteriaService.GetAllTheoryAlternativesAsync();

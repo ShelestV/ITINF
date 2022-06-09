@@ -84,4 +84,17 @@ internal static class LinqExtension
         foreach (var item in second)
             yield return item;
     }
+
+    public static IEnumerable<string> NumerateFrom1<T>(this IEnumerable<T> enumerable)
+    {
+        var numerator = 1;
+        foreach (var item in enumerable.Select(x => x!.ToString()))
+            yield return $"{numerator++}) {item}";
+    }
+
+    public static IEnumerable<double> ToValues(this IEnumerable<Mention> mentions)
+    {
+        foreach (var mention in mentions)
+            yield return mention.Value;
+    }
 }

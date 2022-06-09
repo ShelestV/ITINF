@@ -13,13 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_1", "lab_1\lab_1.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_2", "lab_2\lab_2.csproj", "{2B763E31-F085-4C3D-B656-EB58F4751F9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_3", "lab_3\lab_3.csproj", "{61AC33CB-3E58-4AB6-8B66-015374024CA0}"
+EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Core\Core.projitems*{081716e5-b911-4986-8419-82bd66e5f18c}*SharedItemsImports = 5
-		Core\Core.projitems*{2b204e05-3ff3-456e-98e9-c9cdd6f185b7}*SharedItemsImports = 13
-		Core\Core.projitems*{2b763e31-f085-4c3d-b656-eb58f4751f9a}*SharedItemsImports = 5
-		Core\Core.projitems*{a6551ac2-0710-41f9-bc62-a3fd35f61a6b}*SharedItemsImports = 5
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -37,6 +33,10 @@ Global
 		{2B763E31-F085-4C3D-B656-EB58F4751F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B763E31-F085-4C3D-B656-EB58F4751F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B763E31-F085-4C3D-B656-EB58F4751F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61AC33CB-3E58-4AB6-8B66-015374024CA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61AC33CB-3E58-4AB6-8B66-015374024CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61AC33CB-3E58-4AB6-8B66-015374024CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61AC33CB-3E58-4AB6-8B66-015374024CA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +46,12 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF732D91-88B8-48AE-835E-52F4098FB089}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Core\Core.projitems*{081716e5-b911-4986-8419-82bd66e5f18c}*SharedItemsImports = 5
+		Core\Core.projitems*{2b204e05-3ff3-456e-98e9-c9cdd6f185b7}*SharedItemsImports = 13
+		Core\Core.projitems*{2b763e31-f085-4c3d-b656-eb58f4751f9a}*SharedItemsImports = 5
+		Core\Core.projitems*{61ac33cb-3e58-4ab6-8b66-015374024ca0}*SharedItemsImports = 5
+		Core\Core.projitems*{a6551ac2-0710-41f9-bc62-a3fd35f61a6b}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

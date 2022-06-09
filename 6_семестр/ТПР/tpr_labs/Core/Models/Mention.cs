@@ -39,4 +39,13 @@ public struct Mention : IComparable<Mention>
 
     public override string? ToString() =>
         this.Name;
+
+    public Mention Copy()
+    {
+        return new()
+        {
+            Name = this.Name,
+            Value = this.Value
+        };
+    }
 }

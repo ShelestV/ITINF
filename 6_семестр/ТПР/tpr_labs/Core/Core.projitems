@@ -9,19 +9,29 @@
     <Import_RootNamespace>Core</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Algos\AlternativeTreeBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Algos\TreeLongestWaySearcher.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Algos\TheoryAlternativesCalculator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Collections\Abstract\IClassAlternativeCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Collections\ClassAlternativeCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\DistinctedList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Comparators\ConsoleAlternativesComparator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Comparators\CriteriaComparator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Comparators\MentionComparator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Factories\TreeAlternativesFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Infrastructures\ClassAlternativeExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Infrastructures\AlternativesExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructures\CriteriasExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Infrastructures\LinqExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Collections\MentionCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Infrastructures\TwoDimensionalArrayExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Abstract\IAlternative.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Abstract\IModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Alternative.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ClassAlternative.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Criteria.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\AlternativeGroup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TreeAlternative.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Mention.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Abstract\IAlternativesClassificable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ClassAlternativeService.cs" />

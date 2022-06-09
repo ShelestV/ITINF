@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Core;
 
-public struct Criteria
+public struct Criteria : IModel
 {
     public int Index { get; set; }
     public string Name { get; set; }
@@ -22,5 +23,5 @@ public struct Criteria
         !left.Equals(right);
 
     public override string ToString() =>
-        this.Name + $" {{ { string.Join(", ", this.Mentions.GetData()) } }}";
+        this.Name + $" {{ { string.Join(", ", this.Mentions) } }}";
 }

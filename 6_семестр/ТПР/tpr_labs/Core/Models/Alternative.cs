@@ -2,8 +2,7 @@
 
 namespace Core;
 
-public struct Alternative : IAlternative
-
+public struct Alternative : IModel, IAlternative
 {
     public int Index { get; set; }
     public string Name { get; set; }
@@ -16,14 +15,8 @@ public struct Alternative : IAlternative
     public override int GetHashCode() => 
         HashCode.Combine(this.Name);
 
-    public static bool operator ==(Alternative left, Alternative right) =>
-        left.Equals(right);
-
-    public static bool operator !=(Alternative left, Alternative right) =>
-        !left.Equals(right);
-
     public override string? ToString() => 
-        this.Name;
+        this.Name + $" {{ {string.Join(", ", this.Mentions)} }}";
 
     public ClassAlternative ToClassAlternative()
     {
@@ -33,6 +26,16 @@ public struct Alternative : IAlternative
             Name = this.Name,
             Mentions = this.Mentions,
             Group = AlternativeGroup.Undefined
+        };
+    }
+
+    public Alternative Copy()
+    {
+        return new Alternative
+        {
+            Index = this.Index,
+            Name = this.Name,
+            Mentions = this.Mentions.Copy()
         };
     }
 }
