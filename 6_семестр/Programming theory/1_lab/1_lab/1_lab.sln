@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExponentiationModulo", "ExponentiationModulo\ExponentiationModulo.csproj", "{E256EE42-7317-4A9F-98BC-63767A9B8C38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExponantiationModulo.Tests", "ExponantiationModulo.Tests\ExponantiationModulo.Tests.csproj", "{CCF5AD9B-2A02-4504-ABB4-724117AF359D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E256EE42-7317-4A9F-98BC-63767A9B8C38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E256EE42-7317-4A9F-98BC-63767A9B8C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E256EE42-7317-4A9F-98BC-63767A9B8C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E256EE42-7317-4A9F-98BC-63767A9B8C38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCF5AD9B-2A02-4504-ABB4-724117AF359D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCF5AD9B-2A02-4504-ABB4-724117AF359D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCF5AD9B-2A02-4504-ABB4-724117AF359D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCF5AD9B-2A02-4504-ABB4-724117AF359D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6BC1BD06-FCC6-4EAF-B417-37FF49F15580}
+	EndGlobalSection
+EndGlobal
