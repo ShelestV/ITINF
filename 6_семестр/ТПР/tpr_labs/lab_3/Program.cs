@@ -4,16 +4,11 @@ public partial class Program
 {
     public static void Main()
     {
-        var useUserNames = ConsoleUIHelper.GetBooleanFromConsole("Use default names or you enter them by yourself?");
+        var useUserNames = ConsoleUIHelper.GetBooleanFromConsole("Do you enter names by yourself?");
         Console.Clear();
 
-        // ToDo: Ask for using user or default names
-        // ToDo: Uncomment user input
         var criterias = ConsoleUIHelper.GetCriteriasByUserData(useUserNames);
         var alternatives = ConsoleUIHelper.GetAlternativesByUserData(criterias, useUserNames);
-
-        // ToDo: Comment test data
-        //var (criterias, alternatives) = GetCriteriasAndAlternatives();
 
         OutputCriteriaDescriptionOfAlternatives(alternatives, criterias);
 
@@ -173,7 +168,7 @@ public partial class Program
         {
             Console.Write($"{alternatives[index].Name}\t");
             Console.Write($"{string.Join("", alternatives[index].Mentions.ToValues())}\t");
-            Console.Write($"{string.Join("", vectorMarks[index])}\t");
+            Console.Write($"{string.Join("", vectorMarks[index].Select(x => $"({x})"))}\t");
             Array.Sort(vectorMarks[index]);
             Console.Write($"{string.Join("", vectorMarks[index])}\t");
             Console.WriteLine();

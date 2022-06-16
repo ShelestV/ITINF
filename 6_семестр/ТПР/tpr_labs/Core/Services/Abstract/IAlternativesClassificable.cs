@@ -4,6 +4,7 @@ public interface IAlternativesClassificable
 {
     IClassAlternativeCollection Collection { get; }
     bool CanDoIteration { get; }
-    ClassAlternative DoIteration();
+    Task<ClassAlternative> DoIterationAsync();
+    Task DoLastIterationAsync();
     void UpdateAlternativesGroup(ClassAlternative altWithMaxInfo, AlternativeGroup group);
 }

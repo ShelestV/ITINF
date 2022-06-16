@@ -21,14 +21,19 @@ internal class TreeLongestWaySearcher
     {
         if (current.Neighbours.Count == 0)
             return way;
-        
-        var ways = new IList<TreeAlternative>[current.Neighbours.Count];
-        var wayIndex = 0;
+
+        var ways = new List<IList<TreeAlternative>>();
         foreach (var neighbour in current.Neighbours)
         {
+            if (way.Contains(neighbour))
+                continue;
+
             var changedWay = new List<TreeAlternative>(way) { neighbour };
-            ways[wayIndex++] = GoToNext(neighbour, changedWay);
+            ways.Add(this.GoToNext(neighbour, changedWay));
         }
+
+        if (ways.Count == 0)
+            return way;
 
         var maxWayCount = ways.Select(x => x.Count).Max();
         return ways.First(x => x.Count == maxWayCount);

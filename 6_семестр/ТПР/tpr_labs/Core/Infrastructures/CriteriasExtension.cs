@@ -27,7 +27,7 @@ internal static class CriteriasExtension
             {
                 var alternative = bestAlternative.Copy();
                 alternative.Name = GetAlternativeName(criteriasCount, bestAlternative.Name, criteria.Index, mentionIndex + 1);
-                var mentionName = GetMentionName(criteria, criteria.Mentions[mentionIndex], useUserNames);
+                var mentionName = GetMentionName(criteria, criteria.Mentions[mentionIndex], mentionIndex, useUserNames);
                 alternative.Mentions[criteria.Index] = new() { Name = mentionName, Value = mentionIndex + 1 };
                 alternativesResult[mentionIndex, criteria.Index] = alternative;
             }
@@ -43,13 +43,13 @@ internal static class CriteriasExtension
         {
             Index = 0,
             Name = bestAlternativeName,
-            Mentions = new(criterias.Select(x => new Mention { Name = GetMentionName(x, x.Mentions[0], useUserNames), Value = x.Mentions[0].Value }))
+            Mentions = new(criterias.Select(x => new Mention { Name = GetMentionName(x, x.Mentions[0], 0, useUserNames), Value = x.Mentions[0].Value }))
         };
     }
 
-    private static string GetMentionName(Criteria criteria, Mention mention, bool useUserNames)
+    private static string GetMentionName(Criteria criteria, Mention mention, int mentionIndex, bool useUserNames)
     {
-        return useUserNames ? mention.Name : Mention.GetAlternativeName(criteria.Mentions[0], criteria);
+        return useUserNames ? mention.Name : Mention.GetAlternativeName(criteria.Mentions[mentionIndex], criteria);
     } 
 
     private static string GetAlternativeName(int mentionsCount, string bestAlternativeName, int changedMentionIndex, int newValue)

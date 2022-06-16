@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Linq;
 
 namespace Core;
@@ -17,30 +18,37 @@ public class ClassAlternativeService : IAlternativesClassificable
 
     public bool CanDoIteration { get; private set; }
 
-    public ClassAlternative DoIteration()
+    public async Task<ClassAlternative> DoIterationAsync()
     {
-        this.Iteration();
+        await this.IterationAsync();
 
         var undefinedAlternatives = this.collection.Where(x => x.Group == AlternativeGroup.Undefined);
         var maxInformativeness = undefinedAlternatives.Select(x => x.Informativeness).Max();
         return undefinedAlternatives.First(x => x.Informativeness == maxInformativeness);
     }
 
-    public void LastIteration()
+    public async Task DoLastIterationAsync()
     {
-        this.Iteration();
+        await this.IterationAsync();
     }
 
-    private void Iteration()
+    private async Task IterationAsync()
     {
-        this.collection.CalculateDistancesToGoodCenter();
-        this.collection.CalculateDistancesToBadCenter();
-        this.collection.CalculateProximitiesToGoodCenter();
-        this.collection.CalculateProximitiesToBadCenter();
-        this.collection.CalculateNumberOfBetterAlternatives();
-        this.collection.CalculateNumberOfWorseAlternatives();
-        this.collection.CalculateGoodInformativenesses();
-        this.collection.CalculateBadInformativenesses();
+        var goodCentersCalculatingTask = Task.Run(this.collection.CalculateDistancesToGoodCenter);
+        var badCentersCalculatingTask = Task.Run(this.collection.CalculateDistancesToBadCenter);
+        await Task.WhenAll(goodCentersCalculatingTask, badCentersCalculatingTask);
+
+        var proximitiesToGoodCenterCalculatingTask = Task.Run(this.collection.CalculateProximitiesToGoodCenter);
+        var proximitiesToBadCenterCalculatingTask = Task.Run(this.collection.CalculateProximitiesToBadCenter);
+        await Task.WhenAll(proximitiesToGoodCenterCalculatingTask, proximitiesToBadCenterCalculatingTask);
+
+        var numberOfBetterAlternativesCalculatingTask = Task.Run(this.collection.CalculateNumberOfBetterAlternatives);
+        var numberOfWorseAlternativesCalculatingTask = Task.Run(this.collection.CalculateNumberOfWorseAlternatives);
+        await Task.WhenAll(numberOfBetterAlternativesCalculatingTask, numberOfWorseAlternativesCalculatingTask);
+
+        var goodInformativenessCalculatingTask = Task.Run(this.collection.CalculateGoodInformativenesses);
+        var badInformativenessCalculatingTask = Task.Run(this.collection.CalculateBadInformativenesses);
+        await Task.WhenAll(goodInformativenessCalculatingTask, badInformativenessCalculatingTask);
     }
 
     public void UpdateAlternativesGroup(ClassAlternative altWithMaxInfo, AlternativeGroup group)

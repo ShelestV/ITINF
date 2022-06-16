@@ -102,7 +102,7 @@ public class _2_lb_Tests
         service.UpdateAlternativesGroup(alternative, AlternativeGroup.Good);
         // Fifth iteration
         service.CanDoIteration.Should().BeFalse();
-        service.LastIteration();
+        service.DoLastIteration();
 
         // Assert
         CheckIterationData(service.Collection, new List<object[]>
