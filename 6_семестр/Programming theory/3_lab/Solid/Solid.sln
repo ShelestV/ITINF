@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solid.Dip.ConsoleApproverOfSLA", "Solid.Dip.ApproverOfSLA\Solid.Dip.ConsoleApproverOfSLA.csproj", "{610B6785-D3EA-4193-9E7D-F8323931F323}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solid.Dip.ConsoleTaxesCalculator", "Solid.Dip.EmployeeTaxesCalculator\Solid.Dip.ConsoleTaxesCalculator.csproj", "{BE0A27EA-F610-4D88-A676-9463CC69457F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solid.Dip.ConsolePayslipExporter", "Solid.Dip.PayslipExporter\Solid.Dip.ConsolePayslipExporter.csproj", "{5193DE33-8581-4611-BD66-D02392055912}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solid.Dip.ConsoleEmployeeTimeOffSetter", "Solid.Dip.EmployeeTimeOffSetter\Solid.Dip.ConsoleEmployeeTimeOffSetter.csproj", "{AE441048-7DFB-4F12-A752-DFE501FB558F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solid.Dip.ConsoleEmployeePayer", "Solid.Dip.EmployeePayer\Solid.Dip.ConsoleEmployeePayer.csproj", "{9CFF00AF-F466-4E3E-8A2B-6887BEE3829D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solid.Dip.ConsoleEmployeesSaver", "Solid.Dip.EmployeesSaver\Solid.Dip.ConsoleEmployeesSaver.csproj", "{6517C679-7E59-4CCA-AA31-BF9DDCA14062}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{980E87C7-BA1A-4A00-8933-6A8D13E65CD9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solid.Dip.Payslip", "Solid.Dip.Payslip\Solid.Dip.Payslip.csproj", "{FC63410F-1343-497D-818B-D281EA78FC70}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solid.Dip.EmployeeTaxCalculator", "Solid.Dip.EmployeeTaxCalculator\Solid.Dip.EmployeeTaxCalculator.csproj", "{A3576825-430F-40AE-BC00-22D82E58A72D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solid.Dip.SLAApprover", "Solid.Dip.SLAApprover\Solid.Dip.SLAApprover.csproj", "{807FE294-3726-4BA1-849D-FEB436E9CFBA}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Solid.Dip.Core", "Solid.Dip.Core\Solid.Dip.Core.shproj", "{9DD8BD06-9159-45E7-86B5-947E91AC266D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solid.Dip.Payment", "Solid.Dip.Payment\Solid.Dip.Payment.csproj", "{164F85B3-F46B-49D7-BAE0-AE044C5B90AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{610B6785-D3EA-4193-9E7D-F8323931F323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{610B6785-D3EA-4193-9E7D-F8323931F323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{610B6785-D3EA-4193-9E7D-F8323931F323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{610B6785-D3EA-4193-9E7D-F8323931F323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE0A27EA-F610-4D88-A676-9463CC69457F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE0A27EA-F610-4D88-A676-9463CC69457F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE0A27EA-F610-4D88-A676-9463CC69457F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE0A27EA-F610-4D88-A676-9463CC69457F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5193DE33-8581-4611-BD66-D02392055912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5193DE33-8581-4611-BD66-D02392055912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5193DE33-8581-4611-BD66-D02392055912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5193DE33-8581-4611-BD66-D02392055912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE441048-7DFB-4F12-A752-DFE501FB558F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE441048-7DFB-4F12-A752-DFE501FB558F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE441048-7DFB-4F12-A752-DFE501FB558F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE441048-7DFB-4F12-A752-DFE501FB558F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CFF00AF-F466-4E3E-8A2B-6887BEE3829D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CFF00AF-F466-4E3E-8A2B-6887BEE3829D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CFF00AF-F466-4E3E-8A2B-6887BEE3829D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CFF00AF-F466-4E3E-8A2B-6887BEE3829D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6517C679-7E59-4CCA-AA31-BF9DDCA14062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6517C679-7E59-4CCA-AA31-BF9DDCA14062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6517C679-7E59-4CCA-AA31-BF9DDCA14062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6517C679-7E59-4CCA-AA31-BF9DDCA14062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC63410F-1343-497D-818B-D281EA78FC70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC63410F-1343-497D-818B-D281EA78FC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC63410F-1343-497D-818B-D281EA78FC70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC63410F-1343-497D-818B-D281EA78FC70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3576825-430F-40AE-BC00-22D82E58A72D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3576825-430F-40AE-BC00-22D82E58A72D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3576825-430F-40AE-BC00-22D82E58A72D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3576825-430F-40AE-BC00-22D82E58A72D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807FE294-3726-4BA1-849D-FEB436E9CFBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807FE294-3726-4BA1-849D-FEB436E9CFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807FE294-3726-4BA1-849D-FEB436E9CFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807FE294-3726-4BA1-849D-FEB436E9CFBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{164F85B3-F46B-49D7-BAE0-AE044C5B90AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{164F85B3-F46B-49D7-BAE0-AE044C5B90AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{164F85B3-F46B-49D7-BAE0-AE044C5B90AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{164F85B3-F46B-49D7-BAE0-AE044C5B90AC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9DD8BD06-9159-45E7-86B5-947E91AC266D} = {980E87C7-BA1A-4A00-8933-6A8D13E65CD9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAF668B5-13D3-495A-9445-8B4C236F3FCA}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Solid.Dip.Core\Solid.Dip.Core.projitems*{164f85b3-f46b-49d7-bae0-ae044c5b90ac}*SharedItemsImports = 5
+		Solid.Dip.Core\Solid.Dip.Core.projitems*{6517c679-7e59-4cca-aa31-bf9ddca14062}*SharedItemsImports = 5
+		Solid.Dip.Core\Solid.Dip.Core.projitems*{9dd8bd06-9159-45e7-86b5-947e91ac266d}*SharedItemsImports = 13
+		Solid.Dip.Core\Solid.Dip.Core.projitems*{a3576825-430f-40ae-bc00-22d82e58a72d}*SharedItemsImports = 5
+		Solid.Dip.Core\Solid.Dip.Core.projitems*{ae441048-7dfb-4f12-a752-dfe501fb558f}*SharedItemsImports = 5
+		Solid.Dip.Core\Solid.Dip.Core.projitems*{fc63410f-1343-497d-818b-d281ea78fc70}*SharedItemsImports = 5
+	EndGlobalSection
+EndGlobal

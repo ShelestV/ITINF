@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>9dd8bd06-9159-45e7-86b5-947e91ac266d</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Solid.Dip.Core</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Documents\IJsonExportable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Documents\IPdfExportable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Documents\ITxtExportable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Documents\WorkContract.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\IllegalArgumentException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Loggers\ConsoleLogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Loggers\ILogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Month.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Persistance\EmployeeFileRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Persistance\EmployeeFileSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Persistance\IEmployeeRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Persistance\ISerializable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Personnel\Employee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Personnel\FullTimeEmployee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Personnel\Intern.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Personnel\PartTimeEmployee.cs" />
+  </ItemGroup>
+</Project>
