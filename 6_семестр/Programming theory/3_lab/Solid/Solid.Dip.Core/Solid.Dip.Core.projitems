@@ -17,13 +17,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)Loggers\ConsoleLogger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Loggers\ILogger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Month.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Persistance\EmployeeFileRepository.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Persistance\EmployeeFileSerializer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Persistance\IEmployeeRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Persistance\CsvFileWorker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Persistance\FileRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Persistance\EmployeeSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Persistance\IRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Persistance\IFileWorkable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Persistance\ISerializable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Personnel\Employee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Personnel\FullTimeEmployee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Personnel\IEmailHavable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Personnel\Intern.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Personnel\Manager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Personnel\PartTimeEmployee.cs" />
   </ItemGroup>
 </Project>

@@ -5,7 +5,7 @@
 // For example To InternTaxCalculator I can transfer FullTimeEmployee (because Calculate() wait for base class)
 public abstract class TaxCalculator
 {
-   public abstract double Calculate(Personnel.Employee employee);
+    public abstract double Calculate(Personnel.Employee employee);
 
     protected static double CalculateTaxes(int monthlyIncome, int taxPercentage)
     {

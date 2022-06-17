@@ -1,18 +1,23 @@
-﻿var employeeFileSerializer = new Solid.Dip.Persistance.EmployeeFileSerializer();
-var consoleLogger = Solid.Dip.Loggers.ConsoleLogger.Instance;
+﻿using Solid.Dip.Loggers;
+using Solid.Dip.Persistance;
+using Solid.Dip.Personnel;
 
-var repository = new Solid.Dip.Persistance.EmployeeFileRepository(employeeFileSerializer);
-var employees = repository.GetAll();
+var consoleLogger = ConsoleLogger.Instance;
 
-foreach (var employee in employees)
+var serializer = new EmployeeSerializer();
+var fileWorker = new CsvFileWorker();
+
+var repository = new FileRepository<Employee>(fileWorker, serializer);
+
+try
 {
-    try
-    {
-        repository.Save(employee);
-        consoleLogger.Info($"Saved employee {employee}");
-    }
-    catch (Exception ex)
-    {
-        consoleLogger.Error("Error saving employee", ex);
-    }
+    var newEmployee = new FullTimeEmployee("Volodymyr Shelest", 2000);
+    repository.Save(newEmployee);
+    consoleLogger.Info("Employee has been saved");
 }
+catch (Exception ex)
+{
+    consoleLogger.Error("Error saving employee", ex);
+}
+
+Console.ReadKey();

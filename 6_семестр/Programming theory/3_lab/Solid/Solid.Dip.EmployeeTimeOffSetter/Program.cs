@@ -1,8 +1,15 @@
-﻿var employeeFileSerializer = new Solid.Dip.Persistance.EmployeeFileSerializer();
-var repository = new Solid.Dip.Persistance.EmployeeFileRepository(employeeFileSerializer);
+﻿using Solid.Dip.Persistance;
+using Solid.Dip.Personnel;
 
-var employees = repository.GetAll();
-var manager = new Solid.Dip.Personnel.FullTimeEmployee("Steve Jackson", 5000);
+var serializer = new EmployeeSerializer();
+var fileWorker = new CsvFileWorker();
+
+var repository = new FileRepository<Employee>(fileWorker, serializer);
+
+var employees = repository.Items;
+var manager = new Manager("Steve Jackson", 5000);
 
 foreach (var employee in employees)
-    employee.RequestTimeOff(1, manager);
+    manager.ProcessTimeOffRequest(employee, 1);
+
+Console.ReadKey();

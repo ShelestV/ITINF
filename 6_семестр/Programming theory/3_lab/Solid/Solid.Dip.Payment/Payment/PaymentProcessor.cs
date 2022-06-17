@@ -1,14 +1,15 @@
 ﻿using Solid.Dip.Notifications;
 using Solid.Dip.Persistance;
+using Solid.Dip.Personnel;
 
 namespace Solid.Dip.Payment;
 
-public sealed class PaymentProcessor
+public sealed class PaymentProcessor<TEmployee> where TEmployee : Employee
 {
-    private readonly IEmployeeRepository employeeRepository;
-    private readonly IEmployeeNotifable employeeNotifier;
+    private readonly IRepository<TEmployee> employeeRepository;
+    private readonly INotifable employeeNotifier;
 
-    public PaymentProcessor(IEmployeeRepository employeeRepository, IEmployeeNotifable employeeNotifier)
+    public PaymentProcessor(IRepository<TEmployee> employeeRepository, INotifable employeeNotifier)
     {
         this.employeeRepository = employeeRepository;
         this.employeeNotifier = employeeNotifier;
@@ -16,15 +17,27 @@ public sealed class PaymentProcessor
 
     public int SendPayments()
     {
-        var employees = this.employeeRepository.GetAll();
+        var employees = this.employeeRepository.Items;
         var totalPayments = 0;
 
         foreach (var employee in employees)
         {
             totalPayments += employee.MonthlyIncome;
-            employeeNotifier.Notify(employee);
+            var email = FormEmail(employee.Email, employee.MonthlyIncome);
+            employeeNotifier.Notify(email);
         }
 
         return totalPayments;
+    }
+
+    private static EmailMessage FormEmail(string email, int monthlyIncome)
+    {
+        return new()
+        {
+            From = "payment@globomantics.com",
+            To = email,
+            Subject = "Salary Notification",
+            Content = $"Salary sent; Value: ${monthlyIncome}"
+        };
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Solid.Dip.Personnel;
 
-public abstract class Employee
+public abstract class Employee : IEmailHavable
 {
     private readonly string firstName;
     private readonly string lastName;
@@ -9,6 +9,8 @@ public abstract class Employee
 
     public string FullName => $"{this.firstName} {this.lastName}";
     public string Email => $"{this.firstName}.{this.lastName}@globomantichr.com";
+
+    public abstract string Position { get; }
 
     public int MonthlyIncome
     {
@@ -40,10 +42,6 @@ public abstract class Employee
         this.firstName = names[0];
         this.lastName = names[1];
     }
-
-    // ToDo: I don't think that Employee should write about number of hours that he worked
-    // I think we should delegate this method to other class and use it
-    public abstract void RequestTimeOff(int nbDays, Employee manager);
 
     public override string ToString()
     {
