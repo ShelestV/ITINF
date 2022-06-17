@@ -1,6 +1,7 @@
 ﻿using Solid.Dip.Loggers;
 using Solid.Dip.Persistance;
 using Solid.Dip.Personnel;
+using Solid.Dip.Taxes;
 
 var consoleLogger = ConsoleLogger.Instance;
 
@@ -14,9 +15,9 @@ var employees = repository.Items;
 var totalTaxes = 0.0;
 foreach (var employee in employees)
 {
-    var taxCalculator = Solid.Dip.Taxes.Mappers.TaxCalculatorEmployeeMapper<Employee>.GetTaxCalculator(employee);
+    var taxCalculator = TaxCalculatorEmployeeAdapter.GetTaxCalculator(employee);
 
-    var tax = taxCalculator.Calculate(employee);
+    var tax = taxCalculator.Calculate(employee.MonthlyIncome);
     consoleLogger.Info($"{employee.FullName} taxes: ${tax}");
 
     totalTaxes += tax;
