@@ -1,2 +1,0 @@
-D:\Программирование\Visual Studio\PzOs\Debug\PzOs.exe
-D:\Программирование\Visual Studio\PzOs\Debug\PzOs.pdb
