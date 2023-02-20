@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>PaymentSystem.Sender</RootNamespace>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\PaymentSystem.Application\PaymentSystem.Application.csproj" />
+      <ProjectReference Include="..\PaymentSystem.BusinessLogic\PaymentSystem.BusinessLogic.csproj" />
+      <ProjectReference Include="..\PaymentSystem.Persistence\PaymentSystem.Persistence.csproj" />
+    </ItemGroup>
+
+</Project>

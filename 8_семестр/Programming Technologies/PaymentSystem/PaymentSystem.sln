@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "PaymentSystem.Calculators", "PaymentSystem.Calculators\PaymentSystem.Calculators.fsproj", "{9226695B-D4F1-43E2-8DEC-ED64EC9AF393}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentSystem.Domain", "PaymentSystem.Domain\PaymentSystem.Domain.csproj", "{50C90173-3024-4D12-B22D-DE75ECA28BE6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentSystem.Application", "PaymentSystem.Application\PaymentSystem.Application.csproj", "{C51DD4BC-531E-46A4-B00B-2D08FFE98A30}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentSystem.BusinessLogic", "PaymentSystem.BusinessLogic\PaymentSystem.BusinessLogic.csproj", "{BF024961-46DF-4AA1-9DC0-A27D91182E6B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentSystem.Persistence", "PaymentSystem.Persistence\PaymentSystem.Persistence.csproj", "{78D15436-F051-4B2E-A2D7-DCD320CE7A66}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PaymentSystem.Sender", "PaymentSystem.Sender\PaymentSystem.Sender.vbproj", "{449E6448-D410-4301-A1F0-C462404B10E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentSystem.Administration", "PaymentSystem.Administration\PaymentSystem.Administration.csproj", "{16BE66A8-35D4-4456-8BF2-441BCE7C5B50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9226695B-D4F1-43E2-8DEC-ED64EC9AF393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9226695B-D4F1-43E2-8DEC-ED64EC9AF393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9226695B-D4F1-43E2-8DEC-ED64EC9AF393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9226695B-D4F1-43E2-8DEC-ED64EC9AF393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50C90173-3024-4D12-B22D-DE75ECA28BE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50C90173-3024-4D12-B22D-DE75ECA28BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50C90173-3024-4D12-B22D-DE75ECA28BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50C90173-3024-4D12-B22D-DE75ECA28BE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C51DD4BC-531E-46A4-B00B-2D08FFE98A30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C51DD4BC-531E-46A4-B00B-2D08FFE98A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C51DD4BC-531E-46A4-B00B-2D08FFE98A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C51DD4BC-531E-46A4-B00B-2D08FFE98A30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF024961-46DF-4AA1-9DC0-A27D91182E6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF024961-46DF-4AA1-9DC0-A27D91182E6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF024961-46DF-4AA1-9DC0-A27D91182E6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF024961-46DF-4AA1-9DC0-A27D91182E6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78D15436-F051-4B2E-A2D7-DCD320CE7A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78D15436-F051-4B2E-A2D7-DCD320CE7A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78D15436-F051-4B2E-A2D7-DCD320CE7A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78D15436-F051-4B2E-A2D7-DCD320CE7A66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{449E6448-D410-4301-A1F0-C462404B10E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{449E6448-D410-4301-A1F0-C462404B10E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{449E6448-D410-4301-A1F0-C462404B10E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{449E6448-D410-4301-A1F0-C462404B10E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16BE66A8-35D4-4456-8BF2-441BCE7C5B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16BE66A8-35D4-4456-8BF2-441BCE7C5B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16BE66A8-35D4-4456-8BF2-441BCE7C5B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16BE66A8-35D4-4456-8BF2-441BCE7C5B50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {986DE697-1567-4E15-B383-762FDCD8982C}
+	EndGlobalSection
+EndGlobal
