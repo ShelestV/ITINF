@@ -34,12 +34,12 @@ public sealed class MonthlyPayedEmployee : Employee
     public override string ToJson()
     {
 		return $@"
-{{
-    ""{nameof(Id)}"": {Id},
-    ""{nameof(Type)}"": ""{Type}"",
-    ""{nameof(Name)}"": ""{Name}"",
-    ""{nameof(Balance)}"": {Balance:0.00},
-    ""{nameof(Payment)}"": {Payment:0.00}
-}}";
+    {{
+        ""{nameof(Id)}"": {Id},
+        ""{nameof(Type)}"": ""{Type}"",
+        ""{nameof(Name)}"": ""{Name}"",
+        ""{nameof(Balance)}"": {Balance:0.00},
+        ""{nameof(Payment)}"": {Payment:0.00}
+    }}";
 	}
 }

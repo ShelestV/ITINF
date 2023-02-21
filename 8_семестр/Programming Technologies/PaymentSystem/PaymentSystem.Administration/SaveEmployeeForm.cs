@@ -15,34 +15,26 @@ public partial class SaveEmployeeForm : Form
 
 		InitializeComponent();
 
-		if (employee is null)
-		{
-			Text = "Add Employee";
-
-			workedHoursUpDown.Visible = false;
-			workedHoursLabel.Visible = false;
-			hoursSymbolLabel.Visible = false;
-		}
-		else
+		if (employee is not null)
 		{
 			Text = "Update Employee";
 
 			nameTextBox.Text = employee.Name;
-			var isHourly = employee is HourlyPayedEmployee hpEmployee;
+			var isHourly = employee is HourlyPayedEmployee;
 			isHourlyPayedEmployeeCheckBox.Checked = isHourly;
 
-			if (!isHourly)
-			{
-				workedHoursUpDown.Visible = false;
-				workedHoursLabel.Visible = false;
-				hoursSymbolLabel.Visible = false;
-			}
-			else
-			{
+			if (isHourly)
 				workedHoursUpDown.Value = ((HourlyPayedEmployee)employee).WorkedHours;
-			}
+			else
+				ChangeVisibilityOfWorkedHoursComponents(false);
 
 			paymentUpDown.Value = (decimal)employee.Payment;
+		}
+		else
+		{
+			Text = "Add Employee";
+
+			ChangeVisibilityOfWorkedHoursComponents(false);
 		}
 	}
 
@@ -114,12 +106,16 @@ public partial class SaveEmployeeForm : Form
 
 	private void IsHourlyPayedCheckedChanged(object sender, EventArgs e)
 	{
-		if (sender is not CheckBox cb)
+		if (sender is not CheckBox cb || employee is null)
 			return;
 
-		var isHourly = cb.Checked;
-		workedHoursUpDown.Visible = isHourly;
-		workedHoursLabel.Visible = isHourly;
-		hoursSymbolLabel.Visible = isHourly;
+		ChangeVisibilityOfWorkedHoursComponents(cb.Checked);
+	}
+
+	private void ChangeVisibilityOfWorkedHoursComponents(bool visibility)
+	{
+		workedHoursUpDown.Visible = visibility;
+		workedHoursLabel.Visible = visibility;
+		hoursSymbolLabel.Visible = visibility;
 	}
 }
