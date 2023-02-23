@@ -1,10 +1,9 @@
 ﻿using System.Text;
 using System.Text.Json;
-using PaymentSystem.Domain;
 
 namespace PaymentSystem.Persistence;
 
-public abstract class JsonFileRepository<TModel> where TModel : Model
+public abstract class JsonFileRepository
 {
     private const string FilePath = "C://PaymentSystem//employee.json";
 

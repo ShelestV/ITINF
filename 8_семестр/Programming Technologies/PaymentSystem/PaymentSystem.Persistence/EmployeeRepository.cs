@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace PaymentSystem.Persistence;
 
-public sealed class EmployeeRepository : JsonFileRepository<Employee>, IEmployeeRepository
+public sealed class EmployeeRepository : JsonFileRepository, IEmployeeRepository
 {
     private readonly IList<Employee> employees;
 
